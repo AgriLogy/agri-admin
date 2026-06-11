@@ -1,0 +1,18 @@
+# Dependencies
+node_modules
+
+# Build outputs
+.next
+out
+build
+
+# Lock files
+package-lock.json
+
+# Generated
+next-env.d.ts
+CHANGELOG.md
+
+# Editor / tooling
+.claude
+.vscode
