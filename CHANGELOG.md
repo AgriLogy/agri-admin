@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/AgriLogy/agri-admin/compare/v1.0.0...v1.0.1) (2026-06-12)
+
+
+### Bug Fixes
+
+* Next 16 params + malformed admin API URLs ([#2](https://github.com/AgriLogy/agri-admin/issues/2)) ([3e1e53f](https://github.com/AgriLogy/agri-admin/commit/3e1e53f3d67d24bd8fd83ec56b82d8512ef9403d)), closes [#1](https://github.com/AgriLogy/agri-admin/issues/1)
+
 # 1.0.0 (2026-06-11)
 
 
