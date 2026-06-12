@@ -11,14 +11,17 @@ published `@agri/*` packages shared with `agri-front`.)
 Routes are served under `/admin/*`. The bare `/` redirects to `/admin`.
 
 ## Develop
+
 ```bash
 npm install
 npm run dev        # http://localhost:3001  (open /admin/login)
 npm run build
 npm run typecheck
 ```
+
 Set `apps`-style env in `.env.local` (API base, e.g. `NEXT_PUBLIC_API_URL`).
 
 ## Deploy (Vercel)
+
 New Vercel project on this repo → framework Next.js → add the admin domain
 (e.g. `back.agrogo…`). Set `NEXT_PUBLIC_API_URL` (+ any proxy env) in the project.
