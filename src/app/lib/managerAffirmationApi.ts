@@ -57,7 +57,7 @@ export const managerAffirmationApi = {
     note?: string
   ): Promise<Affirmation> => {
     const res = await api.post<Affirmation>(
-      `/manager-affirmations${id}/${decision}/`,
+      `/manager-affirmations/${id}/${decision}`,
       note ? { note } : {}
     );
     return res.data;

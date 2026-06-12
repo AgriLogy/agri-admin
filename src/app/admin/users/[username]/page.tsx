@@ -6,8 +6,8 @@ import UserDetailShell from '@/app/components/admin/userDetail/UserDetailShell';
 
 type Params = { username: string };
 
-const Page = ({ params }: { params: Params }) => {
-  const { username } = params;
+const Page = ({ params }: { params: Promise<Params> }) => {
+  const { username } = React.use(params);
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
