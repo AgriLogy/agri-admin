@@ -68,7 +68,7 @@ export const adminZoneApi = {
 
   retrieve: async (username: string, zoneId: number): Promise<AdminZone> => {
     const res = await api.get<AdminZone>(
-      `/users/${encodeURIComponent(username)}/zones${zoneId}/`
+      `/users/${encodeURIComponent(username)}/zones/${zoneId}`
     );
     return res.data;
   },
@@ -90,20 +90,20 @@ export const adminZoneApi = {
     payload: AdminZonePatchPayload
   ): Promise<AdminZone> => {
     const res = await api.patch<AdminZone>(
-      `/users/${encodeURIComponent(username)}/zones${zoneId}/`,
+      `/users/${encodeURIComponent(username)}/zones/${zoneId}`,
       payload
     );
     return res.data;
   },
 
   remove: async (username: string, zoneId: number): Promise<void> => {
-    await api.delete(`/users/${encodeURIComponent(username)}/zones${zoneId}/`);
+    await api.delete(`/users/${encodeURIComponent(username)}/zones/${zoneId}`);
   },
 
   params: {
     get: async (username: string, zoneId: number): Promise<AdminZoneParams> => {
       const res = await api.get<AdminZoneParams>(
-        `/users${encodeURIComponent(username)}/zones/${zoneId}/params/`
+        `/users/${encodeURIComponent(username)}/zones/${zoneId}/params`
       );
       return res.data;
     },
@@ -113,7 +113,7 @@ export const adminZoneApi = {
       payload: Partial<Omit<AdminZoneParams, 'id'>>
     ): Promise<AdminZoneParams> => {
       const res = await api.patch<AdminZoneParams>(
-        `/users${encodeURIComponent(username)}/zones/${zoneId}/params/`,
+        `/users/${encodeURIComponent(username)}/zones/${zoneId}/params`,
         payload
       );
       return res.data;
@@ -126,7 +126,7 @@ export const adminZoneApi = {
       zoneId: number
     ): Promise<ActiveGraphRecord> => {
       const res = await api.get<ActiveGraphRecord>(
-        `/users${encodeURIComponent(username)}/zones/${zoneId}/active-graph/`
+        `/users/${encodeURIComponent(username)}/zones/${zoneId}/active-graph`
       );
       return res.data;
     },
@@ -136,7 +136,7 @@ export const adminZoneApi = {
       payload: ActiveGraphRecord
     ): Promise<ActiveGraphRecord> => {
       const res = await api.patch<ActiveGraphRecord>(
-        `/users${encodeURIComponent(username)}/zones/${zoneId}/active-graph/`,
+        `/users/${encodeURIComponent(username)}/zones/${zoneId}/active-graph`,
         payload
       );
       return res.data;

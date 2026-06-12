@@ -1,15 +1,16 @@
 'use client';
 
-import { useEffect } from 'react';
+import { use, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 type Params = { user: string };
 
-const Page = ({ params }: { params: Params }) => {
+const Page = ({ params }: { params: Promise<Params> }) => {
+  const { user } = use(params);
   const router = useRouter();
   useEffect(() => {
-    router.replace(`/admin/users/${encodeURIComponent(params.user)}?tab=zones`);
-  }, [params.user, router]);
+    router.replace(`/admin/users/${encodeURIComponent(user)}?tab=zones`);
+  }, [user, router]);
   return null;
 };
 
