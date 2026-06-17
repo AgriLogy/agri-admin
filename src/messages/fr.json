@@ -429,7 +429,7 @@
         "status": "Statut",
         "adminRole": "Rôle administrateur",
         "payment": "Paiement",
-        "notifyEvery": "Cadence de notifications (heures)"
+        "notifyEvery": "Cadence de notifications (minutes)"
       },
       "validation": {
         "required": "Requis.",
@@ -450,7 +450,16 @@
         "active": "Actif",
         "suspended": "Suspendu"
       },
-      "save": "Enregistrer"
+      "save": "Enregistrer",
+      "notifyEveryHint": "Délai entre deux emails automatiques (10 à 10080 min).",
+      "notifyPreset": {
+        "min10": "10 min",
+        "min30": "30 min",
+        "h1": "1 h",
+        "h4": "4 h",
+        "h12": "12 h",
+        "h24": "24 h"
+      }
     },
     "soilDataTab": {
       "noZonesCreateInTab": "Aucune zone — créez-en une dans l’onglet Zones",
