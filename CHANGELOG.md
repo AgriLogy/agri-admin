@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/AgriLogy/agri-admin/compare/v1.0.1...v1.1.0) (2026-06-17)
+
+
+### Features
+
+* **admin:** notify_every cadence in minutes with quick presets ([#4](https://github.com/AgriLogy/agri-admin/issues/4)) ([a53918e](https://github.com/AgriLogy/agri-admin/commit/a53918e4332ea5268ee96bb660acf2bda6de04a3))
+
 ## [1.0.1](https://github.com/AgriLogy/agri-admin/compare/v1.0.0...v1.0.1) (2026-06-12)
 
 
