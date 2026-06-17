@@ -244,9 +244,37 @@ export function ProfileTab({ user, onChange }: ProfileTabProps) {
       <Form.Item
         label={t('admin.profile.field.notifyEvery')}
         name="notify_every"
-        rules={[{ required: true }, { type: 'number', min: 1, max: 168 }]}
+        rules={[{ required: true }, { type: 'number', min: 10, max: 10080 }]}
+        extra={t('admin.profile.notifyEveryHint')}
       >
-        <InputNumber min={1} max={168} style={{ width: 160 }} />
+        <InputNumber
+          min={10}
+          max={10080}
+          step={5}
+          addonAfter="min"
+          style={{ width: 180 }}
+        />
+      </Form.Item>
+
+      <Form.Item label=" " colon={false}>
+        <Space wrap>
+          {[
+            { m: 10, k: 'min10' },
+            { m: 30, k: 'min30' },
+            { m: 60, k: 'h1' },
+            { m: 240, k: 'h4' },
+            { m: 720, k: 'h12' },
+            { m: 1440, k: 'h24' },
+          ].map((p) => (
+            <Button
+              key={p.m}
+              size="small"
+              onClick={() => form.setFieldValue('notify_every', p.m)}
+            >
+              {t(`admin.profile.notifyPreset.${p.k}`)}
+            </Button>
+          ))}
+        </Space>
       </Form.Item>
 
       <Form.Item>

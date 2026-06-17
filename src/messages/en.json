@@ -429,7 +429,7 @@
         "status": "Status",
         "adminRole": "Administrator role",
         "payment": "Payment",
-        "notifyEvery": "Notification cadence (hours)"
+        "notifyEvery": "Notification cadence (minutes)"
       },
       "validation": {
         "required": "Required.",
@@ -450,7 +450,16 @@
         "active": "Active",
         "suspended": "Suspended"
       },
-      "save": "Save"
+      "save": "Save",
+      "notifyEveryHint": "Delay between automated emails (10–10080 min).",
+      "notifyPreset": {
+        "min10": "10 min",
+        "min30": "30 min",
+        "h1": "1 h",
+        "h4": "4 h",
+        "h12": "12 h",
+        "h24": "24 h"
+      }
     },
     "soilDataTab": {
       "noZonesCreateInTab": "No zone — create one in the Zones tab",
