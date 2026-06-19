@@ -715,7 +715,8 @@
         "all": "Toutes",
         "activeOnly": "Actives",
         "inactiveOnly": "Inactives"
-      }
+      },
+      "new": "Nouvelle alerte"
     },
     "fleet": {
       "title": "État du parc d’appareils",
@@ -810,6 +811,33 @@
         "notify_whatsapp_enabled": "Notifications WhatsApp",
         "default_critical_moisture_pct": "Humidité critique par défaut (%)",
         "stale_device_hours": "Seuil appareil inactif (heures)"
+      }
+    },
+    "alertCreate": {
+      "title": "Créer une alerte",
+      "create": "Créer",
+      "cancel": "Annuler",
+      "success": "Alerte créée",
+      "error": "Échec de la création",
+      "cond": {
+        "gt": "supérieur à",
+        "lt": "inférieur à",
+        "eq": "égal à"
+      },
+      "validation": {
+        "required": "Requis"
+      },
+      "field": {
+        "username": "Utilisateur",
+        "name": "Nom",
+        "type": "Type",
+        "condition": "Condition",
+        "threshold": "Seuil",
+        "sensorKey": "Clé capteur",
+        "sensorKeyHint": "Identifiant de graphique, ex. temperature_weather",
+        "zoneId": "ID zone (optionnel)",
+        "zoneIdHint": "Laisser vide pour une alerte au niveau du compte",
+        "description": "Description"
       }
     }
   },

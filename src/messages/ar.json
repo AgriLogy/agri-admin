@@ -715,7 +715,8 @@
         "all": "الكل",
         "activeOnly": "المفعّلة",
         "inactiveOnly": "غير المفعّلة"
-      }
+      },
+      "new": "تنبيه جديد"
     },
     "fleet": {
       "title": "حالة أسطول الأجهزة",
@@ -810,6 +811,33 @@
         "notify_whatsapp_enabled": "إشعارات واتساب",
         "default_critical_moisture_pct": "الرطوبة الحرجة الافتراضية (%)",
         "stale_device_hours": "عتبة الجهاز غير النشط (ساعات)"
+      }
+    },
+    "alertCreate": {
+      "title": "إنشاء تنبيه",
+      "create": "إنشاء",
+      "cancel": "إلغاء",
+      "success": "تم إنشاء التنبيه",
+      "error": "فشل إنشاء التنبيه",
+      "cond": {
+        "gt": "أكبر من",
+        "lt": "أصغر من",
+        "eq": "يساوي"
+      },
+      "validation": {
+        "required": "مطلوب"
+      },
+      "field": {
+        "username": "المستخدم",
+        "name": "الاسم",
+        "type": "النوع",
+        "condition": "الشرط",
+        "threshold": "العتبة",
+        "sensorKey": "مفتاح المستشعر",
+        "sensorKeyHint": "معرّف الرسم البياني، مثل temperature_weather",
+        "zoneId": "معرّف المنطقة (اختياري)",
+        "zoneIdHint": "اتركه فارغاً لتنبيه على مستوى الحساب",
+        "description": "الوصف"
       }
     }
   },
