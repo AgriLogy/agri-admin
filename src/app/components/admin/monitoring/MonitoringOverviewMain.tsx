@@ -1,6 +1,16 @@
 'use client';
 
-import { App, Card, Col, Progress, Row, Skeleton, Statistic, Table, Tag } from 'antd';
+import {
+  App,
+  Card,
+  Col,
+  Progress,
+  Row,
+  Skeleton,
+  Statistic,
+  Table,
+  Tag,
+} from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import { Box } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
@@ -180,7 +190,8 @@ const MonitoringOverviewMain = () => {
                       >
                         <span>{c.channel}</span>
                         <span>
-                          {c.total} · {c.failed} {t('admin.monitoring.overview.failedShort')}
+                          {c.total} · {c.failed}{' '}
+                          {t('admin.monitoring.overview.failedShort')}
                         </span>
                       </Box>
                       <Progress
@@ -209,7 +220,9 @@ const MonitoringOverviewMain = () => {
                       fontSize="sm"
                       mb={1}
                     >
-                      <span style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                      <span
+                        style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}
+                      >
                         {tk.task_name.replace('agriapi.tasks.', '')}
                       </span>
                       <Tag color={tk.failures ? 'volcano' : 'green'}>

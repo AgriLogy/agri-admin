@@ -190,8 +190,14 @@ const MonitoringTasksMain = () => {
           onChange={(v) => setStatus(v)}
           style={{ width: 180 }}
           options={[
-            { label: t('admin.monitoring.tasks.status.success'), value: 'success' },
-            { label: t('admin.monitoring.tasks.status.failure'), value: 'failure' },
+            {
+              label: t('admin.monitoring.tasks.status.success'),
+              value: 'success',
+            },
+            {
+              label: t('admin.monitoring.tasks.status.failure'),
+              value: 'failure',
+            },
           ]}
         />
       </Space>

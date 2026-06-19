@@ -63,7 +63,11 @@ const LoginsTab = () => {
         </Tag>
       ),
     },
-    { title: t('admin.monitoring.activity.login.ip'), dataIndex: 'ip', key: 'ip' },
+    {
+      title: t('admin.monitoring.activity.login.ip'),
+      dataIndex: 'ip',
+      key: 'ip',
+    },
     {
       title: t('admin.monitoring.activity.login.agent'),
       dataIndex: 'user_agent',
@@ -157,7 +161,8 @@ const AuditTab = () => {
     {
       title: t('admin.monitoring.activity.audit.target'),
       key: 'target',
-      render: (_v, r) => `${r.target_type}${r.target_id ? ` #${r.target_id}` : ''}`,
+      render: (_v, r) =>
+        `${r.target_type}${r.target_id ? ` #${r.target_id}` : ''}`,
     },
     {
       title: t('admin.monitoring.activity.audit.at'),

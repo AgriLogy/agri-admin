@@ -30,7 +30,12 @@ export type MonitoringOverview = {
     }[];
   };
   logins: { total: number; failed: number; unique_users: number };
-  fleet: { total: number; offline: number; online: number; offline_pct: number };
+  fleet: {
+    total: number;
+    offline: number;
+    online: number;
+    offline_pct: number;
+  };
   recent_failures: {
     type: string;
     name: string;
@@ -113,7 +118,11 @@ export const adminMonitoringApi = {
       .get<DeliveryLog[]>('/admin/monitoring/deliveries', { params: filters })
       .then((r) => r.data),
 
-  logins: (filters?: { username?: string; success?: boolean; limit?: number }) =>
+  logins: (filters?: {
+    username?: string;
+    success?: boolean;
+    limit?: number;
+  }) =>
     api
       .get<LoginEvent[]>('/admin/monitoring/logins', { params: filters })
       .then((r) => r.data),

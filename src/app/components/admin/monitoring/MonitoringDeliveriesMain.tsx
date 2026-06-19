@@ -152,9 +152,18 @@ const MonitoringDeliveriesMain = () => {
           onChange={(v) => setStatus(v)}
           style={{ width: 160 }}
           options={[
-            { label: t('admin.monitoring.deliveries.status.sent'), value: 'sent' },
-            { label: t('admin.monitoring.deliveries.status.failed'), value: 'failed' },
-            { label: t('admin.monitoring.deliveries.status.skipped'), value: 'skipped' },
+            {
+              label: t('admin.monitoring.deliveries.status.sent'),
+              value: 'sent',
+            },
+            {
+              label: t('admin.monitoring.deliveries.status.failed'),
+              value: 'failed',
+            },
+            {
+              label: t('admin.monitoring.deliveries.status.skipped'),
+              value: 'skipped',
+            },
           ]}
         />
       </Space>
