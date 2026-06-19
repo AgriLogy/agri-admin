@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  AlertOutlined,
   AuditOutlined,
   DashboardOutlined,
   LogoutOutlined,
@@ -138,6 +139,15 @@ const AdminMobileMenu = () => {
               label: t('shell.admin.technicians'),
               onClick: () => {
                 router.push('/admin/technicians');
+                setOpen(false);
+              },
+            },
+            {
+              key: 'alerts',
+              icon: <AlertOutlined />,
+              label: t('shell.admin.alerts'),
+              onClick: () => {
+                router.push('/admin/alerts');
                 setOpen(false);
               },
             },

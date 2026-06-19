@@ -588,7 +588,8 @@
     },
     "common": {
       "loadError": "تعذّر التحميل.",
-      "unknownError": "خطأ غير معروف."
+      "unknownError": "خطأ غير معروف.",
+      "saveError": "تعذّر الحفظ."
     },
     "technicians": {
       "title": "الفنيون",
@@ -672,6 +673,48 @@
       "working": "جارٍ معالجة {count} حساب…",
       "done": "تم تحديث {count} حساب",
       "partial": "{failed} فشل"
+    },
+    "analytics": {
+      "title": "التحليلات",
+      "signups": "التسجيلات (12 أسبوعًا)",
+      "payment": "حالة الدفع",
+      "alertsByType": "التنبيهات حسب النوع",
+      "zonesPerUser": "المناطق لكل عميل",
+      "userStatus": "المستخدمون",
+      "active": "نشط",
+      "inactive": "غير نشط",
+      "devices": "الأجهزة",
+      "devTotal": "المجموع",
+      "devOnline": "متصل",
+      "devStale": "متوقّف"
+    },
+    "alertsConsole": {
+      "title": "وحدة التنبيهات",
+      "subtitle": "جميع التنبيهات عبر العملاء",
+      "empty": "لا توجد تنبيهات",
+      "col": {
+        "user": "العميل",
+        "name": "الاسم",
+        "type": "النوع",
+        "sensor": "المستشعر",
+        "condition": "الشرط",
+        "condition_nbr": "العتبة",
+        "lastTriggered": "آخر تفعيل",
+        "active": "مفعّل"
+      },
+      "stat": {
+        "total": "المجموع",
+        "active": "مفعّلة",
+        "inactive": "غير مفعّلة",
+        "triggered": "سبق تفعيلها"
+      },
+      "filter": {
+        "username": "ابحث عن عميل",
+        "type": "النوع",
+        "all": "الكل",
+        "activeOnly": "المفعّلة",
+        "inactiveOnly": "غير المفعّلة"
+      }
     }
   },
   "alertsPage": {
@@ -1712,7 +1755,8 @@
       "logoutConfirmTitle": "تأكيد تسجيل الخروج",
       "logoutConfirmBody": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
       "logoutConfirmOk": "تسجيل الخروج",
-      "technicians": "الفنيون"
+      "technicians": "الفنيون",
+      "alerts": "التنبيهات"
     },
     "mobileMenu": {
       "home": "الرئيسية",

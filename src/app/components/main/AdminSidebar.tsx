@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  AlertOutlined,
   AuditOutlined,
   DashboardOutlined,
   LogoutOutlined,
@@ -24,6 +25,7 @@ const AdminSidebar = () => {
   const selectedKey = useMemo(() => {
     if (pathname.startsWith('/admin/users')) return 'users';
     if (pathname.startsWith('/admin/technicians')) return 'technicians';
+    if (pathname.startsWith('/admin/alerts')) return 'alerts';
     if (pathname.startsWith('/admin/affirmations')) return 'affirmations';
     return 'dashboard';
   }, [pathname]);
@@ -84,6 +86,15 @@ const AdminSidebar = () => {
               </Tooltip>
             ),
             onClick: () => router.push('/admin/technicians'),
+          },
+          {
+            key: 'alerts',
+            icon: (
+              <Tooltip title={t('shell.admin.alerts')} placement="right">
+                <AlertOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/alerts'),
           },
           {
             key: 'affirmations',

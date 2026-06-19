@@ -588,7 +588,8 @@
     },
     "common": {
       "loadError": "Unable to load.",
-      "unknownError": "Unknown error."
+      "unknownError": "Unknown error.",
+      "saveError": "Could not save."
     },
     "technicians": {
       "title": "Technicians",
@@ -672,6 +673,48 @@
       "working": "Processing {count} account(s)…",
       "done": "{count} account(s) updated",
       "partial": "{failed} failed"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "signups": "Signups (12 wks)",
+      "payment": "Payment status",
+      "alertsByType": "Alerts by type",
+      "zonesPerUser": "Zones per customer",
+      "userStatus": "Users",
+      "active": "Active",
+      "inactive": "Inactive",
+      "devices": "Devices",
+      "devTotal": "Total",
+      "devOnline": "Online",
+      "devStale": "Stale"
+    },
+    "alertsConsole": {
+      "title": "Alerts console",
+      "subtitle": "All alerts across customers",
+      "empty": "No alerts",
+      "col": {
+        "user": "Customer",
+        "name": "Name",
+        "type": "Type",
+        "sensor": "Sensor",
+        "condition": "Condition",
+        "condition_nbr": "Threshold",
+        "lastTriggered": "Last triggered",
+        "active": "Active"
+      },
+      "stat": {
+        "total": "Total",
+        "active": "Active",
+        "inactive": "Inactive",
+        "triggered": "Triggered ever"
+      },
+      "filter": {
+        "username": "Search customer",
+        "type": "Type",
+        "all": "All",
+        "activeOnly": "Active",
+        "inactiveOnly": "Inactive"
+      }
     }
   },
   "alertsPage": {
@@ -1712,7 +1755,8 @@
       "logoutConfirmTitle": "Confirm log out",
       "logoutConfirmBody": "Are you sure you want to log out?",
       "logoutConfirmOk": "Log out",
-      "technicians": "Technicians"
+      "technicians": "Technicians",
+      "alerts": "Alerts"
     },
     "mobileMenu": {
       "home": "Home",

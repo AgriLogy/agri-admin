@@ -16,6 +16,7 @@ import { Box } from '@chakra-ui/react';
 import { useLocale, useTranslations } from 'next-intl';
 
 import { AdminCrudTable } from '@/app/components/admin/_shared/AdminCrudTable';
+import AdminAnalyticsCharts from '@/app/components/admin/AdminAnalyticsCharts';
 import { PageInfoBar } from '@/app/components/layout/PageInfoBar';
 import { adminUserApi, type AdminUserRow } from '@/app/lib/adminUserApi';
 
@@ -198,6 +199,13 @@ const AdminDashboardMain = () => {
           </Card>
         </Col>
       </Row>
+
+      <Box mt={4}>
+        <h3 style={{ marginTop: 0, marginBottom: 12 }}>
+          {t('admin.analytics.title')}
+        </h3>
+        <AdminAnalyticsCharts />
+      </Box>
 
       <Box mt={4}>
         <Box
