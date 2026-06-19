@@ -108,11 +108,7 @@ export function UserHeaderActions({ user, onChange }: UserHeaderActionsProps) {
       >
         {t('admin.userHeaderActions.resetPassword')}
       </Button>
-      <Button
-        icon={<EyeOutlined />}
-        onClick={handleViewAs}
-        loading={viewing}
-      >
+      <Button icon={<EyeOutlined />} onClick={handleViewAs} loading={viewing}>
         {t('admin.userHeaderActions.viewAs')}
       </Button>
     </Space>
