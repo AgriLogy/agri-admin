@@ -811,6 +811,63 @@
         "default_critical_moisture_pct": "الرطوبة الحرجة الافتراضية (%)",
         "stale_device_hours": "عتبة الجهاز غير النشط (ساعات)"
       }
+    },
+    "records": {
+      "nav": {
+        "notifications": "الإشعارات",
+        "conversations": "المحادثات",
+        "grants": "صلاحيات الفنيين"
+      },
+      "notifications": {
+        "title": "الإشعارات",
+        "subtitle": "لقطات الإشعارات لكل مستخدم",
+        "empty": "لا إشعارات",
+        "col": {
+          "user": "المستخدم",
+          "date": "التاريخ",
+          "temp": "الحرارة (اليوم)",
+          "humidity": "الرطوبة (اليوم)",
+          "et0": "ET0",
+          "period": "نافذة الري"
+        }
+      },
+      "conversations": {
+        "title": "محادثات المساعد",
+        "subtitle": "سجل الدردشة وسجل الإشعارات الاستباقية",
+        "empty": "لا محادثات",
+        "view": "عرض",
+        "transcript": "النص",
+        "col": {
+          "user": "المستخدم",
+          "title": "العنوان",
+          "messages": "الرسائل",
+          "updated": "آخر تحديث"
+        },
+        "tab": {
+          "conversations": "المحادثات",
+          "proactive": "الإشعارات الاستباقية"
+        }
+      },
+      "proactive": {
+        "col": {
+          "user": "المستخدم",
+          "lastSent": "آخر إرسال"
+        },
+        "reset": "إعادة تعيين",
+        "resetConfirm": "إعادة تعيين مهلة الإشعار الاستباقي لهذا المستخدم؟",
+        "empty": "لا إشعارات استباقية"
+      },
+      "grants": {
+        "title": "صلاحيات الفنيين",
+        "subtitle": "كل صلاحيات الفنيين عبر جميع المالكين",
+        "empty": "لا صلاحيات",
+        "col": {
+          "technician": "الفني",
+          "owner": "المالك",
+          "created": "أُنشئ",
+          "active": "مُفعّل"
+        }
+      }
     }
   },
   "alertsPage": {
@@ -1856,7 +1913,8 @@
       "fleet": "حالة الأسطول",
       "billing": "الفوترة",
       "audit": "سجل التدقيق",
-      "settings": "الإعدادات"
+      "settings": "الإعدادات",
+      "records": "السجلات"
     },
     "mobileMenu": {
       "home": "الرئيسية",
