@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/AgriLogy/agri-admin/compare/v1.1.2...v1.2.0) (2026-06-19)
+
+
+### Features
+
+* **admin:** technician management UI + CSV export & bulk actions ([#10](https://github.com/AgriLogy/agri-admin/issues/10)) ([2671ebc](https://github.com/AgriLogy/agri-admin/commit/2671ebc0efcb98cd02e84357094c984e5500d006)), closes [#9](https://github.com/AgriLogy/agri-admin/issues/9)
+
 ## [1.1.2](https://github.com/AgriLogy/agri-admin/compare/v1.1.1...v1.1.2) (2026-06-18)
 
 ## [1.1.1](https://github.com/AgriLogy/agri-admin/compare/v1.1.0...v1.1.1) (2026-06-18)
