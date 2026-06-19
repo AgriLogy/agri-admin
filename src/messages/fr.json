@@ -540,7 +540,11 @@
         "large_fruit_diameter_status": "Diamètre des gros fruits",
         "npk_status": "NPK",
         "electricity_consumption_status": "Consommation électrique"
-      }
+      },
+      "labelsTitle": "Libellés des graphiques",
+      "colorsTitle": "Couleurs des capteurs",
+      "save": "Enregistrer",
+      "saved": "Enregistré"
     },
     "userHeaderActions": {
       "reactivated": "Utilisateur réactivé.",
@@ -590,7 +594,8 @@
       "loadError": "Chargement impossible.",
       "unknownError": "Erreur inconnue.",
       "saveError": "Échec de l'enregistrement.",
-      "edit": "Modifier"
+      "edit": "Modifier",
+      "delete": "Supprimer"
     },
     "technicians": {
       "title": "Techniciens",
@@ -811,6 +816,41 @@
         "notify_whatsapp_enabled": "Notifications WhatsApp",
         "default_critical_moisture_pct": "Humidité critique par défaut (%)",
         "stale_device_hours": "Seuil appareil inactif (heures)"
+      },
+      "addKey": "Ajouter une clé",
+      "created": "Paramètre créé",
+      "createError": "Impossible de créer le paramètre",
+      "deleted": "Paramètre supprimé",
+      "deleteConfirm": "Supprimer ce paramètre ?",
+      "fieldKey": "Clé",
+      "fieldCategory": "Catégorie",
+      "fieldValue": "Valeur"
+    },
+    "kc": {
+      "title": "Calendriers culturaux (Kc)",
+      "subtitle": "Gérer les calendriers de coefficients culturaux de tous les utilisateurs",
+      "new": "Nouveau calendrier",
+      "editTitle": "Modifier le calendrier",
+      "empty": "Aucun calendrier",
+      "created": "Calendrier créé",
+      "updated": "Calendrier mis à jour",
+      "addPeriod": "Ajouter une période",
+      "col": {
+        "user": "Utilisateur",
+        "name": "Nom",
+        "plant": "Plante",
+        "zone": "Zone",
+        "periods": "Périodes"
+      },
+      "field": {
+        "username": "Utilisateur",
+        "name": "Nom",
+        "plant": "Plante",
+        "zone": "Zone",
+        "periodName": "Nom du stade"
+      },
+      "filter": {
+        "username": "Utilisateur"
       }
     },
     "sensorData": {
@@ -2078,6 +2118,7 @@
       "billing": "Facturation",
       "audit": "Journal d'audit",
       "settings": "Paramètres",
+      "kc": "Calendriers culturaux",
       "sensorData": "Données capteurs",
       "records": "Données",
       "monitoring": "Supervision"

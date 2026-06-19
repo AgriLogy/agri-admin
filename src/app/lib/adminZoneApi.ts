@@ -47,6 +47,8 @@ export type AdminZoneParams = Pick<
 >;
 
 export type ActiveGraphRecord = Record<string, boolean | number>;
+/** GraphName labels / SensorColor hex values — free-form string maps. */
+export type ConfigRecord = Record<string, string>;
 
 const unwrap = <T>(data: unknown): T[] => {
   if (Array.isArray(data)) return data as T[];
@@ -137,6 +139,46 @@ export const adminZoneApi = {
     ): Promise<ActiveGraphRecord> => {
       const res = await api.patch<ActiveGraphRecord>(
         `/users/${encodeURIComponent(username)}/zones/${zoneId}/active-graph`,
+        payload
+      );
+      return res.data;
+    },
+  },
+
+  graphNames: {
+    get: async (username: string, zoneId: number): Promise<ConfigRecord> => {
+      const res = await api.get<ConfigRecord>(
+        `/users/${encodeURIComponent(username)}/zones/${zoneId}/graph-names`
+      );
+      return res.data;
+    },
+    patch: async (
+      username: string,
+      zoneId: number,
+      payload: ConfigRecord
+    ): Promise<ConfigRecord> => {
+      const res = await api.patch<ConfigRecord>(
+        `/users/${encodeURIComponent(username)}/zones/${zoneId}/graph-names`,
+        payload
+      );
+      return res.data;
+    },
+  },
+
+  sensorColors: {
+    get: async (username: string, zoneId: number): Promise<ConfigRecord> => {
+      const res = await api.get<ConfigRecord>(
+        `/users/${encodeURIComponent(username)}/zones/${zoneId}/sensor-colors`
+      );
+      return res.data;
+    },
+    patch: async (
+      username: string,
+      zoneId: number,
+      payload: ConfigRecord
+    ): Promise<ConfigRecord> => {
+      const res = await api.patch<ConfigRecord>(
+        `/users/${encodeURIComponent(username)}/zones/${zoneId}/sensor-colors`,
         payload
       );
       return res.data;
