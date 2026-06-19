@@ -811,6 +811,116 @@
         "default_critical_moisture_pct": "Humidité critique par défaut (%)",
         "stale_device_hours": "Seuil appareil inactif (heures)"
       }
+    },
+    "monitoring": {
+      "nav": {
+        "overview": "Aperçu",
+        "automations": "Automatisations",
+        "deliveries": "Envois",
+        "activity": "Activité"
+      },
+      "overview": {
+        "title": "Supervision",
+        "subtitle": "Actions automatisées et comportement des utilisateurs (24 dernières heures)",
+        "taskSuccess": "Taux de réussite des tâches",
+        "runs": "{n} exécutions · {f} échecs",
+        "deliveryErr": "Taux d’erreur d’envoi",
+        "deliveries": "{n} envoyés · {f} échoués",
+        "logins": "Connexions",
+        "loginsDetail": "{u} utilisateurs uniques · {f} échecs",
+        "fleetOffline": "Parc hors ligne",
+        "fleetDetail": "{online}/{total} appareils en ligne",
+        "byChannel": "Envois par canal",
+        "byTask": "Tâches par taux de réussite",
+        "noData": "Aucune donnée",
+        "failedShort": "échoués",
+        "recentFailures": "Échecs récents",
+        "noFailures": "Aucun échec récent",
+        "failType": "Type",
+        "failName": "Nom",
+        "failError": "Erreur",
+        "failAt": "Quand",
+        "type": {
+          "task": "Tâche",
+          "delivery": "Envoi"
+        }
+      },
+      "tasks": {
+        "title": "Automatisations",
+        "subtitle": "Tâches planifiées et historique d’exécution",
+        "scheduleTitle": "Planification (Beat)",
+        "schedName": "Nom",
+        "schedTask": "Tâche",
+        "schedEvery": "Fréquence",
+        "schedSource": "Source",
+        "aggTitle": "Par tâche (7 derniers jours)",
+        "aggName": "Tâche",
+        "aggRuns": "Exécutions",
+        "aggFailures": "Échecs",
+        "aggSuccess": "Réussite",
+        "aggLastRun": "Dernière exécution",
+        "filterStatus": "Statut",
+        "status": {
+          "success": "Réussite",
+          "failure": "Échec"
+        },
+        "runName": "Tâche",
+        "runStatus": "Statut",
+        "runRuntime": "Durée",
+        "runError": "Erreur",
+        "runAt": "Quand",
+        "empty": "Aucune exécution enregistrée"
+      },
+      "deliveries": {
+        "title": "Envois",
+        "subtitle": "Journal des envois de notifications (e-mail / SMS / WhatsApp)",
+        "col": {
+          "channel": "Canal",
+          "kind": "Type",
+          "recipient": "Destinataire",
+          "user": "Utilisateur",
+          "status": "Statut",
+          "error": "Erreur",
+          "at": "Quand"
+        },
+        "status": {
+          "sent": "Envoyé",
+          "failed": "Échoué",
+          "skipped": "Ignoré"
+        },
+        "filter": {
+          "username": "Utilisateur",
+          "channel": "Canal",
+          "status": "Statut"
+        },
+        "empty": "Aucun envoi enregistré"
+      },
+      "activity": {
+        "title": "Activité",
+        "subtitle": "Connexions et actions administrateur",
+        "tab": {
+          "logins": "Connexions",
+          "audit": "Actions admin"
+        },
+        "login": {
+          "user": "Utilisateur",
+          "outcome": "Résultat",
+          "ok": "Réussite",
+          "fail": "Échec",
+          "ip": "IP",
+          "agent": "Navigateur",
+          "at": "Quand",
+          "all": "Tous",
+          "empty": "Aucune connexion"
+        },
+        "audit": {
+          "actor": "Auteur",
+          "action": "Action",
+          "target": "Cible",
+          "at": "Quand",
+          "empty": "Aucune action admin"
+        }
+      }
     }
   },
   "alertsPage": {
@@ -1856,7 +1966,8 @@
       "fleet": "État du parc",
       "billing": "Facturation",
       "audit": "Journal d'audit",
-      "settings": "Paramètres"
+      "settings": "Paramètres",
+      "monitoring": "Supervision"
     },
     "mobileMenu": {
       "home": "Accueil",
