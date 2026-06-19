@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/AgriLogy/agri-admin/compare/v1.2.0...v1.3.0) (2026-06-19)
+
+
+### Features
+
+* **admin:** analytics dashboard + global alerts console ([#12](https://github.com/AgriLogy/agri-admin/issues/12)) ([b927d7f](https://github.com/AgriLogy/agri-admin/commit/b927d7fd6cba42ac2bf680419c265fdc8bc01df8)), closes [#11](https://github.com/AgriLogy/agri-admin/issues/11)
+
 # [1.2.0](https://github.com/AgriLogy/agri-admin/compare/v1.1.2...v1.2.0) (2026-06-19)
 
 
