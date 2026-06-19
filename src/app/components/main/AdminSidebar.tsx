@@ -5,6 +5,7 @@ import {
   AuditOutlined,
   CreditCardOutlined,
   DashboardOutlined,
+  DatabaseOutlined,
   FileSearchOutlined,
   LogoutOutlined,
   SafetyCertificateOutlined,
@@ -31,6 +32,7 @@ const AdminSidebar = () => {
     if (pathname.startsWith('/admin/technicians')) return 'technicians';
     if (pathname.startsWith('/admin/alerts')) return 'alerts';
     if (pathname.startsWith('/admin/devices')) return 'fleet';
+    if (pathname.startsWith('/admin/sensor-data')) return 'sensorData';
     if (pathname.startsWith('/admin/affirmations')) return 'affirmations';
     if (pathname.startsWith('/admin/billing')) return 'billing';
     if (pathname.startsWith('/admin/audit')) return 'audit';
@@ -112,6 +114,15 @@ const AdminSidebar = () => {
               </Tooltip>
             ),
             onClick: () => router.push('/admin/devices/health'),
+          },
+          {
+            key: 'sensorData',
+            icon: (
+              <Tooltip title={t('shell.admin.sensorData')} placement="right">
+                <DatabaseOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/sensor-data'),
           },
           {
             key: 'affirmations',

@@ -811,6 +811,32 @@
         "default_critical_moisture_pct": "Default critical moisture (%)",
         "stale_device_hours": "Stale device threshold (hours)"
       }
+    },
+    "sensorData": {
+      "title": "Sensor data explorer",
+      "subtitle": "Browse, correct and clean raw sensor readings",
+      "pickSensor": "Pick a sensor type first",
+      "load": "Load",
+      "empty": "No readings — pick a sensor and load",
+      "saved": "Reading updated",
+      "editTitle": "Correct reading value",
+      "confirmDelete": "Delete this reading?",
+      "rangeDelete": "Delete range",
+      "confirmRangeDelete": "Delete all readings in this zone + date range?",
+      "rangeDeleted": "{n} readings deleted",
+      "col": {
+        "timestamp": "Timestamp",
+        "value": "Value",
+        "zone": "Zone",
+        "user": "User"
+      },
+      "filter": {
+        "sensor": "Sensor type",
+        "user": "User",
+        "zone": "Zone",
+        "from": "From",
+        "to": "To"
+      }
     }
   },
   "alertsPage": {
@@ -1856,7 +1882,8 @@
       "fleet": "Fleet health",
       "billing": "Billing",
       "audit": "Audit log",
-      "settings": "Settings"
+      "settings": "Settings",
+      "sensorData": "Sensor data"
     },
     "mobileMenu": {
       "home": "Home",
