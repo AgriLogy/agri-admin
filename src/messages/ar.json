@@ -715,6 +715,33 @@
         "activeOnly": "المفعّلة",
         "inactiveOnly": "غير المفعّلة"
       }
+    },
+    "fleet": {
+      "title": "حالة أسطول الأجهزة",
+      "subtitle": "أجهزة LoRaWAN — آخر اتصال والبطارية والإشارة.",
+      "refresh": "تحديث",
+      "empty": "لا توجد أجهزة ترسل بيانات بعد.",
+      "filter": {
+        "all": "كل الحالات"
+      },
+      "status": {
+        "online": "متصل",
+        "stale": "خامل",
+        "offline": "غير متصل"
+      },
+      "stat": {
+        "total": "إجمالي الأجهزة"
+      },
+      "col": {
+        "devEui": "معرف الجهاز",
+        "name": "الاسم",
+        "status": "الحالة",
+        "lastSeen": "آخر اتصال",
+        "battery": "البطارية",
+        "rssi": "RSSI",
+        "snr": "SNR",
+        "uplinks24h": "الرسائل (24 س)"
+      }
     }
   },
   "alertsPage": {
@@ -1756,7 +1783,8 @@
       "logoutConfirmBody": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
       "logoutConfirmOk": "تسجيل الخروج",
       "technicians": "الفنيون",
-      "alerts": "التنبيهات"
+      "alerts": "التنبيهات",
+      "fleet": "حالة الأسطول"
     },
     "mobileMenu": {
       "home": "الرئيسية",

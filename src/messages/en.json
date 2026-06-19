@@ -715,6 +715,33 @@
         "activeOnly": "Active",
         "inactiveOnly": "Inactive"
       }
+    },
+    "fleet": {
+      "title": "Device fleet health",
+      "subtitle": "LoRaWAN devices — last-seen, battery and signal.",
+      "refresh": "Refresh",
+      "empty": "No devices reporting yet.",
+      "filter": {
+        "all": "All statuses"
+      },
+      "status": {
+        "online": "Online",
+        "stale": "Stale",
+        "offline": "Offline"
+      },
+      "stat": {
+        "total": "Total devices"
+      },
+      "col": {
+        "devEui": "Device EUI",
+        "name": "Name",
+        "status": "Status",
+        "lastSeen": "Last seen",
+        "battery": "Battery",
+        "rssi": "RSSI",
+        "snr": "SNR",
+        "uplinks24h": "Uplinks (24h)"
+      }
     }
   },
   "alertsPage": {
@@ -1756,7 +1783,8 @@
       "logoutConfirmBody": "Are you sure you want to log out?",
       "logoutConfirmOk": "Log out",
       "technicians": "Technicians",
-      "alerts": "Alerts"
+      "alerts": "Alerts",
+      "fleet": "Fleet health"
     },
     "mobileMenu": {
       "home": "Home",

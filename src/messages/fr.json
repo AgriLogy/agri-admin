@@ -715,6 +715,33 @@
         "activeOnly": "Actives",
         "inactiveOnly": "Inactives"
       }
+    },
+    "fleet": {
+      "title": "État du parc d’appareils",
+      "subtitle": "Appareils LoRaWAN — dernière communication, batterie et signal.",
+      "refresh": "Actualiser",
+      "empty": "Aucun appareil ne communique pour l’instant.",
+      "filter": {
+        "all": "Tous les statuts"
+      },
+      "status": {
+        "online": "En ligne",
+        "stale": "Inactif",
+        "offline": "Hors ligne"
+      },
+      "stat": {
+        "total": "Appareils au total"
+      },
+      "col": {
+        "devEui": "EUI appareil",
+        "name": "Nom",
+        "status": "Statut",
+        "lastSeen": "Dernière communication",
+        "battery": "Batterie",
+        "rssi": "RSSI",
+        "snr": "SNR",
+        "uplinks24h": "Trames (24 h)"
+      }
     }
   },
   "alertsPage": {
@@ -1756,7 +1783,8 @@
       "logoutConfirmBody": "Êtes-vous sûr de vouloir vous déconnecter ?",
       "logoutConfirmOk": "Se déconnecter",
       "technicians": "Techniciens",
-      "alerts": "Alertes"
+      "alerts": "Alertes",
+      "fleet": "État du parc"
     },
     "mobileMenu": {
       "home": "Accueil",
