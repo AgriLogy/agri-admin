@@ -19,6 +19,27 @@ export type AdminAlertRow = {
   user: number | null;
 };
 
+/** A global-console alert row: the override row + the owner's username. */
+export type AlertConsoleRow = AdminAlertRow & { username: string | null };
+
+export type AlertConsoleFilters = {
+  username?: string;
+  type?: string;
+  sensor_key?: string;
+  is_active?: boolean;
+  zone_id?: number;
+};
+
+export type AlertAnalytics = {
+  total: number;
+  active: number;
+  inactive: number;
+  triggered_ever: number;
+  by_type: { type: string; count: number }[];
+  by_sensor: { sensor_key: string; count: number }[];
+  recently_triggered: AlertConsoleRow[];
+};
+
 const unwrap = <T>(data: unknown): T[] => {
   if (Array.isArray(data)) return data as T[];
   if (
@@ -35,6 +56,23 @@ export const adminAlertApi = {
   listForUser: async (username: string): Promise<AdminAlertRow[]> => {
     const res = await api.get(`/users/${encodeURIComponent(username)}/alerts`);
     return unwrap<AdminAlertRow>(res.data);
+  },
+  /** Cross-user alert list with optional filters (admin console). */
+  listAll: async (
+    filters: AlertConsoleFilters = {}
+  ): Promise<AlertConsoleRow[]> => {
+    const params: Record<string, string | number | boolean> = {};
+    if (filters.username) params.username = filters.username;
+    if (filters.type) params.type = filters.type;
+    if (filters.sensor_key) params.sensor_key = filters.sensor_key;
+    if (filters.is_active !== undefined) params.is_active = filters.is_active;
+    if (filters.zone_id !== undefined) params.zone_id = filters.zone_id;
+    const res = await api.get('/admin/alerts', { params });
+    return unwrap<AlertConsoleRow>(res.data);
+  },
+  analytics: async (): Promise<AlertAnalytics> => {
+    const res = await api.get<AlertAnalytics>('/admin/alert-analytics');
+    return res.data;
   },
   setActive: async (pk: number, isActive: boolean): Promise<AdminAlertRow> => {
     const res = await api.patch<AdminAlertRow>(`/admin/alerts/${pk}`, {

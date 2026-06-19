@@ -588,7 +588,8 @@
     },
     "common": {
       "loadError": "Chargement impossible.",
-      "unknownError": "Erreur inconnue."
+      "unknownError": "Erreur inconnue.",
+      "saveError": "Échec de l'enregistrement."
     },
     "technicians": {
       "title": "Techniciens",
@@ -672,6 +673,48 @@
       "working": "Traitement de {count} compte(s)…",
       "done": "{count} compte(s) mis à jour",
       "partial": "{failed} échec(s)"
+    },
+    "analytics": {
+      "title": "Analytique",
+      "signups": "Inscriptions (12 sem.)",
+      "payment": "Statut de paiement",
+      "alertsByType": "Alertes par type",
+      "zonesPerUser": "Zones par client",
+      "userStatus": "Clients",
+      "active": "Actifs",
+      "inactive": "Inactifs",
+      "devices": "Appareils",
+      "devTotal": "Total",
+      "devOnline": "En ligne",
+      "devStale": "Inactifs"
+    },
+    "alertsConsole": {
+      "title": "Console d'alertes",
+      "subtitle": "Toutes les alertes, tous clients confondus",
+      "empty": "Aucune alerte",
+      "col": {
+        "user": "Client",
+        "name": "Nom",
+        "type": "Type",
+        "sensor": "Capteur",
+        "condition": "Condition",
+        "condition_nbr": "Seuil",
+        "lastTriggered": "Dernier déclenchement",
+        "active": "Active"
+      },
+      "stat": {
+        "total": "Total",
+        "active": "Actives",
+        "inactive": "Inactives",
+        "triggered": "Déjà déclenchées"
+      },
+      "filter": {
+        "username": "Rechercher un client",
+        "type": "Type",
+        "all": "Toutes",
+        "activeOnly": "Actives",
+        "inactiveOnly": "Inactives"
+      }
     }
   },
   "alertsPage": {
@@ -1712,7 +1755,8 @@
       "logoutConfirmTitle": "Confirmer la déconnexion",
       "logoutConfirmBody": "Êtes-vous sûr de vouloir vous déconnecter ?",
       "logoutConfirmOk": "Se déconnecter",
-      "technicians": "Techniciens"
+      "technicians": "Techniciens",
+      "alerts": "Alertes"
     },
     "mobileMenu": {
       "home": "Accueil",
