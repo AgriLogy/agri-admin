@@ -813,6 +813,32 @@
         "stale_device_hours": "Seuil appareil inactif (heures)"
       }
     },
+    "sensorData": {
+      "title": "Explorateur de données capteurs",
+      "subtitle": "Parcourir, corriger et nettoyer les relevés bruts",
+      "pickSensor": "Choisissez d’abord un type de capteur",
+      "load": "Charger",
+      "empty": "Aucun relevé — choisissez un capteur et chargez",
+      "saved": "Relevé mis à jour",
+      "editTitle": "Corriger la valeur du relevé",
+      "confirmDelete": "Supprimer ce relevé ?",
+      "rangeDelete": "Supprimer la plage",
+      "confirmRangeDelete": "Supprimer tous les relevés de cette zone sur la plage de dates ?",
+      "rangeDeleted": "{n} relevés supprimés",
+      "col": {
+        "timestamp": "Horodatage",
+        "value": "Valeur",
+        "zone": "Zone",
+        "user": "Utilisateur"
+      },
+      "filter": {
+        "sensor": "Type de capteur",
+        "user": "Utilisateur",
+        "zone": "Zone",
+        "from": "Du",
+        "to": "Au"
+      }
+    },
     "records": {
       "nav": {
         "notifications": "Notifications",
@@ -2052,6 +2078,7 @@
       "billing": "Facturation",
       "audit": "Journal d'audit",
       "settings": "Paramètres",
+      "sensorData": "Données capteurs",
       "records": "Données",
       "monitoring": "Supervision"
     },
