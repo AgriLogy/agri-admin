@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/AgriLogy/agri-admin/compare/v1.10.0...v1.11.0) (2026-06-19)
+
+
+### Features
+
+* **admin:** view-as button to start a read-only impersonation session ([289413c](https://github.com/AgriLogy/agri-admin/commit/289413c5cda7190600e927d43fb9dce582ce2b29)), closes [#27](https://github.com/AgriLogy/agri-admin/issues/27)
+
 # [1.10.0](https://github.com/AgriLogy/agri-admin/compare/v1.9.0...v1.10.0) (2026-06-19)
 
 
