@@ -11,6 +11,7 @@ import {
   SunOutlined,
   TeamOutlined,
   UserOutlined,
+  WifiOutlined,
 } from '@ant-design/icons';
 import { App, Button, Drawer, Dropdown, Flex, Menu } from 'antd';
 import { useColorMode } from '@chakra-ui/react';
@@ -148,6 +149,15 @@ const AdminMobileMenu = () => {
               label: t('shell.admin.alerts'),
               onClick: () => {
                 router.push('/admin/alerts');
+                setOpen(false);
+              },
+            },
+            {
+              key: 'fleet',
+              icon: <WifiOutlined />,
+              label: t('shell.admin.fleet'),
+              onClick: () => {
+                router.push('/admin/devices/health');
                 setOpen(false);
               },
             },

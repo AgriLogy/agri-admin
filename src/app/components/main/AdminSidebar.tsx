@@ -7,6 +7,7 @@ import {
   LogoutOutlined,
   SafetyCertificateOutlined,
   TeamOutlined,
+  WifiOutlined,
 } from '@ant-design/icons';
 import { App, Menu, Tooltip } from 'antd';
 import { useTranslations } from 'next-intl';
@@ -26,6 +27,7 @@ const AdminSidebar = () => {
     if (pathname.startsWith('/admin/users')) return 'users';
     if (pathname.startsWith('/admin/technicians')) return 'technicians';
     if (pathname.startsWith('/admin/alerts')) return 'alerts';
+    if (pathname.startsWith('/admin/devices')) return 'fleet';
     if (pathname.startsWith('/admin/affirmations')) return 'affirmations';
     return 'dashboard';
   }, [pathname]);
@@ -95,6 +97,15 @@ const AdminSidebar = () => {
               </Tooltip>
             ),
             onClick: () => router.push('/admin/alerts'),
+          },
+          {
+            key: 'fleet',
+            icon: (
+              <Tooltip title={t('shell.admin.fleet')} placement="right">
+                <WifiOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/devices/health'),
           },
           {
             key: 'affirmations',
