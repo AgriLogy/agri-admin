@@ -589,6 +589,89 @@
     "common": {
       "loadError": "Unable to load.",
       "unknownError": "Unknown error."
+    },
+    "technicians": {
+      "title": "Technicians",
+      "subtitle": "Read-only technician accounts and their scope",
+      "newTechnician": "New technician",
+      "create": "Create",
+      "save": "Save",
+      "cancel": "Cancel",
+      "close": "Close",
+      "reset": "Reset",
+      "searchPlaceholder": "Search a technician…",
+      "empty": "No technicians",
+      "loadError": "Failed to load technicians",
+      "created": "Technician created",
+      "createError": "Failed to create technician",
+      "scopeSaved": "Scope updated",
+      "scopeError": "Failed to update scope",
+      "revoked": "Access revoked",
+      "revokeConfirm": "Revoke {username}'s access?",
+      "editScopeTitle": "Scope — {username}",
+      "resetConfirmTitle": "Reset {username}'s password?",
+      "resetConfirmContent": "A new temporary password will be generated.",
+      "newPasswordTitle": "New password",
+      "newPasswordHint": "Share this temporary password with the technician:",
+      "resetError": "Failed to reset password",
+      "col": {
+        "user": "Technician",
+        "email": "Email",
+        "status": "Status",
+        "zones": "Zones",
+        "actions": "Actions"
+      },
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive"
+      },
+      "action": {
+        "editScope": "Edit scope",
+        "editScopeAria": "Edit {username}'s scope",
+        "resetPassword": "Reset password",
+        "resetAria": "Reset {username}'s password",
+        "revoke": "Revoke"
+      },
+      "form": {
+        "username": "Username",
+        "password": "Password",
+        "firstname": "First name",
+        "lastname": "Last name",
+        "email": "Email",
+        "scope": "Scope (zones & graphs)"
+      },
+      "scope": {
+        "zone": "Zone",
+        "zoneFallback": "Zone #{id}",
+        "graphs": "Allowed graphs",
+        "graphsPlaceholder": "Select graphs",
+        "remove": "Remove",
+        "selectUser": "Pick a customer",
+        "selectZone": "Pick a zone",
+        "noZones": "No zones",
+        "add": "Add",
+        "empty": "No zones in scope"
+      },
+      "csv": {
+        "firstname": "First name",
+        "lastname": "Last name"
+      }
+    },
+    "export": {
+      "button": "Export CSV",
+      "selected": "Export selected",
+      "csv": {
+        "firstname": "First name",
+        "lastname": "Last name"
+      }
+    },
+    "bulk": {
+      "selected": "{count} selected",
+      "activate": "Activate",
+      "deactivate": "Deactivate",
+      "working": "Processing {count} account(s)…",
+      "done": "{count} account(s) updated",
+      "partial": "{failed} failed"
     }
   },
   "alertsPage": {
@@ -1628,7 +1711,8 @@
       "cancel": "Cancel",
       "logoutConfirmTitle": "Confirm log out",
       "logoutConfirmBody": "Are you sure you want to log out?",
-      "logoutConfirmOk": "Log out"
+      "logoutConfirmOk": "Log out",
+      "technicians": "Technicians"
     },
     "mobileMenu": {
       "home": "Home",

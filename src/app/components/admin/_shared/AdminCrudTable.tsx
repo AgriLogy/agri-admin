@@ -1,7 +1,7 @@
 'use client';
 
 import { Empty, Input, Space, Table } from 'antd';
-import type { ColumnsType } from 'antd/es/table';
+import type { ColumnsType, TableProps } from 'antd/es/table';
 import { SearchOutlined } from '@ant-design/icons';
 import { useTranslations } from 'next-intl';
 import { useMemo, useState } from 'react';
@@ -20,6 +20,8 @@ export type AdminCrudTableProps<T> = {
   /** Trailing slot (typically a "Nouveau …" primary button). */
   toolbar?: React.ReactNode;
   pagination?: false | { pageSize?: number };
+  /** Optional antd row-selection (enables checkbox bulk selection). */
+  rowSelection?: TableProps<T>['rowSelection'];
 };
 
 /**
@@ -46,6 +48,7 @@ export function AdminCrudTable<T extends Record<string, unknown>>({
   emptyDescription,
   toolbar,
   pagination = { pageSize: 20 },
+  rowSelection,
 }: AdminCrudTableProps<T>) {
   const t = useTranslations();
   const resolvedSearchPlaceholder =
@@ -100,6 +103,7 @@ export function AdminCrudTable<T extends Record<string, unknown>>({
         columns={columns}
         dataSource={filtered}
         loading={loading}
+        rowSelection={rowSelection}
         pagination={pagination}
         locale={{
           emptyText: (

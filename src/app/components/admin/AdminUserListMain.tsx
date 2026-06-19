@@ -10,12 +10,13 @@ import {
 import { App, Badge, Button, Space, Tag, Tooltip } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import { useRouter } from 'next/navigation';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState, type Key } from 'react';
 import { Box } from '@chakra-ui/react';
 import { useLocale, useTranslations } from 'next-intl';
 
 import { PageInfoBar } from '@/app/components/layout/PageInfoBar';
 import { AdminCrudTable } from '@/app/components/admin/_shared/AdminCrudTable';
+import { ExportCsvButton } from '@/app/components/admin/_shared/ExportCsvButton';
 import { adminUserApi, type AdminUserRow } from '@/app/lib/adminUserApi';
 import UserCreateDrawer from './UserCreateDrawer';
 
@@ -43,6 +44,8 @@ const AdminUserListMain = () => {
   const [data, setData] = useState<AdminUserRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [selectedKeys, setSelectedKeys] = useState<Key[]>([]);
+  const [bulkBusy, setBulkBusy] = useState(false);
 
   const refresh = useCallback(async () => {
     setLoading(true);
@@ -265,6 +268,55 @@ const AdminUserListMain = () => {
     [handleResetPassword, handleToggle, router, t, tag]
   );
 
+  const selectedRows = useMemo(
+    () => data.filter((u) => selectedKeys.includes(u.id)),
+    [data, selectedKeys]
+  );
+
+  const bulkSetActive = useCallback(
+    async (active: boolean) => {
+      if (selectedRows.length === 0) return;
+      setBulkBusy(true);
+      const hide = message.loading(
+        t('admin.bulk.working', { count: selectedRows.length }),
+        0
+      );
+      let ok = 0;
+      for (const row of selectedRows) {
+        try {
+          await adminUserApi.toggleActive(row.username, active);
+          ok += 1;
+        } catch {
+          /* keep going; report the tally at the end */
+        }
+      }
+      hide();
+      setBulkBusy(false);
+      setSelectedKeys([]);
+      if (ok > 0) message.success(t('admin.bulk.done', { count: ok }));
+      if (ok < selectedRows.length)
+        message.error(
+          t('admin.bulk.partial', { failed: selectedRows.length - ok })
+        );
+      void refresh();
+    },
+    [message, refresh, selectedRows, t]
+  );
+
+  const csvHeaders = [
+    { label: t('admin.userList.col.user'), key: 'username' },
+    { label: t('admin.export.csv.firstname'), key: 'firstname' },
+    { label: t('admin.export.csv.lastname'), key: 'lastname' },
+    { label: t('admin.userList.col.email'), key: 'email' },
+    { label: t('admin.userList.col.role'), key: 'is_staff' },
+    { label: t('admin.userList.col.status'), key: 'is_active' },
+    { label: t('admin.userList.col.payment'), key: 'payement_status' },
+    { label: t('admin.userList.col.zones'), key: 'zones_count' },
+    { label: t('admin.userList.col.joinedAt'), key: 'date_joined' },
+    { label: t('admin.userList.col.lastLogin'), key: 'last_login' },
+  ];
+  const csvRows = selectedRows.length > 0 ? selectedRows : data;
+
   return (
     <Box px={{ base: 3, md: 4 }} py={{ base: 3, md: 4 }}>
       <PageInfoBar
@@ -300,6 +352,45 @@ const AdminUserListMain = () => {
           searchKeys={['username', 'email', 'firstname', 'lastname']}
           searchPlaceholder={t('admin.userList.searchPlaceholder')}
           emptyDescription={t('admin.userList.empty')}
+          rowSelection={{
+            selectedRowKeys: selectedKeys,
+            onChange: setSelectedKeys,
+          }}
+          toolbar={
+            <Space wrap>
+              {selectedRows.length > 0 && (
+                <>
+                  <span style={{ opacity: 0.7 }}>
+                    {t('admin.bulk.selected', { count: selectedRows.length })}
+                  </span>
+                  <Button
+                    icon={<UserSwitchOutlined />}
+                    loading={bulkBusy}
+                    onClick={() => bulkSetActive(true)}
+                  >
+                    {t('admin.bulk.activate')}
+                  </Button>
+                  <Button
+                    icon={<StopOutlined />}
+                    loading={bulkBusy}
+                    onClick={() => bulkSetActive(false)}
+                  >
+                    {t('admin.bulk.deactivate')}
+                  </Button>
+                </>
+              )}
+              <ExportCsvButton
+                data={csvRows}
+                headers={csvHeaders}
+                filename="users"
+                label={
+                  selectedRows.length > 0
+                    ? t('admin.export.selected')
+                    : t('admin.export.button')
+                }
+              />
+            </Space>
+          }
         />
       </Box>
 

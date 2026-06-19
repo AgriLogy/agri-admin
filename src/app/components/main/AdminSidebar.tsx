@@ -4,6 +4,7 @@ import {
   AuditOutlined,
   DashboardOutlined,
   LogoutOutlined,
+  SafetyCertificateOutlined,
   TeamOutlined,
 } from '@ant-design/icons';
 import { App, Menu, Tooltip } from 'antd';
@@ -22,6 +23,7 @@ const AdminSidebar = () => {
 
   const selectedKey = useMemo(() => {
     if (pathname.startsWith('/admin/users')) return 'users';
+    if (pathname.startsWith('/admin/technicians')) return 'technicians';
     if (pathname.startsWith('/admin/affirmations')) return 'affirmations';
     return 'dashboard';
   }, [pathname]);
@@ -73,6 +75,15 @@ const AdminSidebar = () => {
               </Tooltip>
             ),
             onClick: () => router.push('/admin/users'),
+          },
+          {
+            key: 'technicians',
+            icon: (
+              <Tooltip title={t('shell.admin.technicians')} placement="right">
+                <SafetyCertificateOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/technicians'),
           },
           {
             key: 'affirmations',
