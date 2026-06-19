@@ -3,11 +3,14 @@
 import {
   AlertOutlined,
   AuditOutlined,
+  CreditCardOutlined,
   DashboardOutlined,
+  FileSearchOutlined,
   LogoutOutlined,
   MenuOutlined,
   MoonOutlined,
   SafetyCertificateOutlined,
+  SettingOutlined,
   SunOutlined,
   TeamOutlined,
   UserOutlined,
@@ -167,6 +170,33 @@ const AdminMobileMenu = () => {
               label: t('shell.admin.affirmations'),
               onClick: () => {
                 router.push('/admin/affirmations');
+                setOpen(false);
+              },
+            },
+            {
+              key: 'billing',
+              icon: <CreditCardOutlined />,
+              label: t('shell.admin.billing'),
+              onClick: () => {
+                router.push('/admin/billing');
+                setOpen(false);
+              },
+            },
+            {
+              key: 'audit',
+              icon: <FileSearchOutlined />,
+              label: t('shell.admin.audit'),
+              onClick: () => {
+                router.push('/admin/audit');
+                setOpen(false);
+              },
+            },
+            {
+              key: 'settings',
+              icon: <SettingOutlined />,
+              label: t('shell.admin.settings'),
+              onClick: () => {
+                router.push('/admin/settings');
                 setOpen(false);
               },
             },

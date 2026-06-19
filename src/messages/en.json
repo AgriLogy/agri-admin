@@ -589,7 +589,8 @@
     "common": {
       "loadError": "Unable to load.",
       "unknownError": "Unknown error.",
-      "saveError": "Could not save."
+      "saveError": "Could not save.",
+      "edit": "Edit"
     },
     "technicians": {
       "title": "Technicians",
@@ -741,6 +742,74 @@
         "rssi": "RSSI",
         "snr": "SNR",
         "uplinks24h": "Uplinks (24h)"
+      }
+    },
+    "billing": {
+      "title": "Billing",
+      "subtitle": "Plans, subscriptions and invoices",
+      "tab": {
+        "plans": "Plans",
+        "subscriptions": "Subscriptions",
+        "invoices": "Invoices"
+      },
+      "plan": {
+        "name": "Name",
+        "price": "Price",
+        "interval": "Interval",
+        "active": "Active",
+        "new": "New plan",
+        "monthly": "Monthly",
+        "yearly": "Yearly"
+      },
+      "sub": {
+        "user": "User",
+        "plan": "Plan",
+        "status": "Status",
+        "cancel": "Cancel",
+        "assign": "Assign subscription"
+      },
+      "inv": {
+        "sub": "Subscription",
+        "amount": "Amount",
+        "status": "Status",
+        "paidAt": "Paid at",
+        "markPaid": "Mark paid",
+        "new": "New invoice"
+      }
+    },
+    "audit": {
+      "title": "Audit log",
+      "subtitle": "Admin actions history",
+      "empty": "No audit events",
+      "col": {
+        "when": "When",
+        "actor": "Actor",
+        "action": "Action",
+        "target": "Target",
+        "changes": "Changes"
+      },
+      "filter": {
+        "actor": "Filter by actor",
+        "action": "Filter by action"
+      }
+    },
+    "settings": {
+      "title": "System settings",
+      "subtitle": "Configure thresholds, channels and templates",
+      "save": "Save",
+      "saved": "Settings saved",
+      "category": {
+        "general": "General",
+        "notifications": "Notifications",
+        "thresholds": "Thresholds"
+      },
+      "key": {
+        "support_email": "Support email",
+        "notify_email_enabled": "Email notifications",
+        "notify_sms_enabled": "SMS notifications",
+        "notify_whatsapp_enabled": "WhatsApp notifications",
+        "default_critical_moisture_pct": "Default critical moisture (%)",
+        "stale_device_hours": "Stale device threshold (hours)"
       }
     }
   },
@@ -1784,7 +1853,10 @@
       "logoutConfirmOk": "Log out",
       "technicians": "Technicians",
       "alerts": "Alerts",
-      "fleet": "Fleet health"
+      "fleet": "Fleet health",
+      "billing": "Billing",
+      "audit": "Audit log",
+      "settings": "Settings"
     },
     "mobileMenu": {
       "home": "Home",
