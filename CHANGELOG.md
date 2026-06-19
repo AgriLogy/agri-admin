@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/AgriLogy/agri-admin/compare/v1.9.0...v1.10.0) (2026-06-19)
+
+
+### Features
+
+* **admin:** Kc CRUD page, settings add/delete key, per-user display config ([7a840e5](https://github.com/AgriLogy/agri-admin/commit/7a840e5bd7cc56b41d7fb5511fc557f28c8cc9f3)), closes [#25](https://github.com/AgriLogy/agri-admin/issues/25)
+
 # [1.9.0](https://github.com/AgriLogy/agri-admin/compare/v1.8.0...v1.9.0) (2026-06-19)
 
 
