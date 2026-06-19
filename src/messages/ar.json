@@ -589,6 +589,89 @@
     "common": {
       "loadError": "تعذّر التحميل.",
       "unknownError": "خطأ غير معروف."
+    },
+    "technicians": {
+      "title": "الفنيون",
+      "subtitle": "حسابات الفنيين للقراءة فقط ونطاق صلاحياتهم",
+      "newTechnician": "فني جديد",
+      "create": "إنشاء",
+      "save": "حفظ",
+      "cancel": "إلغاء",
+      "close": "إغلاق",
+      "reset": "إعادة تعيين",
+      "searchPlaceholder": "ابحث عن فني…",
+      "empty": "لا يوجد فنيون",
+      "loadError": "تعذّر تحميل الفنيين",
+      "created": "تم إنشاء الفني",
+      "createError": "تعذّر إنشاء الفني",
+      "scopeSaved": "تم تحديث النطاق",
+      "scopeError": "تعذّر تحديث النطاق",
+      "revoked": "تم إلغاء الوصول",
+      "revokeConfirm": "إلغاء وصول {username}؟",
+      "editScopeTitle": "النطاق — {username}",
+      "resetConfirmTitle": "إعادة تعيين كلمة مرور {username}؟",
+      "resetConfirmContent": "سيتم إنشاء كلمة مرور مؤقتة جديدة.",
+      "newPasswordTitle": "كلمة مرور جديدة",
+      "newPasswordHint": "شارك كلمة المرور المؤقتة هذه مع الفني:",
+      "resetError": "تعذّرت إعادة التعيين",
+      "col": {
+        "user": "الفني",
+        "email": "البريد الإلكتروني",
+        "status": "الحالة",
+        "zones": "المناطق",
+        "actions": "إجراءات"
+      },
+      "status": {
+        "active": "نشط",
+        "inactive": "غير نشط"
+      },
+      "action": {
+        "editScope": "تعديل النطاق",
+        "editScopeAria": "تعديل نطاق {username}",
+        "resetPassword": "إعادة تعيين كلمة المرور",
+        "resetAria": "إعادة تعيين كلمة مرور {username}",
+        "revoke": "إلغاء"
+      },
+      "form": {
+        "username": "اسم المستخدم",
+        "password": "كلمة المرور",
+        "firstname": "الاسم الأول",
+        "lastname": "اسم العائلة",
+        "email": "البريد الإلكتروني",
+        "scope": "النطاق (المناطق والرسوم البيانية)"
+      },
+      "scope": {
+        "zone": "المنطقة",
+        "zoneFallback": "المنطقة رقم {id}",
+        "graphs": "الرسوم المسموح بها",
+        "graphsPlaceholder": "اختر الرسوم البيانية",
+        "remove": "إزالة",
+        "selectUser": "اختر عميلاً",
+        "selectZone": "اختر منطقة",
+        "noZones": "لا توجد مناطق",
+        "add": "إضافة",
+        "empty": "لا توجد مناطق في النطاق"
+      },
+      "csv": {
+        "firstname": "الاسم الأول",
+        "lastname": "اسم العائلة"
+      }
+    },
+    "export": {
+      "button": "تصدير CSV",
+      "selected": "تصدير المحدد",
+      "csv": {
+        "firstname": "الاسم الأول",
+        "lastname": "اسم العائلة"
+      }
+    },
+    "bulk": {
+      "selected": "{count} محدد",
+      "activate": "تفعيل",
+      "deactivate": "تعطيل",
+      "working": "جارٍ معالجة {count} حساب…",
+      "done": "تم تحديث {count} حساب",
+      "partial": "{failed} فشل"
     }
   },
   "alertsPage": {
@@ -1628,7 +1711,8 @@
       "cancel": "إلغاء",
       "logoutConfirmTitle": "تأكيد تسجيل الخروج",
       "logoutConfirmBody": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
-      "logoutConfirmOk": "تسجيل الخروج"
+      "logoutConfirmOk": "تسجيل الخروج",
+      "technicians": "الفنيون"
     },
     "mobileMenu": {
       "home": "الرئيسية",

@@ -589,6 +589,89 @@
     "common": {
       "loadError": "Chargement impossible.",
       "unknownError": "Erreur inconnue."
+    },
+    "technicians": {
+      "title": "Techniciens",
+      "subtitle": "Comptes techniciens en lecture seule et leur périmètre",
+      "newTechnician": "Nouveau technicien",
+      "create": "Créer",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "close": "Fermer",
+      "reset": "Réinitialiser",
+      "searchPlaceholder": "Rechercher un technicien…",
+      "empty": "Aucun technicien",
+      "loadError": "Échec du chargement des techniciens",
+      "created": "Technicien créé",
+      "createError": "Échec de la création du technicien",
+      "scopeSaved": "Périmètre mis à jour",
+      "scopeError": "Échec de la mise à jour du périmètre",
+      "revoked": "Accès révoqué",
+      "revokeConfirm": "Révoquer l'accès de {username} ?",
+      "editScopeTitle": "Périmètre — {username}",
+      "resetConfirmTitle": "Réinitialiser le mot de passe de {username} ?",
+      "resetConfirmContent": "Un nouveau mot de passe temporaire sera généré.",
+      "newPasswordTitle": "Nouveau mot de passe",
+      "newPasswordHint": "Communiquez ce mot de passe temporaire au technicien :",
+      "resetError": "Échec de la réinitialisation",
+      "col": {
+        "user": "Technicien",
+        "email": "E-mail",
+        "status": "Statut",
+        "zones": "Zones",
+        "actions": "Actions"
+      },
+      "status": {
+        "active": "Actif",
+        "inactive": "Inactif"
+      },
+      "action": {
+        "editScope": "Modifier le périmètre",
+        "editScopeAria": "Modifier le périmètre de {username}",
+        "resetPassword": "Réinitialiser le mot de passe",
+        "resetAria": "Réinitialiser le mot de passe de {username}",
+        "revoke": "Révoquer"
+      },
+      "form": {
+        "username": "Identifiant",
+        "password": "Mot de passe",
+        "firstname": "Prénom",
+        "lastname": "Nom",
+        "email": "E-mail",
+        "scope": "Périmètre (zones et graphiques)"
+      },
+      "scope": {
+        "zone": "Zone",
+        "zoneFallback": "Zone n°{id}",
+        "graphs": "Graphiques autorisés",
+        "graphsPlaceholder": "Sélectionner des graphiques",
+        "remove": "Retirer",
+        "selectUser": "Choisir un client",
+        "selectZone": "Choisir une zone",
+        "noZones": "Aucune zone",
+        "add": "Ajouter",
+        "empty": "Aucune zone dans le périmètre"
+      },
+      "csv": {
+        "firstname": "Prénom",
+        "lastname": "Nom"
+      }
+    },
+    "export": {
+      "button": "Exporter CSV",
+      "selected": "Exporter la sélection",
+      "csv": {
+        "firstname": "Prénom",
+        "lastname": "Nom"
+      }
+    },
+    "bulk": {
+      "selected": "{count} sélectionné(s)",
+      "activate": "Activer",
+      "deactivate": "Désactiver",
+      "working": "Traitement de {count} compte(s)…",
+      "done": "{count} compte(s) mis à jour",
+      "partial": "{failed} échec(s)"
     }
   },
   "alertsPage": {
@@ -1628,7 +1711,8 @@
       "cancel": "Annuler",
       "logoutConfirmTitle": "Confirmer la déconnexion",
       "logoutConfirmBody": "Êtes-vous sûr de vouloir vous déconnecter ?",
-      "logoutConfirmOk": "Se déconnecter"
+      "logoutConfirmOk": "Se déconnecter",
+      "technicians": "Techniciens"
     },
     "mobileMenu": {
       "home": "Accueil",

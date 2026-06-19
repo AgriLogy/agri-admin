@@ -6,6 +6,7 @@ import {
   LogoutOutlined,
   MenuOutlined,
   MoonOutlined,
+  SafetyCertificateOutlined,
   SunOutlined,
   TeamOutlined,
   UserOutlined,
@@ -128,6 +129,15 @@ const AdminMobileMenu = () => {
               label: t('shell.admin.users'),
               onClick: () => {
                 router.push('/admin/users');
+                setOpen(false);
+              },
+            },
+            {
+              key: 'technicians',
+              icon: <SafetyCertificateOutlined />,
+              label: t('shell.admin.technicians'),
+              onClick: () => {
+                router.push('/admin/technicians');
                 setOpen(false);
               },
             },
