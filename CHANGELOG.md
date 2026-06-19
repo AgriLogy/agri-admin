@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/AgriLogy/agri-admin/compare/v1.7.0...v1.8.0) (2026-06-19)
+
+
+### Features
+
+* **admin:** records section — notifications, conversations, grants ([3e231da](https://github.com/AgriLogy/agri-admin/commit/3e231da83f55e80ea9fd2e5db55733174424548f)), closes [#21](https://github.com/AgriLogy/agri-admin/issues/21)
+
 # [1.7.0](https://github.com/AgriLogy/agri-admin/compare/v1.6.0...v1.7.0) (2026-06-19)
 
 
