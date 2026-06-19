@@ -589,7 +589,8 @@
     "common": {
       "loadError": "تعذّر التحميل.",
       "unknownError": "خطأ غير معروف.",
-      "saveError": "تعذّر الحفظ."
+      "saveError": "تعذّر الحفظ.",
+      "edit": "تعديل"
     },
     "technicians": {
       "title": "الفنيون",
@@ -741,6 +742,74 @@
         "rssi": "RSSI",
         "snr": "SNR",
         "uplinks24h": "الرسائل (24 س)"
+      }
+    },
+    "billing": {
+      "title": "الفوترة",
+      "subtitle": "الباقات والاشتراكات والفواتير",
+      "tab": {
+        "plans": "الباقات",
+        "subscriptions": "الاشتراكات",
+        "invoices": "الفواتير"
+      },
+      "plan": {
+        "name": "الاسم",
+        "price": "السعر",
+        "interval": "الفترة",
+        "active": "نشط",
+        "new": "باقة جديدة",
+        "monthly": "شهري",
+        "yearly": "سنوي"
+      },
+      "sub": {
+        "user": "المستخدم",
+        "plan": "الباقة",
+        "status": "الحالة",
+        "cancel": "إلغاء",
+        "assign": "إسناد اشتراك"
+      },
+      "inv": {
+        "sub": "الاشتراك",
+        "amount": "المبلغ",
+        "status": "الحالة",
+        "paidAt": "تاريخ الدفع",
+        "markPaid": "تحديد كمدفوعة",
+        "new": "فاتورة جديدة"
+      }
+    },
+    "audit": {
+      "title": "سجل التدقيق",
+      "subtitle": "سجل إجراءات المشرف",
+      "empty": "لا توجد أحداث",
+      "col": {
+        "when": "الوقت",
+        "actor": "الفاعل",
+        "action": "الإجراء",
+        "target": "الهدف",
+        "changes": "التغييرات"
+      },
+      "filter": {
+        "actor": "تصفية حسب الفاعل",
+        "action": "تصفية حسب الإجراء"
+      }
+    },
+    "settings": {
+      "title": "إعدادات النظام",
+      "subtitle": "ضبط العتبات والقنوات والقوالب",
+      "save": "حفظ",
+      "saved": "تم حفظ الإعدادات",
+      "category": {
+        "general": "عام",
+        "notifications": "الإشعارات",
+        "thresholds": "العتبات"
+      },
+      "key": {
+        "support_email": "بريد الدعم",
+        "notify_email_enabled": "إشعارات البريد",
+        "notify_sms_enabled": "إشعارات SMS",
+        "notify_whatsapp_enabled": "إشعارات واتساب",
+        "default_critical_moisture_pct": "الرطوبة الحرجة الافتراضية (%)",
+        "stale_device_hours": "عتبة الجهاز غير النشط (ساعات)"
       }
     }
   },
@@ -1784,7 +1853,10 @@
       "logoutConfirmOk": "تسجيل الخروج",
       "technicians": "الفنيون",
       "alerts": "التنبيهات",
-      "fleet": "حالة الأسطول"
+      "fleet": "حالة الأسطول",
+      "billing": "الفوترة",
+      "audit": "سجل التدقيق",
+      "settings": "الإعدادات"
     },
     "mobileMenu": {
       "home": "الرئيسية",

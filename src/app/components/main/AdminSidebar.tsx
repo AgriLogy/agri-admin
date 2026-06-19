@@ -3,9 +3,12 @@
 import {
   AlertOutlined,
   AuditOutlined,
+  CreditCardOutlined,
   DashboardOutlined,
+  FileSearchOutlined,
   LogoutOutlined,
   SafetyCertificateOutlined,
+  SettingOutlined,
   TeamOutlined,
   WifiOutlined,
 } from '@ant-design/icons';
@@ -29,6 +32,9 @@ const AdminSidebar = () => {
     if (pathname.startsWith('/admin/alerts')) return 'alerts';
     if (pathname.startsWith('/admin/devices')) return 'fleet';
     if (pathname.startsWith('/admin/affirmations')) return 'affirmations';
+    if (pathname.startsWith('/admin/billing')) return 'billing';
+    if (pathname.startsWith('/admin/audit')) return 'audit';
+    if (pathname.startsWith('/admin/settings')) return 'settings';
     return 'dashboard';
   }, [pathname]);
 
@@ -115,6 +121,33 @@ const AdminSidebar = () => {
               </Tooltip>
             ),
             onClick: () => router.push('/admin/affirmations'),
+          },
+          {
+            key: 'billing',
+            icon: (
+              <Tooltip title={t('shell.admin.billing')} placement="right">
+                <CreditCardOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/billing'),
+          },
+          {
+            key: 'audit',
+            icon: (
+              <Tooltip title={t('shell.admin.audit')} placement="right">
+                <FileSearchOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/audit'),
+          },
+          {
+            key: 'settings',
+            icon: (
+              <Tooltip title={t('shell.admin.settings')} placement="right">
+                <SettingOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/settings'),
           },
         ]}
       />

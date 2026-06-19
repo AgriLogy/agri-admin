@@ -589,7 +589,8 @@
     "common": {
       "loadError": "Chargement impossible.",
       "unknownError": "Erreur inconnue.",
-      "saveError": "Échec de l'enregistrement."
+      "saveError": "Échec de l'enregistrement.",
+      "edit": "Modifier"
     },
     "technicians": {
       "title": "Techniciens",
@@ -741,6 +742,74 @@
         "rssi": "RSSI",
         "snr": "SNR",
         "uplinks24h": "Trames (24 h)"
+      }
+    },
+    "billing": {
+      "title": "Facturation",
+      "subtitle": "Forfaits, abonnements et factures",
+      "tab": {
+        "plans": "Forfaits",
+        "subscriptions": "Abonnements",
+        "invoices": "Factures"
+      },
+      "plan": {
+        "name": "Nom",
+        "price": "Prix",
+        "interval": "Intervalle",
+        "active": "Actif",
+        "new": "Nouveau forfait",
+        "monthly": "Mensuel",
+        "yearly": "Annuel"
+      },
+      "sub": {
+        "user": "Utilisateur",
+        "plan": "Forfait",
+        "status": "Statut",
+        "cancel": "Annuler",
+        "assign": "Attribuer un abonnement"
+      },
+      "inv": {
+        "sub": "Abonnement",
+        "amount": "Montant",
+        "status": "Statut",
+        "paidAt": "Payée le",
+        "markPaid": "Marquer payée",
+        "new": "Nouvelle facture"
+      }
+    },
+    "audit": {
+      "title": "Journal d'audit",
+      "subtitle": "Historique des actions admin",
+      "empty": "Aucun évènement",
+      "col": {
+        "when": "Quand",
+        "actor": "Acteur",
+        "action": "Action",
+        "target": "Cible",
+        "changes": "Changements"
+      },
+      "filter": {
+        "actor": "Filtrer par acteur",
+        "action": "Filtrer par action"
+      }
+    },
+    "settings": {
+      "title": "Paramètres système",
+      "subtitle": "Configurer seuils, canaux et modèles",
+      "save": "Enregistrer",
+      "saved": "Paramètres enregistrés",
+      "category": {
+        "general": "Général",
+        "notifications": "Notifications",
+        "thresholds": "Seuils"
+      },
+      "key": {
+        "support_email": "E-mail de support",
+        "notify_email_enabled": "Notifications e-mail",
+        "notify_sms_enabled": "Notifications SMS",
+        "notify_whatsapp_enabled": "Notifications WhatsApp",
+        "default_critical_moisture_pct": "Humidité critique par défaut (%)",
+        "stale_device_hours": "Seuil appareil inactif (heures)"
       }
     }
   },
@@ -1784,7 +1853,10 @@
       "logoutConfirmOk": "Se déconnecter",
       "technicians": "Techniciens",
       "alerts": "Alertes",
-      "fleet": "État du parc"
+      "fleet": "État du parc",
+      "billing": "Facturation",
+      "audit": "Journal d'audit",
+      "settings": "Paramètres"
     },
     "mobileMenu": {
       "home": "Accueil",
