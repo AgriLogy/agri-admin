@@ -102,7 +102,10 @@ export function AlertCreateDrawer({
           label={t('admin.alertCreate.field.username')}
           name="username"
           rules={[
-            { required: true, message: t('admin.alertCreate.validation.required') },
+            {
+              required: true,
+              message: t('admin.alertCreate.validation.required'),
+            },
           ]}
         >
           <Input autoComplete="off" />
@@ -111,7 +114,10 @@ export function AlertCreateDrawer({
           label={t('admin.alertCreate.field.name')}
           name="name"
           rules={[
-            { required: true, message: t('admin.alertCreate.validation.required') },
+            {
+              required: true,
+              message: t('admin.alertCreate.validation.required'),
+            },
           ]}
         >
           <Input autoComplete="off" />
@@ -120,7 +126,10 @@ export function AlertCreateDrawer({
           label={t('admin.alertCreate.field.type')}
           name="type"
           rules={[
-            { required: true, message: t('admin.alertCreate.validation.required') },
+            {
+              required: true,
+              message: t('admin.alertCreate.validation.required'),
+            },
           ]}
         >
           <Select
@@ -145,7 +154,10 @@ export function AlertCreateDrawer({
           label={t('admin.alertCreate.field.threshold')}
           name="condition_nbr"
           rules={[
-            { required: true, message: t('admin.alertCreate.validation.required') },
+            {
+              required: true,
+              message: t('admin.alertCreate.validation.required'),
+            },
           ]}
         >
           <InputNumber style={{ width: '100%' }} />
