@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/AgriLogy/agri-admin/compare/v1.3.0...v1.4.0) (2026-06-19)
+
+
+### Features
+
+* **admin:** device fleet health view ([#14](https://github.com/AgriLogy/agri-admin/issues/14)) ([72acf97](https://github.com/AgriLogy/agri-admin/commit/72acf97a037efb0f7487a854ceaa96dd6bec7302)), closes [#13](https://github.com/AgriLogy/agri-admin/issues/13)
+
 # [1.3.0](https://github.com/AgriLogy/agri-admin/compare/v1.2.0...v1.3.0) (2026-06-19)
 
 
