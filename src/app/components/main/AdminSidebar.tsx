@@ -5,6 +5,7 @@ import {
   AuditOutlined,
   CreditCardOutlined,
   DashboardOutlined,
+  ExperimentOutlined,
   FileSearchOutlined,
   LogoutOutlined,
   SafetyCertificateOutlined,
@@ -32,6 +33,7 @@ const AdminSidebar = () => {
     if (pathname.startsWith('/admin/alerts')) return 'alerts';
     if (pathname.startsWith('/admin/devices')) return 'fleet';
     if (pathname.startsWith('/admin/affirmations')) return 'affirmations';
+    if (pathname.startsWith('/admin/kc')) return 'kc';
     if (pathname.startsWith('/admin/billing')) return 'billing';
     if (pathname.startsWith('/admin/audit')) return 'audit';
     if (pathname.startsWith('/admin/settings')) return 'settings';
@@ -121,6 +123,15 @@ const AdminSidebar = () => {
               </Tooltip>
             ),
             onClick: () => router.push('/admin/affirmations'),
+          },
+          {
+            key: 'kc',
+            icon: (
+              <Tooltip title={t('shell.admin.kc')} placement="right">
+                <ExperimentOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/kc'),
           },
           {
             key: 'billing',

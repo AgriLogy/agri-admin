@@ -13,4 +13,10 @@ export const adminSettingsApi = {
     api
       .patch<SettingsGrouped>('/admin/settings', { values })
       .then((r) => r.data),
+  create: (payload: { key: string; value: unknown; category: string }) =>
+    api.post<SettingsGrouped>('/admin/settings', payload).then((r) => r.data),
+  remove: (key: string) =>
+    api
+      .delete<SettingsGrouped>(`/admin/settings/${encodeURIComponent(key)}`)
+      .then((r) => r.data),
 };

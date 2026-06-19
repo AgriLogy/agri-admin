@@ -540,7 +540,11 @@
         "large_fruit_diameter_status": "قطر الثمار الكبيرة",
         "npk_status": "NPK",
         "electricity_consumption_status": "استهلاك الكهرباء"
-      }
+      },
+      "labelsTitle": "تسميات الرسوم",
+      "colorsTitle": "ألوان المستشعرات",
+      "save": "حفظ",
+      "saved": "تم الحفظ"
     },
     "userHeaderActions": {
       "reactivated": "تمت إعادة تفعيل المستخدم.",
@@ -590,7 +594,8 @@
       "loadError": "تعذّر التحميل.",
       "unknownError": "خطأ غير معروف.",
       "saveError": "تعذّر الحفظ.",
-      "edit": "تعديل"
+      "edit": "تعديل",
+      "delete": "حذف"
     },
     "technicians": {
       "title": "الفنيون",
@@ -810,6 +815,41 @@
         "notify_whatsapp_enabled": "إشعارات واتساب",
         "default_critical_moisture_pct": "الرطوبة الحرجة الافتراضية (%)",
         "stale_device_hours": "عتبة الجهاز غير النشط (ساعات)"
+      },
+      "addKey": "إضافة مفتاح",
+      "created": "تم إنشاء الإعداد",
+      "createError": "تعذّر إنشاء الإعداد",
+      "deleted": "تم حذف الإعداد",
+      "deleteConfirm": "حذف هذا الإعداد؟",
+      "fieldKey": "المفتاح",
+      "fieldCategory": "الفئة",
+      "fieldValue": "القيمة"
+    },
+    "kc": {
+      "title": "تقويمات المحاصيل (Kc)",
+      "subtitle": "إدارة تقويمات معاملات المحاصيل لجميع المستخدمين",
+      "new": "تقويم جديد",
+      "editTitle": "تعديل التقويم",
+      "empty": "لا توجد تقويمات",
+      "created": "تم إنشاء التقويم",
+      "updated": "تم تحديث التقويم",
+      "addPeriod": "إضافة فترة",
+      "col": {
+        "user": "المستخدم",
+        "name": "الاسم",
+        "plant": "النبتة",
+        "zone": "المنطقة",
+        "periods": "الفترات"
+      },
+      "field": {
+        "username": "المستخدم",
+        "name": "الاسم",
+        "plant": "النبتة",
+        "zone": "المنطقة",
+        "periodName": "اسم المرحلة"
+      },
+      "filter": {
+        "username": "المستخدم"
       }
     }
   },
@@ -1856,7 +1896,8 @@
       "fleet": "حالة الأسطول",
       "billing": "الفوترة",
       "audit": "سجل التدقيق",
-      "settings": "الإعدادات"
+      "settings": "الإعدادات",
+      "kc": "تقويمات المحاصيل"
     },
     "mobileMenu": {
       "home": "الرئيسية",

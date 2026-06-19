@@ -540,7 +540,11 @@
         "large_fruit_diameter_status": "Large fruit diameter",
         "npk_status": "NPK",
         "electricity_consumption_status": "Electricity consumption"
-      }
+      },
+      "labelsTitle": "Graph labels",
+      "colorsTitle": "Sensor colors",
+      "save": "Save",
+      "saved": "Saved"
     },
     "userHeaderActions": {
       "reactivated": "User reactivated.",
@@ -590,7 +594,8 @@
       "loadError": "Unable to load.",
       "unknownError": "Unknown error.",
       "saveError": "Could not save.",
-      "edit": "Edit"
+      "edit": "Edit",
+      "delete": "Delete"
     },
     "technicians": {
       "title": "Technicians",
@@ -810,6 +815,41 @@
         "notify_whatsapp_enabled": "WhatsApp notifications",
         "default_critical_moisture_pct": "Default critical moisture (%)",
         "stale_device_hours": "Stale device threshold (hours)"
+      },
+      "addKey": "Add key",
+      "created": "Setting created",
+      "createError": "Could not create setting",
+      "deleted": "Setting deleted",
+      "deleteConfirm": "Delete this setting?",
+      "fieldKey": "Key",
+      "fieldCategory": "Category",
+      "fieldValue": "Value"
+    },
+    "kc": {
+      "title": "Crop calendars (Kc)",
+      "subtitle": "Manage crop coefficient calendars across all users",
+      "new": "New crop calendar",
+      "editTitle": "Edit crop calendar",
+      "empty": "No crop calendars",
+      "created": "Crop calendar created",
+      "updated": "Crop calendar updated",
+      "addPeriod": "Add period",
+      "col": {
+        "user": "User",
+        "name": "Name",
+        "plant": "Plant",
+        "zone": "Zone",
+        "periods": "Periods"
+      },
+      "field": {
+        "username": "User",
+        "name": "Name",
+        "plant": "Plant",
+        "zone": "Zone",
+        "periodName": "Stage name"
+      },
+      "filter": {
+        "username": "User"
       }
     }
   },
@@ -1856,7 +1896,8 @@
       "fleet": "Fleet health",
       "billing": "Billing",
       "audit": "Audit log",
-      "settings": "Settings"
+      "settings": "Settings",
+      "kc": "Crop calendars"
     },
     "mobileMenu": {
       "home": "Home",
