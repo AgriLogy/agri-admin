@@ -53,9 +53,9 @@ export const adminSensorDataApi = {
     params: { zone_id: number; from?: string; to?: string; username?: string }
   ) =>
     api
-      .delete<{ status: string; deleted: number }>(
-        `/admin/sensor-data/${sensor}`,
-        { params }
-      )
+      .delete<{
+        status: string;
+        deleted: number;
+      }>(`/admin/sensor-data/${sensor}`, { params })
       .then((r) => r.data),
 };

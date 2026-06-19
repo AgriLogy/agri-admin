@@ -715,7 +715,8 @@
         "all": "All",
         "activeOnly": "Active",
         "inactiveOnly": "Inactive"
-      }
+      },
+      "new": "New alert"
     },
     "fleet": {
       "title": "Device fleet health",
@@ -836,6 +837,200 @@
         "zone": "Zone",
         "from": "From",
         "to": "To"
+      }
+    },
+    "records": {
+      "nav": {
+        "notifications": "Notifications",
+        "conversations": "Conversations",
+        "grants": "Technician grants"
+      },
+      "notifications": {
+        "title": "Notifications",
+        "subtitle": "Per-user notification snapshots",
+        "empty": "No notifications",
+        "col": {
+          "user": "User",
+          "date": "Date",
+          "temp": "Temp (today)",
+          "humidity": "Humidity (today)",
+          "et0": "ET0",
+          "period": "Irrigation window"
+        }
+      },
+      "conversations": {
+        "title": "Assistant conversations",
+        "subtitle": "Chat history & proactive-notice ledger",
+        "empty": "No conversations",
+        "view": "View",
+        "transcript": "Transcript",
+        "col": {
+          "user": "User",
+          "title": "Title",
+          "messages": "Messages",
+          "updated": "Updated"
+        },
+        "tab": {
+          "conversations": "Conversations",
+          "proactive": "Proactive notices"
+        }
+      },
+      "proactive": {
+        "col": {
+          "user": "User",
+          "lastSent": "Last sent"
+        },
+        "reset": "Reset",
+        "resetConfirm": "Reset this user’s proactive cooldown?",
+        "empty": "No proactive notices"
+      },
+      "grants": {
+        "title": "Technician grants",
+        "subtitle": "All technician grants across owners",
+        "empty": "No grants",
+        "col": {
+          "technician": "Technician",
+          "owner": "Owner",
+          "created": "Created",
+          "active": "Active"
+        }
+      }
+    },
+    "alertCreate": {
+      "title": "Create alert",
+      "create": "Create",
+      "cancel": "Cancel",
+      "success": "Alert created",
+      "error": "Failed to create alert",
+      "cond": {
+        "gt": "greater than",
+        "lt": "less than",
+        "eq": "equal to"
+      },
+      "validation": {
+        "required": "Required"
+      },
+      "field": {
+        "username": "User",
+        "name": "Name",
+        "type": "Type",
+        "condition": "Condition",
+        "threshold": "Threshold",
+        "sensorKey": "Sensor key",
+        "sensorKeyHint": "Stable chart identifier, e.g. temperature_weather",
+        "zoneId": "Zone ID (optional)",
+        "zoneIdHint": "Leave empty for an account-wide alert",
+        "description": "Description"
+      }
+    },
+    "monitoring": {
+      "nav": {
+        "overview": "Overview",
+        "automations": "Automations",
+        "deliveries": "Deliveries",
+        "activity": "Activity"
+      },
+      "overview": {
+        "title": "Monitoring",
+        "subtitle": "Automated actions & user behaviour over the last 24h",
+        "taskSuccess": "Task success rate",
+        "runs": "{n} runs · {f} failed",
+        "deliveryErr": "Delivery error rate",
+        "deliveries": "{n} sent · {f} failed",
+        "logins": "Sign-ins",
+        "loginsDetail": "{u} unique users · {f} failed",
+        "fleetOffline": "Fleet offline",
+        "fleetDetail": "{online}/{total} devices online",
+        "byChannel": "Deliveries by channel",
+        "byTask": "Tasks by success rate",
+        "noData": "No data yet",
+        "failedShort": "failed",
+        "recentFailures": "Recent failures",
+        "noFailures": "No recent failures",
+        "failType": "Type",
+        "failName": "Name",
+        "failError": "Error",
+        "failAt": "When",
+        "type": {
+          "task": "Task",
+          "delivery": "Delivery"
+        }
+      },
+      "tasks": {
+        "title": "Automations",
+        "subtitle": "Scheduled jobs and their run history",
+        "scheduleTitle": "Beat schedule",
+        "schedName": "Name",
+        "schedTask": "Task",
+        "schedEvery": "Schedule",
+        "schedSource": "Source",
+        "aggTitle": "Per-task (last 7 days)",
+        "aggName": "Task",
+        "aggRuns": "Runs",
+        "aggFailures": "Failures",
+        "aggSuccess": "Success",
+        "aggLastRun": "Last run",
+        "filterStatus": "Status",
+        "status": {
+          "success": "Success",
+          "failure": "Failure"
+        },
+        "runName": "Task",
+        "runStatus": "Status",
+        "runRuntime": "Runtime",
+        "runError": "Error",
+        "runAt": "When",
+        "empty": "No task runs recorded yet"
+      },
+      "deliveries": {
+        "title": "Deliveries",
+        "subtitle": "Notification delivery log (email / SMS / WhatsApp)",
+        "col": {
+          "channel": "Channel",
+          "kind": "Kind",
+          "recipient": "Recipient",
+          "user": "User",
+          "status": "Status",
+          "error": "Error",
+          "at": "When"
+        },
+        "status": {
+          "sent": "Sent",
+          "failed": "Failed",
+          "skipped": "Skipped"
+        },
+        "filter": {
+          "username": "User",
+          "channel": "Channel",
+          "status": "Status"
+        },
+        "empty": "No deliveries recorded yet"
+      },
+      "activity": {
+        "title": "Activity",
+        "subtitle": "Sign-in events and admin actions",
+        "tab": {
+          "logins": "Sign-ins",
+          "audit": "Admin actions"
+        },
+        "login": {
+          "user": "User",
+          "outcome": "Outcome",
+          "ok": "Success",
+          "fail": "Failed",
+          "ip": "IP",
+          "agent": "User agent",
+          "at": "When",
+          "all": "All",
+          "empty": "No sign-in events yet"
+        },
+        "audit": {
+          "actor": "Actor",
+          "action": "Action",
+          "target": "Target",
+          "at": "When",
+          "empty": "No admin actions yet"
+        }
       }
     }
   },
@@ -1883,7 +2078,9 @@
       "billing": "Billing",
       "audit": "Audit log",
       "settings": "Settings",
-      "sensorData": "Sensor data"
+      "sensorData": "Sensor data",
+      "records": "Records",
+      "monitoring": "Monitoring"
     },
     "mobileMenu": {
       "home": "Home",

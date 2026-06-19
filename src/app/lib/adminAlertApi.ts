@@ -22,6 +22,18 @@ export type AdminAlertRow = {
 /** A global-console alert row: the override row + the owner's username. */
 export type AlertConsoleRow = AdminAlertRow & { username: string | null };
 
+export type AlertCreatePayload = {
+  username: string;
+  name: string;
+  type: string;
+  condition: string;
+  condition_nbr: number;
+  sensor_key?: string;
+  description?: string;
+  zone_id?: number | null;
+  is_active?: boolean;
+};
+
 export type AlertConsoleFilters = {
   username?: string;
   type?: string;
@@ -82,5 +94,9 @@ export const adminAlertApi = {
   },
   remove: async (pk: number): Promise<void> => {
     await api.delete(`/admin/alerts/${pk}`);
+  },
+  create: async (payload: AlertCreatePayload): Promise<AlertConsoleRow> => {
+    const res = await api.post<AlertConsoleRow>('/admin/alerts', payload);
+    return res.data;
   },
 };
