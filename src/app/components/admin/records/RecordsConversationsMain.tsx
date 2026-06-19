@@ -10,7 +10,10 @@ import { AdminCrudTable } from '@/app/components/admin/_shared/AdminCrudTable';
 import { AdminConfirmDelete } from '@/app/components/admin/_shared/AdminConfirmDelete';
 import { PageInfoBar } from '@/app/components/layout/PageInfoBar';
 import RecordsNav from '@/app/components/admin/records/RecordsNav';
-import { fmtDateTime, localeTag } from '@/app/components/admin/records/recordsFmt';
+import {
+  fmtDateTime,
+  localeTag,
+} from '@/app/components/admin/records/recordsFmt';
 import {
   adminRecordsApi,
   type ConversationDetail,
@@ -32,7 +35,9 @@ const ConversationsTab = () => {
   const refresh = useCallback(async () => {
     setLoading(true);
     try {
-      setRows(await adminRecordsApi.conversations(username.trim() || undefined));
+      setRows(
+        await adminRecordsApi.conversations(username.trim() || undefined)
+      );
     } catch {
       message.error(t('admin.common.loadError'));
     } finally {

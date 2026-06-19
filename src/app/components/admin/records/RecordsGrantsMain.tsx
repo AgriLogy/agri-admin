@@ -11,7 +11,10 @@ import { AdminConfirmDelete } from '@/app/components/admin/_shared/AdminConfirmD
 import { ExportCsvButton } from '@/app/components/admin/_shared/ExportCsvButton';
 import { PageInfoBar } from '@/app/components/layout/PageInfoBar';
 import RecordsNav from '@/app/components/admin/records/RecordsNav';
-import { fmtDateTime, localeTag } from '@/app/components/admin/records/recordsFmt';
+import {
+  fmtDateTime,
+  localeTag,
+} from '@/app/components/admin/records/recordsFmt';
 import { adminRecordsApi, type GrantRow } from '@/app/lib/adminRecordsApi';
 
 const RecordsGrantsMain = () => {

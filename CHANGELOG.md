@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/AgriLogy/agri-admin/compare/v1.5.0...v1.6.0) (2026-06-19)
+
+
+### Features
+
+* **admin:** monitoring back-office (automations, deliveries, activity) ([392056e](https://github.com/AgriLogy/agri-admin/commit/392056ed6de90f21b9ffa729baffe5e5bf64a71a)), closes [#17](https://github.com/AgriLogy/agri-admin/issues/17)
+
 # [1.5.0](https://github.com/AgriLogy/agri-admin/compare/v1.4.0...v1.5.0) (2026-06-19)
 
 

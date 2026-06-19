@@ -11,7 +11,10 @@ import { AdminConfirmDelete } from '@/app/components/admin/_shared/AdminConfirmD
 import { ExportCsvButton } from '@/app/components/admin/_shared/ExportCsvButton';
 import { PageInfoBar } from '@/app/components/layout/PageInfoBar';
 import RecordsNav from '@/app/components/admin/records/RecordsNav';
-import { fmtDateTime, localeTag } from '@/app/components/admin/records/recordsFmt';
+import {
+  fmtDateTime,
+  localeTag,
+} from '@/app/components/admin/records/recordsFmt';
 import {
   adminRecordsApi,
   type NotificationRow,
@@ -29,7 +32,9 @@ const RecordsNotificationsMain = () => {
   const refresh = useCallback(async () => {
     setLoading(true);
     try {
-      setRows(await adminRecordsApi.notifications(username.trim() || undefined));
+      setRows(
+        await adminRecordsApi.notifications(username.trim() || undefined)
+      );
     } catch {
       message.error(t('admin.common.loadError'));
     } finally {
@@ -93,11 +98,23 @@ const RecordsNotificationsMain = () => {
 
   const csvHeaders = [
     { label: t('admin.records.notifications.col.user'), key: 'username' },
-    { label: t('admin.records.notifications.col.date'), key: 'notification_date' },
-    { label: t('admin.records.notifications.col.temp'), key: 'today_temperature' },
-    { label: t('admin.records.notifications.col.humidity'), key: 'today_humidity' },
+    {
+      label: t('admin.records.notifications.col.date'),
+      key: 'notification_date',
+    },
+    {
+      label: t('admin.records.notifications.col.temp'),
+      key: 'today_temperature',
+    },
+    {
+      label: t('admin.records.notifications.col.humidity'),
+      key: 'today_humidity',
+    },
     { label: t('admin.records.notifications.col.et0'), key: 'ET0' },
-    { label: t('admin.records.notifications.col.period'), key: 'perfect_irrigation_period' },
+    {
+      label: t('admin.records.notifications.col.period'),
+      key: 'perfect_irrigation_period',
+    },
   ];
 
   return (
