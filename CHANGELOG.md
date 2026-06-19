@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/AgriLogy/agri-admin/compare/v1.8.0...v1.9.0) (2026-06-19)
+
+
+### Features
+
+* **admin:** sensor data explorer (browse/correct/range-delete) ([3fe8ec0](https://github.com/AgriLogy/agri-admin/commit/3fe8ec0e7d39e04a4f2e0a01b6c213c881ead298)), closes [#23](https://github.com/AgriLogy/agri-admin/issues/23)
+
 # [1.8.0](https://github.com/AgriLogy/agri-admin/compare/v1.7.0...v1.8.0) (2026-06-19)
 
 
