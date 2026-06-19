@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/AgriLogy/agri-admin/compare/v1.4.0...v1.5.0) (2026-06-19)
+
+
+### Features
+
+* **admin:** billing, audit log, and system settings UI ([#16](https://github.com/AgriLogy/agri-admin/issues/16)) ([d8e4688](https://github.com/AgriLogy/agri-admin/commit/d8e46881dfded61b1f1a6d14445cb516755002ab)), closes [#15](https://github.com/AgriLogy/agri-admin/issues/15)
+
 # [1.4.0](https://github.com/AgriLogy/agri-admin/compare/v1.3.0...v1.4.0) (2026-06-19)
 
 
