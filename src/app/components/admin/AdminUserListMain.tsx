@@ -2,6 +2,7 @@
 
 import {
   EditOutlined,
+  EyeOutlined,
   PlusOutlined,
   StopOutlined,
   UnlockOutlined,
@@ -18,6 +19,7 @@ import { PageInfoBar } from '@/app/components/layout/PageInfoBar';
 import { AdminCrudTable } from '@/app/components/admin/_shared/AdminCrudTable';
 import { ExportCsvButton } from '@/app/components/admin/_shared/ExportCsvButton';
 import { adminUserApi, type AdminUserRow } from '@/app/lib/adminUserApi';
+import { openViewAs } from '@/app/lib/adminImpersonationApi';
 import UserCreateDrawer from './UserCreateDrawer';
 
 const localeTag = (locale: string): string =>
@@ -124,6 +126,20 @@ const AdminUserListMain = () => {
       });
     },
     [message, modal, t]
+  );
+
+  const handleViewAs = useCallback(
+    async (row: AdminUserRow) => {
+      try {
+        await openViewAs(row.username);
+        message.success(
+          t('admin.userList.viewAsStarted', { username: row.username })
+        );
+      } catch {
+        message.error(t('admin.userList.viewAsError'));
+      }
+    },
+    [message, t]
   );
 
   const columns = useMemo<ColumnsType<AdminUserRow>>(
@@ -261,11 +277,20 @@ const AdminUserListMain = () => {
                 })}
               />
             </Tooltip>
+            <Tooltip title={t('admin.userList.action.viewAs')}>
+              <Button
+                icon={<EyeOutlined />}
+                onClick={() => void handleViewAs(row)}
+                aria-label={t('admin.userList.action.viewAsAria', {
+                  username: row.username,
+                })}
+              />
+            </Tooltip>
           </Space>
         ),
       },
     ],
-    [handleResetPassword, handleToggle, router, t, tag]
+    [handleResetPassword, handleToggle, handleViewAs, router, t, tag]
   );
 
   const selectedRows = useMemo(

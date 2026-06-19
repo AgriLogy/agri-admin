@@ -370,7 +370,11 @@
       "subtitle": "Gérez les comptes, leurs zones et leur observabilité.",
       "newUser": "Nouvel utilisateur",
       "searchPlaceholder": "Rechercher (nom, email)…",
-      "empty": "Aucun utilisateur"
+      "empty": "Aucun utilisateur",
+      "action.viewAs": "Voir comme (lecture seule)",
+      "action.viewAsAria": "Voir comme {username}",
+      "viewAsStarted": "Ouverture d’une session en lecture seule en tant que {username}…",
+      "viewAsError": "Impossible de démarrer la session « voir comme »"
     },
     "zoneForm": {
       "updateSuccess": "Zone mise à jour.",
@@ -554,7 +558,10 @@
       "resetError": "Échec de la réinitialisation.",
       "deactivate": "Désactiver",
       "reactivate": "Réactiver",
-      "resetPassword": "Réinitialiser MDP"
+      "resetPassword": "Réinitialiser MDP",
+      "viewAs": "Voir comme",
+      "viewAsStarted": "Ouverture d’une session en lecture seule en tant que {name}…",
+      "viewAsError": "Impossible de démarrer la session « voir comme »"
     },
     "alertsTab": {
       "loadError": "Impossible de charger les alertes.",

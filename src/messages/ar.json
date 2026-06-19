@@ -370,7 +370,11 @@
       "subtitle": "إدارة الحسابات ومناطقها وقابلية مراقبتها.",
       "newUser": "مستخدم جديد",
       "searchPlaceholder": "بحث (الاسم، البريد الإلكتروني)…",
-      "empty": "لا يوجد مستخدم"
+      "empty": "لا يوجد مستخدم",
+      "action.viewAs": "العرض كـ (قراءة فقط)",
+      "action.viewAsAria": "العرض كـ {username}",
+      "viewAsStarted": "جارٍ فتح جلسة للقراءة فقط باسم {username}…",
+      "viewAsError": "تعذّر بدء جلسة العرض كـ"
     },
     "zoneForm": {
       "updateSuccess": "تم تحديث المنطقة.",
@@ -554,7 +558,10 @@
       "resetError": "فشلت إعادة التعيين.",
       "deactivate": "تعطيل",
       "reactivate": "إعادة تفعيل",
-      "resetPassword": "إعادة تعيين كلمة المرور"
+      "resetPassword": "إعادة تعيين كلمة المرور",
+      "viewAs": "العرض كـ",
+      "viewAsStarted": "جارٍ فتح جلسة للقراءة فقط باسم {name}…",
+      "viewAsError": "تعذّر بدء جلسة العرض كـ"
     },
     "alertsTab": {
       "loadError": "تعذر تحميل التنبيهات.",

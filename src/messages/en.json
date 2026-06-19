@@ -370,7 +370,11 @@
       "subtitle": "Manage accounts, their zones and observability.",
       "newUser": "New user",
       "searchPlaceholder": "Search (name, email)…",
-      "empty": "No user"
+      "empty": "No user",
+      "action.viewAs": "View as (read-only)",
+      "action.viewAsAria": "View as {username}",
+      "viewAsStarted": "Opening read-only session as {username}…",
+      "viewAsError": "Could not start the view-as session"
     },
     "zoneForm": {
       "updateSuccess": "Zone updated.",
@@ -554,7 +558,10 @@
       "resetError": "Reset failed.",
       "deactivate": "Deactivate",
       "reactivate": "Reactivate",
-      "resetPassword": "Reset password"
+      "resetPassword": "Reset password",
+      "viewAs": "View as",
+      "viewAsStarted": "Opening read-only session as {name}…",
+      "viewAsError": "Could not start the view-as session"
     },
     "alertsTab": {
       "loadError": "Unable to load alerts.",

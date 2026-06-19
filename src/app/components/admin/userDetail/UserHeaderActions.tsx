@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  EyeOutlined,
   StopOutlined,
   UnlockOutlined,
   UserSwitchOutlined,
@@ -10,6 +11,7 @@ import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 
 import { adminUserApi, type AdminUserDetail } from '@/app/lib/adminUserApi';
+import { openViewAs } from '@/app/lib/adminImpersonationApi';
 
 export type UserHeaderActionsProps = {
   user: AdminUserDetail;
@@ -21,6 +23,21 @@ export function UserHeaderActions({ user, onChange }: UserHeaderActionsProps) {
   const { message, modal } = App.useApp();
   const [toggling, setToggling] = useState(false);
   const [resetting, setResetting] = useState(false);
+  const [viewing, setViewing] = useState(false);
+
+  const handleViewAs = async () => {
+    setViewing(true);
+    try {
+      await openViewAs(user.username);
+      message.success(
+        t('admin.userHeaderActions.viewAsStarted', { name: user.username })
+      );
+    } catch {
+      message.error(t('admin.userHeaderActions.viewAsError'));
+    } finally {
+      setViewing(false);
+    }
+  };
 
   const handleToggle = async () => {
     setToggling(true);
@@ -90,6 +107,13 @@ export function UserHeaderActions({ user, onChange }: UserHeaderActionsProps) {
         loading={resetting}
       >
         {t('admin.userHeaderActions.resetPassword')}
+      </Button>
+      <Button
+        icon={<EyeOutlined />}
+        onClick={handleViewAs}
+        loading={viewing}
+      >
+        {t('admin.userHeaderActions.viewAs')}
       </Button>
     </Space>
   );
