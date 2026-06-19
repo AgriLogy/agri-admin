@@ -811,6 +811,116 @@
         "default_critical_moisture_pct": "Default critical moisture (%)",
         "stale_device_hours": "Stale device threshold (hours)"
       }
+    },
+    "monitoring": {
+      "nav": {
+        "overview": "Overview",
+        "automations": "Automations",
+        "deliveries": "Deliveries",
+        "activity": "Activity"
+      },
+      "overview": {
+        "title": "Monitoring",
+        "subtitle": "Automated actions & user behaviour over the last 24h",
+        "taskSuccess": "Task success rate",
+        "runs": "{n} runs · {f} failed",
+        "deliveryErr": "Delivery error rate",
+        "deliveries": "{n} sent · {f} failed",
+        "logins": "Sign-ins",
+        "loginsDetail": "{u} unique users · {f} failed",
+        "fleetOffline": "Fleet offline",
+        "fleetDetail": "{online}/{total} devices online",
+        "byChannel": "Deliveries by channel",
+        "byTask": "Tasks by success rate",
+        "noData": "No data yet",
+        "failedShort": "failed",
+        "recentFailures": "Recent failures",
+        "noFailures": "No recent failures",
+        "failType": "Type",
+        "failName": "Name",
+        "failError": "Error",
+        "failAt": "When",
+        "type": {
+          "task": "Task",
+          "delivery": "Delivery"
+        }
+      },
+      "tasks": {
+        "title": "Automations",
+        "subtitle": "Scheduled jobs and their run history",
+        "scheduleTitle": "Beat schedule",
+        "schedName": "Name",
+        "schedTask": "Task",
+        "schedEvery": "Schedule",
+        "schedSource": "Source",
+        "aggTitle": "Per-task (last 7 days)",
+        "aggName": "Task",
+        "aggRuns": "Runs",
+        "aggFailures": "Failures",
+        "aggSuccess": "Success",
+        "aggLastRun": "Last run",
+        "filterStatus": "Status",
+        "status": {
+          "success": "Success",
+          "failure": "Failure"
+        },
+        "runName": "Task",
+        "runStatus": "Status",
+        "runRuntime": "Runtime",
+        "runError": "Error",
+        "runAt": "When",
+        "empty": "No task runs recorded yet"
+      },
+      "deliveries": {
+        "title": "Deliveries",
+        "subtitle": "Notification delivery log (email / SMS / WhatsApp)",
+        "col": {
+          "channel": "Channel",
+          "kind": "Kind",
+          "recipient": "Recipient",
+          "user": "User",
+          "status": "Status",
+          "error": "Error",
+          "at": "When"
+        },
+        "status": {
+          "sent": "Sent",
+          "failed": "Failed",
+          "skipped": "Skipped"
+        },
+        "filter": {
+          "username": "User",
+          "channel": "Channel",
+          "status": "Status"
+        },
+        "empty": "No deliveries recorded yet"
+      },
+      "activity": {
+        "title": "Activity",
+        "subtitle": "Sign-in events and admin actions",
+        "tab": {
+          "logins": "Sign-ins",
+          "audit": "Admin actions"
+        },
+        "login": {
+          "user": "User",
+          "outcome": "Outcome",
+          "ok": "Success",
+          "fail": "Failed",
+          "ip": "IP",
+          "agent": "User agent",
+          "at": "When",
+          "all": "All",
+          "empty": "No sign-in events yet"
+        },
+        "audit": {
+          "actor": "Actor",
+          "action": "Action",
+          "target": "Target",
+          "at": "When",
+          "empty": "No admin actions yet"
+        }
+      }
     }
   },
   "alertsPage": {
@@ -1856,7 +1966,8 @@
       "fleet": "Fleet health",
       "billing": "Billing",
       "audit": "Audit log",
-      "settings": "Settings"
+      "settings": "Settings",
+      "monitoring": "Monitoring"
     },
     "mobileMenu": {
       "home": "Home",
