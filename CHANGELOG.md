@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/AgriLogy/agri-admin/compare/v1.6.0...v1.7.0) (2026-06-19)
+
+
+### Features
+
+* **admin:** create alerts from the global console ([60f19cc](https://github.com/AgriLogy/agri-admin/commit/60f19ccac4cabcbf83f6597d695bce173886fd96)), closes [#19](https://github.com/AgriLogy/agri-admin/issues/19)
+
 # [1.6.0](https://github.com/AgriLogy/agri-admin/compare/v1.5.0...v1.6.0) (2026-06-19)
 
 
