@@ -715,7 +715,8 @@
         "all": "All",
         "activeOnly": "Active",
         "inactiveOnly": "Inactive"
-      }
+      },
+      "new": "New alert"
     },
     "fleet": {
       "title": "Device fleet health",
@@ -810,6 +811,33 @@
         "notify_whatsapp_enabled": "WhatsApp notifications",
         "default_critical_moisture_pct": "Default critical moisture (%)",
         "stale_device_hours": "Stale device threshold (hours)"
+      }
+    },
+    "alertCreate": {
+      "title": "Create alert",
+      "create": "Create",
+      "cancel": "Cancel",
+      "success": "Alert created",
+      "error": "Failed to create alert",
+      "cond": {
+        "gt": "greater than",
+        "lt": "less than",
+        "eq": "equal to"
+      },
+      "validation": {
+        "required": "Required"
+      },
+      "field": {
+        "username": "User",
+        "name": "Name",
+        "type": "Type",
+        "condition": "Condition",
+        "threshold": "Threshold",
+        "sensorKey": "Sensor key",
+        "sensorKeyHint": "Stable chart identifier, e.g. temperature_weather",
+        "zoneId": "Zone ID (optional)",
+        "zoneIdHint": "Leave empty for an account-wide alert",
+        "description": "Description"
       }
     },
     "monitoring": {
