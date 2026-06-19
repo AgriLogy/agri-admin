@@ -5,7 +5,10 @@ import {
   AuditOutlined,
   CreditCardOutlined,
   DashboardOutlined,
+  DatabaseOutlined,
+  ExperimentOutlined,
   FileSearchOutlined,
+  LineChartOutlined,
   LogoutOutlined,
   SafetyCertificateOutlined,
   SettingOutlined,
@@ -31,8 +34,12 @@ const AdminSidebar = () => {
     if (pathname.startsWith('/admin/technicians')) return 'technicians';
     if (pathname.startsWith('/admin/alerts')) return 'alerts';
     if (pathname.startsWith('/admin/devices')) return 'fleet';
+    if (pathname.startsWith('/admin/sensor-data')) return 'sensorData';
+    if (pathname.startsWith('/admin/monitoring')) return 'monitoring';
     if (pathname.startsWith('/admin/affirmations')) return 'affirmations';
+    if (pathname.startsWith('/admin/kc')) return 'kc';
     if (pathname.startsWith('/admin/billing')) return 'billing';
+    if (pathname.startsWith('/admin/records')) return 'records';
     if (pathname.startsWith('/admin/audit')) return 'audit';
     if (pathname.startsWith('/admin/settings')) return 'settings';
     return 'dashboard';
@@ -114,6 +121,24 @@ const AdminSidebar = () => {
             onClick: () => router.push('/admin/devices/health'),
           },
           {
+            key: 'sensorData',
+            icon: (
+              <Tooltip title={t('shell.admin.sensorData')} placement="right">
+                <DatabaseOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/sensor-data'),
+          },
+          {
+            key: 'monitoring',
+            icon: (
+              <Tooltip title={t('shell.admin.monitoring')} placement="right">
+                <LineChartOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/monitoring'),
+          },
+          {
             key: 'affirmations',
             icon: (
               <Tooltip title={t('shell.admin.affirmations')} placement="right">
@@ -121,6 +146,24 @@ const AdminSidebar = () => {
               </Tooltip>
             ),
             onClick: () => router.push('/admin/affirmations'),
+          },
+          {
+            key: 'kc',
+            icon: (
+              <Tooltip title={t('shell.admin.kc')} placement="right">
+                <ExperimentOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/kc'),
+          },
+          {
+            key: 'records',
+            icon: (
+              <Tooltip title={t('shell.admin.records')} placement="right">
+                <DatabaseOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/records'),
           },
           {
             key: 'billing',

@@ -1,3 +1,31 @@
+# [1.9.0](https://github.com/AgriLogy/agri-admin/compare/v1.8.0...v1.9.0) (2026-06-19)
+
+
+### Features
+
+* **admin:** sensor data explorer (browse/correct/range-delete) ([3fe8ec0](https://github.com/AgriLogy/agri-admin/commit/3fe8ec0e7d39e04a4f2e0a01b6c213c881ead298)), closes [#23](https://github.com/AgriLogy/agri-admin/issues/23)
+
+# [1.8.0](https://github.com/AgriLogy/agri-admin/compare/v1.7.0...v1.8.0) (2026-06-19)
+
+
+### Features
+
+* **admin:** records section — notifications, conversations, grants ([3e231da](https://github.com/AgriLogy/agri-admin/commit/3e231da83f55e80ea9fd2e5db55733174424548f)), closes [#21](https://github.com/AgriLogy/agri-admin/issues/21)
+
+# [1.7.0](https://github.com/AgriLogy/agri-admin/compare/v1.6.0...v1.7.0) (2026-06-19)
+
+
+### Features
+
+* **admin:** create alerts from the global console ([60f19cc](https://github.com/AgriLogy/agri-admin/commit/60f19ccac4cabcbf83f6597d695bce173886fd96)), closes [#19](https://github.com/AgriLogy/agri-admin/issues/19)
+
+# [1.6.0](https://github.com/AgriLogy/agri-admin/compare/v1.5.0...v1.6.0) (2026-06-19)
+
+
+### Features
+
+* **admin:** monitoring back-office (automations, deliveries, activity) ([392056e](https://github.com/AgriLogy/agri-admin/commit/392056ed6de90f21b9ffa729baffe5e5bf64a71a)), closes [#17](https://github.com/AgriLogy/agri-admin/issues/17)
+
 # [1.5.0](https://github.com/AgriLogy/agri-admin/compare/v1.4.0...v1.5.0) (2026-06-19)
 
 
