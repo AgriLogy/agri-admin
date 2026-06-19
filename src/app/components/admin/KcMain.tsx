@@ -158,10 +158,24 @@ const KcMain = () => {
   };
 
   const columns: ColumnsType<KcRow> = [
-    { title: t('admin.kc.col.user'), dataIndex: 'username', key: 'username', render: (v) => v ?? '—' },
+    {
+      title: t('admin.kc.col.user'),
+      dataIndex: 'username',
+      key: 'username',
+      render: (v) => v ?? '—',
+    },
     { title: t('admin.kc.col.name'), dataIndex: 'name', key: 'name' },
-    { title: t('admin.kc.col.plant'), dataIndex: 'plant_name', key: 'plant_name' },
-    { title: t('admin.kc.col.zone'), dataIndex: 'zone_name', key: 'zone_name', render: (v) => v ?? '—' },
+    {
+      title: t('admin.kc.col.plant'),
+      dataIndex: 'plant_name',
+      key: 'plant_name',
+    },
+    {
+      title: t('admin.kc.col.zone'),
+      dataIndex: 'zone_name',
+      key: 'zone_name',
+      render: (v) => v ?? '—',
+    },
     {
       title: t('admin.kc.col.periods'),
       dataIndex: 'number_of_periods',
@@ -281,7 +295,10 @@ const KcMain = () => {
                       rules={[{ required: true }]}
                       style={{ marginBottom: 8 }}
                     >
-                      <Input placeholder={t('admin.kc.field.periodName')} style={{ width: 130 }} />
+                      <Input
+                        placeholder={t('admin.kc.field.periodName')}
+                        style={{ width: 130 }}
+                      />
                     </Form.Item>
                     <Form.Item
                       name={[field.name, 'range']}
@@ -295,7 +312,11 @@ const KcMain = () => {
                       rules={[{ required: true }]}
                       style={{ marginBottom: 8 }}
                     >
-                      <InputNumber step={0.05} placeholder="Kc" style={{ width: 80 }} />
+                      <InputNumber
+                        step={0.05}
+                        placeholder="Kc"
+                        style={{ width: 80 }}
+                      />
                     </Form.Item>
                     <Button type="link" danger onClick={() => rm(field.name)}>
                       {t('admin.common.delete')}

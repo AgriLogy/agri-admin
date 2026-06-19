@@ -2,6 +2,7 @@
 
 import {
   App,
+  Button,
   Card,
   Col,
   Input,
@@ -12,6 +13,7 @@ import {
   Switch,
   Tag,
 } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
 import type { ColumnsType } from 'antd/es/table';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Box } from '@chakra-ui/react';
@@ -20,6 +22,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import { AdminCrudTable } from '@/app/components/admin/_shared/AdminCrudTable';
 import { AdminConfirmDelete } from '@/app/components/admin/_shared/AdminConfirmDelete';
 import { ExportCsvButton } from '@/app/components/admin/_shared/ExportCsvButton';
+import AlertCreateDrawer from '@/app/components/admin/AlertCreateDrawer';
 import { PageInfoBar } from '@/app/components/layout/PageInfoBar';
 import {
   adminAlertApi,
@@ -47,6 +50,7 @@ const AlertsConsoleMain = () => {
   const [rows, setRows] = useState<AlertConsoleRow[]>([]);
   const [stats, setStats] = useState<AlertAnalytics | null>(null);
   const [loading, setLoading] = useState(true);
+  const [createOpen, setCreateOpen] = useState(false);
 
   // Filters (client holds the inputs; the active filter applies on the server).
   const [username, setUsername] = useState('');
@@ -177,12 +181,31 @@ const AlertsConsoleMain = () => {
         title={t('admin.alertsConsole.title')}
         subtitle={t('admin.alertsConsole.subtitle')}
         actions={
-          <ExportCsvButton<AlertConsoleRow>
-            data={rows}
-            headers={csvHeaders}
-            filename="alerts"
-          />
+          <Space>
+            <Button
+              type="primary"
+              icon={<PlusOutlined />}
+              onClick={() => setCreateOpen(true)}
+            >
+              {t('admin.alertsConsole.new')}
+            </Button>
+            <ExportCsvButton<AlertConsoleRow>
+              data={rows}
+              headers={csvHeaders}
+              filename="alerts"
+            />
+          </Space>
         }
+      />
+
+      <AlertCreateDrawer
+        open={createOpen}
+        onClose={() => setCreateOpen(false)}
+        onSaved={(row) => {
+          setRows((prev) => [row, ...prev]);
+          setCreateOpen(false);
+          void refresh();
+        }}
       />
 
       <Row gutter={[16, 16]} style={{ marginBottom: 16 }}>

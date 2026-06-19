@@ -41,6 +41,5 @@ export const adminKcApi = {
     api.post<KcRow>('/admin/kc', payload).then((r) => r.data),
   update: (id: number, payload: KcUpdatePayload) =>
     api.put<KcRow>(`/admin/kc/${id}`, payload).then((r) => r.data),
-  remove: (id: number) =>
-    api.delete(`/admin/kc/${id}`).then((r) => r.data),
+  remove: (id: number) => api.delete(`/admin/kc/${id}`).then((r) => r.data),
 };

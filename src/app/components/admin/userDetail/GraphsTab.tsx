@@ -1,6 +1,17 @@
 'use client';
 
-import { App, Button, Card, Col, Empty, Input, Row, Select, Space, Switch } from 'antd';
+import {
+  App,
+  Button,
+  Card,
+  Col,
+  Empty,
+  Input,
+  Row,
+  Select,
+  Space,
+  Switch,
+} from 'antd';
 import { useTranslations } from 'next-intl';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -67,7 +78,11 @@ export function GraphsTab({ username }: GraphsTabProps) {
     if (zoneId === null) return;
     setSavingLabels(true);
     try {
-      const updated = await adminZoneApi.graphNames.patch(username, zoneId, labels);
+      const updated = await adminZoneApi.graphNames.patch(
+        username,
+        zoneId,
+        labels
+      );
       setLabels(updated);
       message.success(t('admin.graphsTab.saved'));
     } catch {
@@ -81,7 +96,11 @@ export function GraphsTab({ username }: GraphsTabProps) {
     if (zoneId === null) return;
     setSavingColors(true);
     try {
-      const updated = await adminZoneApi.sensorColors.patch(username, zoneId, colors);
+      const updated = await adminZoneApi.sensorColors.patch(
+        username,
+        zoneId,
+        colors
+      );
       setColors(updated);
       message.success(t('admin.graphsTab.saved'));
     } catch {
@@ -207,14 +226,25 @@ export function GraphsTab({ username }: GraphsTabProps) {
                       type="color"
                       value={colors[key] || '#000000'}
                       onChange={(e) =>
-                        setColors((prev) => ({ ...prev, [key]: e.target.value }))
+                        setColors((prev) => ({
+                          ...prev,
+                          [key]: e.target.value,
+                        }))
                       }
-                      style={{ width: 36, height: 28, border: 'none', background: 'none' }}
+                      style={{
+                        width: 36,
+                        height: 28,
+                        border: 'none',
+                        background: 'none',
+                      }}
                     />
                     <Input
                       value={colors[key]}
                       onChange={(e) =>
-                        setColors((prev) => ({ ...prev, [key]: e.target.value }))
+                        setColors((prev) => ({
+                          ...prev,
+                          [key]: e.target.value,
+                        }))
                       }
                       style={{ width: 90 }}
                     />

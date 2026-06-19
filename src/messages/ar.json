@@ -720,7 +720,8 @@
         "all": "الكل",
         "activeOnly": "المفعّلة",
         "inactiveOnly": "غير المفعّلة"
-      }
+      },
+      "new": "تنبيه جديد"
     },
     "fleet": {
       "title": "حالة أسطول الأجهزة",
@@ -850,6 +851,226 @@
       },
       "filter": {
         "username": "المستخدم"
+      }
+    },
+    "sensorData": {
+      "title": "مستكشف بيانات المستشعرات",
+      "subtitle": "تصفّح القراءات الخام وتصحيحها وتنظيفها",
+      "pickSensor": "اختر نوع المستشعر أولاً",
+      "load": "تحميل",
+      "empty": "لا قراءات — اختر مستشعراً ثم حمّل",
+      "saved": "تم تحديث القراءة",
+      "editTitle": "تصحيح قيمة القراءة",
+      "confirmDelete": "حذف هذه القراءة؟",
+      "rangeDelete": "حذف النطاق",
+      "confirmRangeDelete": "حذف كل القراءات في هذه المنطقة ضمن نطاق التاريخ؟",
+      "rangeDeleted": "تم حذف {n} قراءة",
+      "col": {
+        "timestamp": "الوقت",
+        "value": "القيمة",
+        "zone": "المنطقة",
+        "user": "المستخدم"
+      },
+      "filter": {
+        "sensor": "نوع المستشعر",
+        "user": "المستخدم",
+        "zone": "المنطقة",
+        "from": "من",
+        "to": "إلى"
+      }
+    },
+    "records": {
+      "nav": {
+        "notifications": "الإشعارات",
+        "conversations": "المحادثات",
+        "grants": "صلاحيات الفنيين"
+      },
+      "notifications": {
+        "title": "الإشعارات",
+        "subtitle": "لقطات الإشعارات لكل مستخدم",
+        "empty": "لا إشعارات",
+        "col": {
+          "user": "المستخدم",
+          "date": "التاريخ",
+          "temp": "الحرارة (اليوم)",
+          "humidity": "الرطوبة (اليوم)",
+          "et0": "ET0",
+          "period": "نافذة الري"
+        }
+      },
+      "conversations": {
+        "title": "محادثات المساعد",
+        "subtitle": "سجل الدردشة وسجل الإشعارات الاستباقية",
+        "empty": "لا محادثات",
+        "view": "عرض",
+        "transcript": "النص",
+        "col": {
+          "user": "المستخدم",
+          "title": "العنوان",
+          "messages": "الرسائل",
+          "updated": "آخر تحديث"
+        },
+        "tab": {
+          "conversations": "المحادثات",
+          "proactive": "الإشعارات الاستباقية"
+        }
+      },
+      "proactive": {
+        "col": {
+          "user": "المستخدم",
+          "lastSent": "آخر إرسال"
+        },
+        "reset": "إعادة تعيين",
+        "resetConfirm": "إعادة تعيين مهلة الإشعار الاستباقي لهذا المستخدم؟",
+        "empty": "لا إشعارات استباقية"
+      },
+      "grants": {
+        "title": "صلاحيات الفنيين",
+        "subtitle": "كل صلاحيات الفنيين عبر جميع المالكين",
+        "empty": "لا صلاحيات",
+        "col": {
+          "technician": "الفني",
+          "owner": "المالك",
+          "created": "أُنشئ",
+          "active": "مُفعّل"
+        }
+      }
+    },
+    "alertCreate": {
+      "title": "إنشاء تنبيه",
+      "create": "إنشاء",
+      "cancel": "إلغاء",
+      "success": "تم إنشاء التنبيه",
+      "error": "فشل إنشاء التنبيه",
+      "cond": {
+        "gt": "أكبر من",
+        "lt": "أصغر من",
+        "eq": "يساوي"
+      },
+      "validation": {
+        "required": "مطلوب"
+      },
+      "field": {
+        "username": "المستخدم",
+        "name": "الاسم",
+        "type": "النوع",
+        "condition": "الشرط",
+        "threshold": "العتبة",
+        "sensorKey": "مفتاح المستشعر",
+        "sensorKeyHint": "معرّف الرسم البياني، مثل temperature_weather",
+        "zoneId": "معرّف المنطقة (اختياري)",
+        "zoneIdHint": "اتركه فارغاً لتنبيه على مستوى الحساب",
+        "description": "الوصف"
+      }
+    },
+    "monitoring": {
+      "nav": {
+        "overview": "نظرة عامة",
+        "automations": "المهام الآلية",
+        "deliveries": "الإرسالات",
+        "activity": "النشاط"
+      },
+      "overview": {
+        "title": "المراقبة",
+        "subtitle": "الإجراءات الآلية وسلوك المستخدمين خلال آخر 24 ساعة",
+        "taskSuccess": "معدل نجاح المهام",
+        "runs": "{n} تنفيذ · {f} فشل",
+        "deliveryErr": "معدل خطأ الإرسال",
+        "deliveries": "{n} مُرسل · {f} فشل",
+        "logins": "تسجيلات الدخول",
+        "loginsDetail": "{u} مستخدم فريد · {f} فشل",
+        "fleetOffline": "أجهزة غير متصلة",
+        "fleetDetail": "{online}/{total} جهاز متصل",
+        "byChannel": "الإرسالات حسب القناة",
+        "byTask": "المهام حسب معدل النجاح",
+        "noData": "لا توجد بيانات",
+        "failedShort": "فشل",
+        "recentFailures": "الإخفاقات الأخيرة",
+        "noFailures": "لا إخفاقات حديثة",
+        "failType": "النوع",
+        "failName": "الاسم",
+        "failError": "الخطأ",
+        "failAt": "الوقت",
+        "type": {
+          "task": "مهمة",
+          "delivery": "إرسال"
+        }
+      },
+      "tasks": {
+        "title": "المهام الآلية",
+        "subtitle": "المهام المجدولة وسجل تنفيذها",
+        "scheduleTitle": "الجدولة",
+        "schedName": "الاسم",
+        "schedTask": "المهمة",
+        "schedEvery": "التكرار",
+        "schedSource": "المصدر",
+        "aggTitle": "حسب المهمة (آخر 7 أيام)",
+        "aggName": "المهمة",
+        "aggRuns": "التنفيذات",
+        "aggFailures": "الإخفاقات",
+        "aggSuccess": "النجاح",
+        "aggLastRun": "آخر تنفيذ",
+        "filterStatus": "الحالة",
+        "status": {
+          "success": "نجاح",
+          "failure": "فشل"
+        },
+        "runName": "المهمة",
+        "runStatus": "الحالة",
+        "runRuntime": "المدة",
+        "runError": "الخطأ",
+        "runAt": "الوقت",
+        "empty": "لا توجد تنفيذات مسجلة"
+      },
+      "deliveries": {
+        "title": "الإرسالات",
+        "subtitle": "سجل إرسال الإشعارات (بريد / SMS / واتساب)",
+        "col": {
+          "channel": "القناة",
+          "kind": "النوع",
+          "recipient": "المستلم",
+          "user": "المستخدم",
+          "status": "الحالة",
+          "error": "الخطأ",
+          "at": "الوقت"
+        },
+        "status": {
+          "sent": "مُرسل",
+          "failed": "فشل",
+          "skipped": "متخطى"
+        },
+        "filter": {
+          "username": "المستخدم",
+          "channel": "القناة",
+          "status": "الحالة"
+        },
+        "empty": "لا توجد إرسالات مسجلة"
+      },
+      "activity": {
+        "title": "النشاط",
+        "subtitle": "أحداث تسجيل الدخول وإجراءات المسؤول",
+        "tab": {
+          "logins": "تسجيلات الدخول",
+          "audit": "إجراءات المسؤول"
+        },
+        "login": {
+          "user": "المستخدم",
+          "outcome": "النتيجة",
+          "ok": "نجاح",
+          "fail": "فشل",
+          "ip": "IP",
+          "agent": "المتصفح",
+          "at": "الوقت",
+          "all": "الكل",
+          "empty": "لا أحداث دخول"
+        },
+        "audit": {
+          "actor": "المنفّذ",
+          "action": "الإجراء",
+          "target": "الهدف",
+          "at": "الوقت",
+          "empty": "لا إجراءات للمسؤول"
+        }
       }
     }
   },
@@ -1897,7 +2118,10 @@
       "billing": "الفوترة",
       "audit": "سجل التدقيق",
       "settings": "الإعدادات",
-      "kc": "تقويمات المحاصيل"
+      "kc": "تقويمات المحاصيل",
+      "sensorData": "بيانات المستشعرات",
+      "records": "السجلات",
+      "monitoring": "المراقبة"
     },
     "mobileMenu": {
       "home": "الرئيسية",
