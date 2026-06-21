@@ -24,6 +24,17 @@ export type AdminUserDetail = AdminUserRow & {
   longitude: number | null;
   notify_every: number;
   last_notified: string | null;
+  sessions_revoked_at?: string | null;
+};
+
+export type UserSessionStatus = {
+  username: string;
+  is_active: boolean;
+  status: 'active' | 'revoked' | 'disabled' | 'never_logged_in';
+  last_login: string | null;
+  sessions_revoked_at: string | null;
+  access_token_lifetime_minutes: number;
+  current_token_expires_at: string | null;
 };
 
 export type AdminUserCreatePayload = {
@@ -124,6 +135,21 @@ export const adminUserApi = {
     const res = await api.post<{ username: string; password: string }>(
       `/users/${encodeURIComponent(username)}/password-reset`,
       body
+    );
+    return res.data;
+  },
+
+  sessions: async (username: string): Promise<UserSessionStatus> => {
+    const res = await api.get<UserSessionStatus>(
+      `/users/${encodeURIComponent(username)}/sessions`
+    );
+    return res.data;
+  },
+
+  forceLogout: async (username: string): Promise<UserSessionStatus> => {
+    const res = await api.post<UserSessionStatus>(
+      `/users/${encodeURIComponent(username)}/force-logout`,
+      {}
     );
     return res.data;
   },

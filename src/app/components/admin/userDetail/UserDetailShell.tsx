@@ -15,6 +15,7 @@ import ParamsTab from './ParamsTab';
 import ProfileTab from './ProfileTab';
 import SoilDataTab from './SoilDataTab';
 import StationDataTab from './StationDataTab';
+import SessionsTab from './SessionsTab';
 import UserHeaderActions from './UserHeaderActions';
 import UserStatusLine from './UserStatusLine';
 import ZonesTab from './ZonesTab';
@@ -148,6 +149,11 @@ export function UserDetailShell({ username }: UserDetailShellProps) {
                 key: 'activity',
                 label: t('admin.userDetail.tabActivity'),
                 children: <ActivityTab username={username} />,
+              },
+              {
+                key: 'sessions',
+                label: t('admin.userDetail.tabSessions'),
+                children: <SessionsTab user={user} onChange={setUser} />,
               },
             ]}
           />
