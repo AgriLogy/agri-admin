@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/AgriLogy/agri-admin/compare/v1.12.0...v1.13.0) (2026-06-21)
+
+
+### Features
+
+* user session management tab (token status + force logout) ([18e198e](https://github.com/AgriLogy/agri-admin/commit/18e198ed79f4f9cdfc005d68ed21d8b0fd177afb))
+
 # [1.12.0](https://github.com/AgriLogy/agri-admin/compare/v1.11.0...v1.12.0) (2026-06-21)
 
 
