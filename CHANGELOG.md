@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/AgriLogy/agri-admin/compare/v1.11.0...v1.12.0) (2026-06-21)
+
+
+### Features
+
+* adopt SSO session from identity gateway ([80afc9b](https://github.com/AgriLogy/agri-admin/commit/80afc9b9135d04596c0a7c0aa26cacafab81497e))
+
 # [1.11.0](https://github.com/AgriLogy/agri-admin/compare/v1.10.0...v1.11.0) (2026-06-19)
 
 
