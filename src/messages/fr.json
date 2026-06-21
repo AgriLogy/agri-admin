@@ -483,6 +483,7 @@
       "tabStationData": "Données — Station",
       "tabAlerts": "Alertes & notifs",
       "tabActivity": "Activité",
+      "tabSessions": "Sessions",
       "paymentLabel": "Paiement : {status}",
       "joinedLastLogin": "Inscrit le {joined} · Dernière connexion {lastLogin}"
     },
@@ -549,6 +550,34 @@
       "colorsTitle": "Couleurs des capteurs",
       "save": "Enregistrer",
       "saved": "Enregistré"
+    },
+    "userSessions": {
+      "loadError": "Impossible de charger l'état des sessions.",
+      "status": {
+        "active": "Session active",
+        "revoked": "Sessions révoquées",
+        "disabled": "Compte désactivé",
+        "never_logged_in": "Jamais connecté"
+      },
+      "lastLogin": "Dernière connexion",
+      "tokenExpires": "Expiration du jeton actuel",
+      "revokedAt": "Dernière révocation",
+      "tokenLifetime": "Durée de vie du jeton d'accès",
+      "minutes": "{minutes} min",
+      "explainer": "« Forcer la déconnexion » révoque tous les jetons émis : le jeton d'accès actuel est rejeté dès la prochaine requête de l'utilisateur (sous {minutes} min) et le jeton de rafraîchissement ne peut plus en générer de nouveau, le forçant à se reconnecter. « Désactiver le compte » fait de même et bloque la connexion jusqu'à réactivation.",
+      "refresh": "Actualiser",
+      "forceLogout": "Forcer la déconnexion",
+      "forceLogoutConfirm": "Forcer la déconnexion de toutes les sessions de {name} ?",
+      "forceLogoutExplainer": "Ses jetons sont invalidés immédiatement ; l'accès prend fin sous {minutes} min. Il pourra se reconnecter ensuite.",
+      "forceLogoutDone": "Sessions révoquées — l'utilisateur sera déconnecté.",
+      "disableAccount": "Désactiver le compte",
+      "enableAccount": "Activer le compte",
+      "disableConfirm": "Désactiver le compte de {name} et forcer la déconnexion ?",
+      "enableConfirm": "Réactiver le compte de {name} ?",
+      "disabled": "Compte désactivé.",
+      "enabled": "Compte activé.",
+      "actionError": "L'action n'a pas pu être effectuée.",
+      "cancel": "Annuler"
     },
     "userHeaderActions": {
       "reactivated": "Utilisateur réactivé.",

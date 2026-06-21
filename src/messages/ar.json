@@ -483,6 +483,7 @@
       "tabStationData": "البيانات — المحطة",
       "tabAlerts": "التنبيهات والإشعارات",
       "tabActivity": "النشاط",
+      "tabSessions": "الجلسات",
       "paymentLabel": "الدفع: {status}",
       "joinedLastLogin": "مسجَّل في {joined} · آخر تسجيل دخول {lastLogin}"
     },
@@ -549,6 +550,34 @@
       "colorsTitle": "ألوان المستشعرات",
       "save": "حفظ",
       "saved": "تم الحفظ"
+    },
+    "userSessions": {
+      "loadError": "تعذّر تحميل حالة الجلسات.",
+      "status": {
+        "active": "جلسة نشطة",
+        "revoked": "تم إبطال الجلسات",
+        "disabled": "الحساب معطّل",
+        "never_logged_in": "لم يسجّل الدخول قط"
+      },
+      "lastLogin": "آخر تسجيل دخول",
+      "tokenExpires": "انتهاء صلاحية الرمز الحالي",
+      "revokedAt": "آخر إبطال",
+      "tokenLifetime": "مدة صلاحية رمز الوصول",
+      "minutes": "{minutes} دقيقة",
+      "explainer": "«فرض تسجيل الخروج» يبطل جميع الرموز الصادرة: يُرفض رمز الوصول الحالي عند الطلب التالي للمستخدم (خلال {minutes} دقيقة) ولا يستطيع رمز التحديث إصدار رمز جديد، مما يجبره على إعادة تسجيل الدخول. «تعطيل الحساب» يفعل الشيء نفسه ويمنع تسجيل الدخول حتى إعادة التفعيل.",
+      "refresh": "تحديث",
+      "forceLogout": "فرض تسجيل الخروج",
+      "forceLogoutConfirm": "فرض تسجيل خروج {name} من جميع الجلسات؟",
+      "forceLogoutExplainer": "تُبطل رموزه فورًا؛ ينتهي الوصول خلال {minutes} دقيقة. يمكنه تسجيل الدخول مجددًا بعد ذلك.",
+      "forceLogoutDone": "تم إبطال الجلسات — سيُسجَّل خروج المستخدم.",
+      "disableAccount": "تعطيل الحساب",
+      "enableAccount": "تفعيل الحساب",
+      "disableConfirm": "تعطيل حساب {name} وفرض تسجيل الخروج؟",
+      "enableConfirm": "إعادة تفعيل حساب {name}؟",
+      "disabled": "تم تعطيل الحساب.",
+      "enabled": "تم تفعيل الحساب.",
+      "actionError": "تعذّر إتمام الإجراء.",
+      "cancel": "إلغاء"
     },
     "userHeaderActions": {
       "reactivated": "تمت إعادة تفعيل المستخدم.",

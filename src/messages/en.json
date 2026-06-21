@@ -483,6 +483,7 @@
       "tabStationData": "Data — Station",
       "tabAlerts": "Alerts & notifications",
       "tabActivity": "Activity",
+      "tabSessions": "Sessions",
       "paymentLabel": "Payment: {status}",
       "joinedLastLogin": "Joined on {joined} · Last login {lastLogin}"
     },
@@ -549,6 +550,34 @@
       "colorsTitle": "Sensor colors",
       "save": "Save",
       "saved": "Saved"
+    },
+    "userSessions": {
+      "loadError": "Unable to load session status.",
+      "status": {
+        "active": "Active session",
+        "revoked": "Sessions revoked",
+        "disabled": "Account disabled",
+        "never_logged_in": "Never logged in"
+      },
+      "lastLogin": "Last login",
+      "tokenExpires": "Current token expires",
+      "revokedAt": "Last revoked",
+      "tokenLifetime": "Access token lifetime",
+      "minutes": "{minutes} min",
+      "explainer": "“Force logout” revokes every token issued so far: the current access token is rejected on the user's next request (within {minutes} min) and the refresh token can no longer mint a new one, forcing them to sign in again. “Disable account” does the same and blocks sign-in until re-enabled.",
+      "refresh": "Refresh",
+      "forceLogout": "Force logout",
+      "forceLogoutConfirm": "Force {name} to log out of all sessions?",
+      "forceLogoutExplainer": "Their tokens are invalidated immediately; access ends within {minutes} min. They can sign in again afterwards.",
+      "forceLogoutDone": "Sessions revoked — the user will be logged out.",
+      "disableAccount": "Disable account",
+      "enableAccount": "Enable account",
+      "disableConfirm": "Disable {name}'s account and force logout?",
+      "enableConfirm": "Re-enable {name}'s account?",
+      "disabled": "Account disabled.",
+      "enabled": "Account enabled.",
+      "actionError": "The action could not be completed.",
+      "cancel": "Cancel"
     },
     "userHeaderActions": {
       "reactivated": "User reactivated.",
