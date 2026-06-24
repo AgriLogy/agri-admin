@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/AgriLogy/agri-admin/compare/v1.13.0...v1.14.0) (2026-06-24)
+
+
+### Features
+
+* **sso:** clear shared cookie on logout and 401 to enable real single logout ([#34](https://github.com/AgriLogy/agri-admin/issues/34)) ([134eac0](https://github.com/AgriLogy/agri-admin/commit/134eac0c891b90ba512dbc02ce8c553ebdceb565))
+
 # [1.13.0](https://github.com/AgriLogy/agri-admin/compare/v1.12.0...v1.13.0) (2026-06-21)
 
 
