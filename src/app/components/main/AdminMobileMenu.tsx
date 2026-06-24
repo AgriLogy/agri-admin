@@ -25,7 +25,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import api from '@/app/lib/api';
-import { clearSsoSession } from '@/app/lib/clearSsoSession';
+import { logoutEverywhere } from '@/app/lib/logoutEverywhere';
 import useColorModeStyles from '@/app/utils/useColorModeStyles';
 import logo from '../../public/logo.png';
 
@@ -58,8 +58,9 @@ const AdminMobileMenu = () => {
       okType: 'danger',
       cancelText: t('shell.admin.cancel'),
       onOk: () => {
-        clearSsoSession();
-        window.location.href = process.env.NEXT_PUBLIC_LOGIN_PATH || '/login';
+        // Revoke the session everywhere (best-effort), clear local state, then
+        // full-navigate to the identity gateway login (NEXT_PUBLIC_LOGIN_PATH).
+        logoutEverywhere();
       },
     });
   };
