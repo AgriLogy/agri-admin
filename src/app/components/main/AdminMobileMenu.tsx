@@ -25,6 +25,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import api from '@/app/lib/api';
+import { clearSsoSession } from '@/app/lib/clearSsoSession';
 import useColorModeStyles from '@/app/utils/useColorModeStyles';
 import logo from '../../public/logo.png';
 
@@ -57,8 +58,8 @@ const AdminMobileMenu = () => {
       okType: 'danger',
       cancelText: t('shell.admin.cancel'),
       onOk: () => {
-        localStorage.clear();
-        router.push('/login');
+        clearSsoSession();
+        window.location.href = process.env.NEXT_PUBLIC_LOGIN_PATH || '/login';
       },
     });
   };

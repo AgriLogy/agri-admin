@@ -20,6 +20,7 @@ import { useTranslations } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
 import { useMemo } from 'react';
 
+import { clearSsoSession } from '@/app/lib/clearSsoSession';
 import useColorModeStyles from '@/app/utils/useColorModeStyles';
 
 const AdminSidebar = () => {
@@ -53,8 +54,8 @@ const AdminSidebar = () => {
       okType: 'danger',
       cancelText: t('shell.admin.cancel'),
       onOk: () => {
-        localStorage.clear();
-        router.push('/login');
+        clearSsoSession();
+        window.location.href = process.env.NEXT_PUBLIC_LOGIN_PATH || '/login';
       },
     });
   };
