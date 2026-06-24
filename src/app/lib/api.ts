@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { clearSsoSession } from './clearSsoSession';
 import { hydrateSsoSession } from './hydrateSsoSession';
 
 export const API_URL =
@@ -40,8 +41,7 @@ api.interceptors.response.use(
       requestUrl.includes('/auth/token');
 
     if (error.response && error.response.status === 401 && !isAuthEndpoint) {
-      localStorage.removeItem('accessToken');
-      localStorage.removeItem('refreshToken');
+      clearSsoSession();
       // Login route differs per app (web: /login, admin: /admin/login).
       // NEXT_PUBLIC_LOGIN_PATH overrides; default keeps the farmer app's path.
       window.location.href = process.env.NEXT_PUBLIC_LOGIN_PATH || '/login';

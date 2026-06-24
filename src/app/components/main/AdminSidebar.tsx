@@ -20,6 +20,7 @@ import { useTranslations } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
 import { useMemo } from 'react';
 
+import { logoutEverywhere } from '@/app/lib/logoutEverywhere';
 import useColorModeStyles from '@/app/utils/useColorModeStyles';
 
 const AdminSidebar = () => {
@@ -53,8 +54,9 @@ const AdminSidebar = () => {
       okType: 'danger',
       cancelText: t('shell.admin.cancel'),
       onOk: () => {
-        localStorage.clear();
-        router.push('/login');
+        // Revoke the session everywhere (best-effort), clear local state, then
+        // full-navigate to the identity gateway login (NEXT_PUBLIC_LOGIN_PATH).
+        logoutEverywhere();
       },
     });
   };
