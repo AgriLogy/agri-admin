@@ -407,6 +407,21 @@
         "nonNegative": "Non négatif."
       }
     },
+    "sensorChart": {
+      "zoneLabel": "Zone :",
+      "sensorLabel": "Capteur :",
+      "rangeLabel": "Période :",
+      "pickSensor": "Sélectionner un capteur",
+      "noSensors": "Aucun capteur",
+      "range": {
+        "d1": "24 h",
+        "d7": "7 jours",
+        "d30": "30 jours",
+        "d90": "90 jours"
+      },
+      "noData": "Aucune mesure pour cette sélection.",
+      "loadError": "Impossible de charger les mesures."
+    },
     "stationData": {
       "noZones": "Aucune zone configurée",
       "zoneLabel": "Zone :",
