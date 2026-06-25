@@ -29,6 +29,9 @@ jobs:
       - name: Check formatting
         run: npm run format:check
 
+      - name: Test
+        run: npm run test:ci
+
       # Build first so Next generates next-env.d.ts (image module types) before tsc.
       - name: Build
         run: npm run build
