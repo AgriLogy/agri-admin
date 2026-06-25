@@ -9,6 +9,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:ci": "jest --ci",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
