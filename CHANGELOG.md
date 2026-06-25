@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/AgriLogy/agri-admin/compare/v1.14.1...v1.15.0) (2026-06-25)
+
+
+### Features
+
+* **admin:** inline soil/station sensor charts in user-detail tabs ([#38](https://github.com/AgriLogy/agri-admin/issues/38)) ([419a7da](https://github.com/AgriLogy/agri-admin/commit/419a7dab2c05ae70119e2f868b9fec0011b0aab5))
+
 ## [1.14.1](https://github.com/AgriLogy/agri-admin/compare/v1.14.0...v1.14.1) (2026-06-25)
 
 # [1.14.0](https://github.com/AgriLogy/agri-admin/compare/v1.13.0...v1.14.0) (2026-06-24)
