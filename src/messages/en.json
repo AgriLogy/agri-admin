@@ -296,6 +296,26 @@
         "zone": "Zone",
         "status": "Status",
         "actions": "Actions"
+      },
+      "sensors": {
+        "manage": "Sensors",
+        "title": "Sensors on {serial}",
+        "tag": "Tag (channel)",
+        "tagPlaceholder": "e.g. ta, ha, ms",
+        "sensorKey": "Sensor type",
+        "sensorKeyPlaceholder": "Select a sensor type",
+        "zone": "Zone",
+        "zoneHint": "Leave empty to inherit the device's zone",
+        "inheritZone": "Device's zone",
+        "add": "Add sensor",
+        "addHeading": "Add a sensor",
+        "editHeading": "Edit sensor",
+        "added": "Sensor added",
+        "updated": "Sensor updated",
+        "deleted": "Sensor removed",
+        "loadError": "Failed to load sensors",
+        "saveError": "Failed to save the sensor",
+        "confirmDelete": "Remove this sensor?"
       }
     },
     "dashboard": {

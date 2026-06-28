@@ -23,6 +23,7 @@ import {
   type DeviceType,
 } from '@/app/lib/adminDeviceApi';
 import { adminZoneApi, type AdminZone } from '@/app/lib/adminZoneApi';
+import DeviceSensorsDrawer from '@/app/components/admin/DeviceSensorsDrawer';
 
 const DEVICE_TYPES: DeviceType[] = ['dragon', 'lora', 'bivocom'];
 
@@ -45,6 +46,7 @@ const DevicesMain: React.FC = () => {
   const [editing, setEditing] = useState<AdminDevice | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [zones, setZones] = useState<AdminZone[]>([]);
+  const [sensorsDevice, setSensorsDevice] = useState<AdminDevice | null>(null);
 
   const refresh = () => {
     setLoading(true);
@@ -157,6 +159,9 @@ const DevicesMain: React.FC = () => {
       key: 'actions',
       render: (_: unknown, row: AdminDevice) => (
         <Space>
+          <Button size="small" onClick={() => setSensorsDevice(row)}>
+            {t('admin.devices.sensors.manage')}
+          </Button>
           <Button size="small" onClick={() => openEdit(row)}>
             {t('admin.devices.edit')}
           </Button>
@@ -264,6 +269,12 @@ const DevicesMain: React.FC = () => {
           </Form.Item>
         </Form>
       </Drawer>
+
+      <DeviceSensorsDrawer
+        device={sensorsDevice}
+        open={sensorsDevice !== null}
+        onClose={() => setSensorsDevice(null)}
+      />
     </div>
   );
 };
