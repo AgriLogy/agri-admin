@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/AgriLogy/agri-admin/compare/v1.15.0...v1.16.0) (2026-06-28)
+
+
+### Features
+
+* **devices:** manage a router's sensors from the back-office ([#39](https://github.com/AgriLogy/agri-admin/issues/39)) ([#40](https://github.com/AgriLogy/agri-admin/issues/40)) ([7a45aae](https://github.com/AgriLogy/agri-admin/commit/7a45aaea96e9950684a0ace2cbd4c4e7d3caeea4))
+
 # [1.15.0](https://github.com/AgriLogy/agri-admin/compare/v1.14.1...v1.15.0) (2026-06-25)
 
 
