@@ -296,6 +296,26 @@
         "zone": "Zone",
         "status": "Statut",
         "actions": "Actions"
+      },
+      "sensors": {
+        "manage": "Capteurs",
+        "title": "Capteurs de {serial}",
+        "tag": "Tag (voie)",
+        "tagPlaceholder": "ex. ta, ha, ms",
+        "sensorKey": "Type de capteur",
+        "sensorKeyPlaceholder": "Sélectionner un type de capteur",
+        "zone": "Zone",
+        "zoneHint": "Laisser vide pour hériter de la zone de l'appareil",
+        "inheritZone": "Zone de l'appareil",
+        "add": "Ajouter le capteur",
+        "addHeading": "Ajouter un capteur",
+        "editHeading": "Modifier le capteur",
+        "added": "Capteur ajouté",
+        "updated": "Capteur mis à jour",
+        "deleted": "Capteur supprimé",
+        "loadError": "Échec du chargement des capteurs",
+        "saveError": "Échec de l'enregistrement du capteur",
+        "confirmDelete": "Retirer ce capteur ?"
       }
     },
     "dashboard": {

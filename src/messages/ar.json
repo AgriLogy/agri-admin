@@ -296,6 +296,26 @@
         "zone": "المنطقة",
         "status": "الحالة",
         "actions": "إجراءات"
+      },
+      "sensors": {
+        "manage": "المستشعرات",
+        "title": "مستشعرات {serial}",
+        "tag": "الوسم (القناة)",
+        "tagPlaceholder": "مثال: ta، ha، ms",
+        "sensorKey": "نوع المستشعر",
+        "sensorKeyPlaceholder": "اختر نوع المستشعر",
+        "zone": "المنطقة",
+        "zoneHint": "اتركه فارغًا لوراثة منطقة الجهاز",
+        "inheritZone": "منطقة الجهاز",
+        "add": "إضافة مستشعر",
+        "addHeading": "إضافة مستشعر",
+        "editHeading": "تعديل المستشعر",
+        "added": "تمت إضافة المستشعر",
+        "updated": "تم تحديث المستشعر",
+        "deleted": "تمت إزالة المستشعر",
+        "loadError": "فشل تحميل المستشعرات",
+        "saveError": "فشل حفظ المستشعر",
+        "confirmDelete": "إزالة هذا المستشعر؟"
       }
     },
     "dashboard": {

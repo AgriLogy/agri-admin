@@ -25,6 +25,32 @@ export type AdminDeviceWritePayload = {
   is_active?: boolean;
 };
 
+/** One sensor carried by a device: maps a wire tag → sensor_key + optional zone. */
+export type DeviceSensor = {
+  id: number;
+  device: number;
+  tag_name: string;
+  sensor_key: string;
+  zone: number | null;
+  is_active: boolean;
+  created_at: string | null;
+};
+
+export type DeviceSensorWritePayload = {
+  tag_name?: string;
+  sensor_key?: string;
+  zone_id?: number | null;
+  is_active?: boolean;
+};
+
+/** Entry from the sensor-key catalog (GET /sensors), for the sensor_key picker. */
+export type SensorKeyCatalogEntry = {
+  key: string;
+  unit: string;
+  label: string;
+  type: string | null;
+};
+
 export const adminDeviceApi = {
   list: (username?: string) =>
     api
@@ -41,4 +67,40 @@ export const adminDeviceApi = {
 
   remove: (id: number) =>
     api.delete<void>(`/devices/${id}`).then((r) => r.data),
+
+  // --- Sensor attachments (/devices/{id}/sensors) ---------------------------
+  sensors: {
+    list: (deviceId: number) =>
+      api
+        .get<DeviceSensor[]>(`/devices/${deviceId}/sensors`)
+        .then((r) => r.data),
+
+    create: (deviceId: number, payload: DeviceSensorWritePayload) =>
+      api
+        .post<DeviceSensor>(`/devices/${deviceId}/sensors`, payload)
+        .then((r) => r.data),
+
+    update: (
+      deviceId: number,
+      sensorId: number,
+      payload: DeviceSensorWritePayload
+    ) =>
+      api
+        .patch<DeviceSensor>(
+          `/devices/${deviceId}/sensors/${sensorId}`,
+          payload
+        )
+        .then((r) => r.data),
+
+    remove: (deviceId: number, sensorId: number) =>
+      api
+        .delete<void>(`/devices/${deviceId}/sensors/${sensorId}`)
+        .then((r) => r.data),
+  },
+
+  /** Sensor-key catalog for the picker. */
+  sensorKeyCatalog: () =>
+    api
+      .get<{ keys: SensorKeyCatalogEntry[] }>('/sensors')
+      .then((r) => r.data.keys),
 };
