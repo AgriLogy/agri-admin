@@ -520,7 +520,8 @@
       "tabActivity": "Activity",
       "tabSessions": "Sessions",
       "paymentLabel": "Payment: {status}",
-      "joinedLastLogin": "Joined on {joined} · Last login {lastLogin}"
+      "joinedLastLogin": "Joined on {joined} · Last login {lastLogin}",
+      "tabBackfill": "Backfill"
     },
     "zonesTab": {
       "listError": "Zone list unavailable.",
@@ -1173,6 +1174,37 @@
         "jsonError": "Invalid JSON in one of the fields",
         "fkPlaceholder": "Select…"
       }
+    },
+    "backfill": {
+      "title": "Backfill sensor data",
+      "subtitle": "Generate continuation readings from the last real data up to now so this user's graphs render. Carry-forward with light variation; existing points are kept.",
+      "listError": "Could not load zones",
+      "statusError": "Could not load backfill status",
+      "runError": "Backfill failed",
+      "previewMsg": "{rows} readings would be created",
+      "doneMsg": "Backfilled {rows} readings",
+      "confirmTitle": "Run backfill?",
+      "confirmBody": "Generate readings every {interval} min from the last reading up to now. Existing points are preserved.",
+      "confirmOk": "Run",
+      "cancel": "Cancel",
+      "noZones": "This user has no zones",
+      "zoneLabel": "Zone",
+      "intervalLabel": "Interval",
+      "everyMinutes": "Every {m} min",
+      "lastData": "Last data",
+      "never": "Never",
+      "gap": "Gap",
+      "upToDate": "Up to date",
+      "hoursBehind": "{h}h behind",
+      "series": "Series with data",
+      "preview": "Preview",
+      "fillToNow": "Fill to now",
+      "previewTitle": "Preview (nothing written)",
+      "resultTitle": "Backfill complete",
+      "rowsCreated": "Readings created",
+      "seriesCol": "Series",
+      "rowsCol": "Rows",
+      "nothingToDo": "Already up to date — nothing to backfill"
     }
   },
   "alertsPage": {

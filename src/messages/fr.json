@@ -520,7 +520,8 @@
       "tabActivity": "Activité",
       "tabSessions": "Sessions",
       "paymentLabel": "Paiement : {status}",
-      "joinedLastLogin": "Inscrit le {joined} · Dernière connexion {lastLogin}"
+      "joinedLastLogin": "Inscrit le {joined} · Dernière connexion {lastLogin}",
+      "tabBackfill": "Remplissage"
     },
     "zonesTab": {
       "listError": "Liste des zones indisponible.",
@@ -1173,6 +1174,37 @@
         "jsonError": "JSON invalide dans un des champs",
         "fkPlaceholder": "Choisir…"
       }
+    },
+    "backfill": {
+      "title": "Remplir les données capteurs",
+      "subtitle": "Générer des relevés de continuité depuis les dernières vraies données jusqu'à maintenant, pour que les graphiques de cet utilisateur s'affichent. Report de la dernière valeur avec légère variation ; les points existants sont conservés.",
+      "listError": "Impossible de charger les zones",
+      "statusError": "Impossible de charger l'état du remplissage",
+      "runError": "Échec du remplissage",
+      "previewMsg": "{rows} relevés seraient créés",
+      "doneMsg": "{rows} relevés générés",
+      "confirmTitle": "Lancer le remplissage ?",
+      "confirmBody": "Générer des relevés toutes les {interval} min depuis le dernier relevé jusqu’à maintenant. Les points existants sont conservés.",
+      "confirmOk": "Lancer",
+      "cancel": "Annuler",
+      "noZones": "Cet utilisateur n'a aucune zone",
+      "zoneLabel": "Zone",
+      "intervalLabel": "Intervalle",
+      "everyMinutes": "Toutes les {m} min",
+      "lastData": "Dernières données",
+      "never": "Jamais",
+      "gap": "Écart",
+      "upToDate": "À jour",
+      "hoursBehind": "{h} h de retard",
+      "series": "Séries avec données",
+      "preview": "Aperçu",
+      "fillToNow": "Remplir jusqu'à maintenant",
+      "previewTitle": "Aperçu (rien écrit)",
+      "resultTitle": "Remplissage terminé",
+      "rowsCreated": "Relevés créés",
+      "seriesCol": "Série",
+      "rowsCol": "Lignes",
+      "nothingToDo": "Déjà à jour — rien à remplir"
     }
   },
   "alertsPage": {
