@@ -1143,6 +1143,36 @@
           "empty": "No admin actions yet"
         }
       }
+    },
+    "database": {
+      "title": "Database",
+      "subtitle": "Browse and edit any table directly. Changes apply immediately.",
+      "selectTable": "Select a table…",
+      "rows": "rows",
+      "searchPlaceholder": "Search…",
+      "newRow": "New row",
+      "col": {
+        "actions": "Actions"
+      },
+      "confirmDelete": "Delete this row?",
+      "confirmDeleteOk": "Delete",
+      "cancel": "Cancel",
+      "deleted": "Row deleted",
+      "deleteError": "Could not delete the row",
+      "loadTablesError": "Could not load tables",
+      "loadSchemaError": "Could not load the table schema",
+      "loadRowsError": "Could not load rows",
+      "form": {
+        "createTitle": "New {table}",
+        "editTitle": "Edit {table}",
+        "save": "Save",
+        "cancel": "Cancel",
+        "saved": "Saved",
+        "saveError": "Could not save",
+        "required": "Required",
+        "jsonError": "Invalid JSON in one of the fields",
+        "fkPlaceholder": "Select…"
+      }
     }
   },
   "alertsPage": {
@@ -2192,7 +2222,8 @@
       "kc": "Crop calendars",
       "sensorData": "Sensor data",
       "records": "Records",
-      "monitoring": "Monitoring"
+      "monitoring": "Monitoring",
+      "database": "Database"
     },
     "mobileMenu": {
       "home": "Home",

@@ -1143,6 +1143,36 @@
           "empty": "Aucune action admin"
         }
       }
+    },
+    "database": {
+      "title": "Base de données",
+      "subtitle": "Consultez et modifiez n'importe quelle table directement. Les changements s'appliquent immédiatement.",
+      "selectTable": "Choisir une table…",
+      "rows": "lignes",
+      "searchPlaceholder": "Rechercher…",
+      "newRow": "Nouvelle ligne",
+      "col": {
+        "actions": "Actions"
+      },
+      "confirmDelete": "Supprimer cette ligne ?",
+      "confirmDeleteOk": "Supprimer",
+      "cancel": "Annuler",
+      "deleted": "Ligne supprimée",
+      "deleteError": "Impossible de supprimer la ligne",
+      "loadTablesError": "Impossible de charger les tables",
+      "loadSchemaError": "Impossible de charger le schéma de la table",
+      "loadRowsError": "Impossible de charger les lignes",
+      "form": {
+        "createTitle": "Nouveau {table}",
+        "editTitle": "Modifier {table}",
+        "save": "Enregistrer",
+        "cancel": "Annuler",
+        "saved": "Enregistré",
+        "saveError": "Impossible d'enregistrer",
+        "required": "Requis",
+        "jsonError": "JSON invalide dans un des champs",
+        "fkPlaceholder": "Choisir…"
+      }
     }
   },
   "alertsPage": {
@@ -2192,7 +2222,8 @@
       "kc": "Calendriers culturaux",
       "sensorData": "Données capteurs",
       "records": "Données",
-      "monitoring": "Supervision"
+      "monitoring": "Supervision",
+      "database": "Base de données"
     },
     "mobileMenu": {
       "home": "Accueil",

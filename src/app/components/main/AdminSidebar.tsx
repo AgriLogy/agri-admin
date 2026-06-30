@@ -3,6 +3,7 @@
 import {
   AlertOutlined,
   AuditOutlined,
+  ConsoleSqlOutlined,
   CreditCardOutlined,
   DashboardOutlined,
   DatabaseOutlined,
@@ -43,6 +44,7 @@ const AdminSidebar = () => {
     if (pathname.startsWith('/admin/records')) return 'records';
     if (pathname.startsWith('/admin/audit')) return 'audit';
     if (pathname.startsWith('/admin/settings')) return 'settings';
+    if (pathname.startsWith('/admin/database')) return 'database';
     return 'dashboard';
   }, [pathname]);
 
@@ -193,6 +195,15 @@ const AdminSidebar = () => {
               </Tooltip>
             ),
             onClick: () => router.push('/admin/settings'),
+          },
+          {
+            key: 'database',
+            icon: (
+              <Tooltip title={t('shell.admin.database')} placement="right">
+                <ConsoleSqlOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/database'),
           },
         ]}
       />

@@ -1143,6 +1143,36 @@
           "empty": "لا إجراءات للمسؤول"
         }
       }
+    },
+    "database": {
+      "title": "قاعدة البيانات",
+      "subtitle": "تصفّح وعدّل أي جدول مباشرة. تُطبّق التغييرات فوراً.",
+      "selectTable": "اختر جدولاً…",
+      "rows": "صفوف",
+      "searchPlaceholder": "بحث…",
+      "newRow": "صف جديد",
+      "col": {
+        "actions": "إجراءات"
+      },
+      "confirmDelete": "حذف هذا الصف؟",
+      "confirmDeleteOk": "حذف",
+      "cancel": "إلغاء",
+      "deleted": "تم حذف الصف",
+      "deleteError": "تعذّر حذف الصف",
+      "loadTablesError": "تعذّر تحميل الجداول",
+      "loadSchemaError": "تعذّر تحميل مخطط الجدول",
+      "loadRowsError": "تعذّر تحميل الصفوف",
+      "form": {
+        "createTitle": "{table} جديد",
+        "editTitle": "تعديل {table}",
+        "save": "حفظ",
+        "cancel": "إلغاء",
+        "saved": "تم الحفظ",
+        "saveError": "تعذّر الحفظ",
+        "required": "مطلوب",
+        "jsonError": "JSON غير صالح في أحد الحقول",
+        "fkPlaceholder": "اختر…"
+      }
     }
   },
   "alertsPage": {
@@ -2192,7 +2222,8 @@
       "kc": "تقويمات المحاصيل",
       "sensorData": "بيانات المستشعرات",
       "records": "السجلات",
-      "monitoring": "المراقبة"
+      "monitoring": "المراقبة",
+      "database": "قاعدة البيانات"
     },
     "mobileMenu": {
       "home": "الرئيسية",
