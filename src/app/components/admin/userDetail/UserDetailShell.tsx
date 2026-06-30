@@ -10,6 +10,7 @@ import { PageInfoBar } from '@/app/components/layout/PageInfoBar';
 import { adminUserApi, type AdminUserDetail } from '@/app/lib/adminUserApi';
 import ActivityTab from './ActivityTab';
 import AlertsNotifsTab from './AlertsNotifsTab';
+import BackfillTab from './BackfillTab';
 import GraphsTab from './GraphsTab';
 import ParamsTab from './ParamsTab';
 import ProfileTab from './ProfileTab';
@@ -28,7 +29,8 @@ type TabKey =
   | 'soil-data'
   | 'station-data'
   | 'alerts'
-  | 'activity';
+  | 'activity'
+  | 'backfill';
 
 const KNOWN_TABS: TabKey[] = [
   'profile',
@@ -39,6 +41,7 @@ const KNOWN_TABS: TabKey[] = [
   'station-data',
   'alerts',
   'activity',
+  'backfill',
 ];
 
 export type UserDetailShellProps = {
@@ -149,6 +152,11 @@ export function UserDetailShell({ username }: UserDetailShellProps) {
                 key: 'activity',
                 label: t('admin.userDetail.tabActivity'),
                 children: <ActivityTab username={username} />,
+              },
+              {
+                key: 'backfill',
+                label: t('admin.userDetail.tabBackfill'),
+                children: <BackfillTab username={username} />,
               },
               {
                 key: 'sessions',

@@ -520,7 +520,8 @@
       "tabActivity": "النشاط",
       "tabSessions": "الجلسات",
       "paymentLabel": "الدفع: {status}",
-      "joinedLastLogin": "مسجَّل في {joined} · آخر تسجيل دخول {lastLogin}"
+      "joinedLastLogin": "مسجَّل في {joined} · آخر تسجيل دخول {lastLogin}",
+      "tabBackfill": "تعبئة"
     },
     "zonesTab": {
       "listError": "قائمة المناطق غير متاحة.",
@@ -1173,6 +1174,37 @@
         "jsonError": "JSON غير صالح في أحد الحقول",
         "fkPlaceholder": "اختر…"
       }
+    },
+    "backfill": {
+      "title": "تعبئة بيانات المستشعرات",
+      "subtitle": "توليد قراءات متّصلة من آخر بيانات حقيقية حتى الآن، حتى تظهر رسوم هذا المستخدم. تمديد آخر قيمة مع تغيّر طفيف؛ تُحفظ النقاط الموجودة.",
+      "listError": "تعذّر تحميل المناطق",
+      "statusError": "تعذّر تحميل حالة التعبئة",
+      "runError": "فشلت التعبئة",
+      "previewMsg": "سيتم إنشاء {rows} قراءة",
+      "doneMsg": "تم توليد {rows} قراءة",
+      "confirmTitle": "تشغيل التعبئة؟",
+      "confirmBody": "توليد قراءات كل {interval} دقيقة من آخر قراءة حتى الآن. تُحفظ النقاط الموجودة.",
+      "confirmOk": "تشغيل",
+      "cancel": "إلغاء",
+      "noZones": "لا مناطق لهذا المستخدم",
+      "zoneLabel": "المنطقة",
+      "intervalLabel": "الفاصل",
+      "everyMinutes": "كل {m} دقيقة",
+      "lastData": "آخر بيانات",
+      "never": "أبداً",
+      "gap": "الفجوة",
+      "upToDate": "محدّث",
+      "hoursBehind": "متأخّر {h} ساعة",
+      "series": "سلاسل بها بيانات",
+      "preview": "معاينة",
+      "fillToNow": "التعبئة حتى الآن",
+      "previewTitle": "معاينة (لم يُكتب شيء)",
+      "resultTitle": "اكتملت التعبئة",
+      "rowsCreated": "القراءات المُنشأة",
+      "seriesCol": "السلسلة",
+      "rowsCol": "صفوف",
+      "nothingToDo": "محدّث بالفعل — لا شيء للتعبئة"
     }
   },
   "alertsPage": {

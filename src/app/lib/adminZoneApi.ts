@@ -50,6 +50,33 @@ export type ActiveGraphRecord = Record<string, boolean | number>;
 /** GraphName labels / SensorColor hex values — free-form string maps. */
 export type ConfigRecord = Record<string, string>;
 
+export type BackfillStatus = {
+  zone_id: number;
+  zone_name: string;
+  series_total: number;
+  series_with_data: number;
+  last_data_at: string | null;
+  now: string;
+  gap_hours: number | null;
+};
+
+export type BackfillRunPayload = {
+  start?: string | null;
+  end?: string | null;
+  interval_minutes?: number;
+  dry_run?: boolean;
+};
+
+export type BackfillResult = {
+  dry_run: boolean;
+  zone_id: number;
+  start: string;
+  end: string;
+  interval_minutes: number;
+  rows_created: number;
+  per_series: Record<string, number>;
+};
+
 const unwrap = <T>(data: unknown): T[] => {
   if (Array.isArray(data)) return data as T[];
   if (
@@ -179,6 +206,29 @@ export const adminZoneApi = {
     ): Promise<ConfigRecord> => {
       const res = await api.patch<ConfigRecord>(
         `/users/${encodeURIComponent(username)}/zones/${zoneId}/sensor-colors`,
+        payload
+      );
+      return res.data;
+    },
+  },
+
+  backfill: {
+    status: async (
+      username: string,
+      zoneId: number
+    ): Promise<BackfillStatus> => {
+      const res = await api.get<BackfillStatus>(
+        `/admin/users/${encodeURIComponent(username)}/zones/${zoneId}/backfill-status`
+      );
+      return res.data;
+    },
+    run: async (
+      username: string,
+      zoneId: number,
+      payload: BackfillRunPayload
+    ): Promise<BackfillResult> => {
+      const res = await api.post<BackfillResult>(
+        `/admin/users/${encodeURIComponent(username)}/zones/${zoneId}/backfill`,
         payload
       );
       return res.data;
