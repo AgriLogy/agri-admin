@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/AgriLogy/agri-admin/compare/v1.16.0...v1.17.0) (2026-06-30)
+
+
+### Features
+
+* **admin:** Database section — CRUD any table without code ([#41](https://github.com/AgriLogy/agri-admin/issues/41)) ([#42](https://github.com/AgriLogy/agri-admin/issues/42)) ([51a73ad](https://github.com/AgriLogy/agri-admin/commit/51a73ad666b45acb33eeed8de8c091f133fd6e18))
+
 # [1.16.0](https://github.com/AgriLogy/agri-admin/compare/v1.15.0...v1.16.0) (2026-06-28)
 
 
