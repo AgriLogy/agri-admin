@@ -1,3 +1,10 @@
+## [1.18.1](https://github.com/AgriLogy/agri-admin/compare/v1.18.0...v1.18.1) (2026-07-01)
+
+
+### Bug Fixes
+
+* **admin:** make the Sessions tab reachable (revoke token / ban user) ([#45](https://github.com/AgriLogy/agri-admin/issues/45)) ([#46](https://github.com/AgriLogy/agri-admin/issues/46)) ([8bc0cd5](https://github.com/AgriLogy/agri-admin/commit/8bc0cd54b697ee41c32f9bd410c29a17e5c776fa))
+
 # [1.18.0](https://github.com/AgriLogy/agri-admin/compare/v1.17.0...v1.18.0) (2026-07-01)
 
 
