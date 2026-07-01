@@ -30,7 +30,8 @@ type TabKey =
   | 'station-data'
   | 'alerts'
   | 'activity'
-  | 'backfill';
+  | 'backfill'
+  | 'sessions';
 
 const KNOWN_TABS: TabKey[] = [
   'profile',
@@ -42,6 +43,7 @@ const KNOWN_TABS: TabKey[] = [
   'alerts',
   'activity',
   'backfill',
+  'sessions',
 ];
 
 export type UserDetailShellProps = {
