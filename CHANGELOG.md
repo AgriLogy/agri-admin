@@ -1,3 +1,10 @@
+# [1.18.0](https://github.com/AgriLogy/agri-admin/compare/v1.17.0...v1.18.0) (2026-07-01)
+
+
+### Features
+
+* **admin:** Backfill tab to revive a user's stale graphs ([#43](https://github.com/AgriLogy/agri-admin/issues/43)) ([#44](https://github.com/AgriLogy/agri-admin/issues/44)) ([08bc720](https://github.com/AgriLogy/agri-admin/commit/08bc7209774e7646159621f42a9fded44c9e2dfb))
+
 # [1.17.0](https://github.com/AgriLogy/agri-admin/compare/v1.16.0...v1.17.0) (2026-06-30)
 
 
