@@ -23,6 +23,8 @@ export type AdminDeviceWritePayload = {
   username?: string;
   zone_id?: number | null;
   is_active?: boolean;
+  // PATCH only: also migrate the device's history when this edit moves it.
+  backfill?: boolean;
 };
 
 /** Attribute many devices to one account + zone in a single call. */
