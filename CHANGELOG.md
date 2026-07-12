@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/AgriLogy/agri-admin/compare/v1.20.0...v1.21.0) (2026-07-12)
+
+
+### Features
+
+* **devices:** remove the migrate-past-readings toggle (history follows the device) ([#52](https://github.com/AgriLogy/agri-admin/issues/52)) ([cdbfc33](https://github.com/AgriLogy/agri-admin/commit/cdbfc33d1832fd3d0c03de76c21e481d7049437a)), closes [#51](https://github.com/AgriLogy/agri-admin/issues/51)
+
 # [1.20.0](https://github.com/AgriLogy/agri-admin/compare/v1.19.0...v1.20.0) (2026-07-12)
 
 
