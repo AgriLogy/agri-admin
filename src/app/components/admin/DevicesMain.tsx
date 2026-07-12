@@ -38,7 +38,6 @@ type FormValues = {
   username: string;
   zone_id?: number | null;
   is_active: boolean;
-  backfill?: boolean;
 };
 
 /**
@@ -129,7 +128,6 @@ const DevicesMain: React.FC = () => {
   const [assignUsername, setAssignUsername] = useState<string | undefined>();
   const [assignZones, setAssignZones] = useState<AdminZone[]>([]);
   const [assignZoneId, setAssignZoneId] = useState<number | undefined>();
-  const [assignBackfill, setAssignBackfill] = useState(false);
   const [assignSubmitting, setAssignSubmitting] = useState(false);
 
   const refresh = () => {
@@ -171,7 +169,6 @@ const DevicesMain: React.FC = () => {
       username: d.user ?? '',
       zone_id: d.zone,
       is_active: d.is_active,
-      backfill: false,
     });
     loadZonesFor(d.user ?? undefined);
     setDrawerOpen(true);
@@ -189,10 +186,7 @@ const DevicesMain: React.FC = () => {
     };
     try {
       if (editing) {
-        await adminDeviceApi.update(editing.id, {
-          ...payload,
-          backfill: values.backfill ?? false,
-        });
+        await adminDeviceApi.update(editing.id, payload);
         message.success(t('admin.devices.updated'));
       } else {
         await adminDeviceApi.create(payload);
@@ -223,7 +217,6 @@ const DevicesMain: React.FC = () => {
     setAssignUsername(undefined);
     setAssignZones([]);
     setAssignZoneId(undefined);
-    setAssignBackfill(false);
     setAssignOpen(true);
   };
 
@@ -251,7 +244,6 @@ const DevicesMain: React.FC = () => {
         device_ids: selectedRowKeys.map(Number),
         username: assignUsername,
         zone_id: assignZoneId,
-        backfill: assignBackfill,
       });
       message.success(
         t('admin.devices.assign.success', {
@@ -433,16 +425,6 @@ const DevicesMain: React.FC = () => {
           >
             <Switch />
           </Form.Item>
-          {editing && (
-            <Form.Item
-              name="backfill"
-              label={t('admin.devices.assign.backfill')}
-              valuePropName="checked"
-              extra={t('admin.devices.assign.backfillHint')}
-            >
-              <Switch />
-            </Form.Item>
-          )}
         </Form>
       </Drawer>
 
@@ -485,15 +467,6 @@ const DevicesMain: React.FC = () => {
                 label: `${z.name} (#${z.id})`,
               }))}
             />
-          </div>
-          <Checkbox
-            checked={assignBackfill}
-            onChange={(e) => setAssignBackfill(e.target.checked)}
-          >
-            {t('admin.devices.assign.backfill')}
-          </Checkbox>
-          <div style={{ fontSize: 12, opacity: 0.65 }}>
-            {t('admin.devices.assign.backfillHint')}
           </div>
         </Space>
       </Modal>

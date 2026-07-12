@@ -23,8 +23,6 @@ export type AdminDeviceWritePayload = {
   username?: string;
   zone_id?: number | null;
   is_active?: boolean;
-  // PATCH only: also migrate the device's history when this edit moves it.
-  backfill?: boolean;
 };
 
 /** Attribute many devices to one account + zone in a single call. */
@@ -32,13 +30,11 @@ export type BulkAssignPayload = {
   device_ids: number[];
   username: string;
   zone_id: number;
-  backfill?: boolean;
 };
 
 export type BulkAssignResult = {
   assigned: number[];
   failed: { id: number; reason: string }[];
-  backfill_enqueued: boolean;
 };
 
 /** One sensor carried by a device: maps a wire tag → sensor_key + optional zone. */
