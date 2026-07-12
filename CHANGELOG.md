@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/AgriLogy/agri-admin/compare/v1.19.0...v1.20.0) (2026-07-12)
+
+
+### Features
+
+* **devices:** migrate-past-readings toggle on the Edit drawer ([#50](https://github.com/AgriLogy/agri-admin/issues/50)) ([693e3ef](https://github.com/AgriLogy/agri-admin/commit/693e3ef8a5e582216a6c2323822c3bd656ca87b3)), closes [#49](https://github.com/AgriLogy/agri-admin/issues/49)
+
 # [1.19.0](https://github.com/AgriLogy/agri-admin/compare/v1.18.1...v1.19.0) (2026-07-12)
 
 
