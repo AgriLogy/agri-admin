@@ -7,6 +7,7 @@ import {
   CreditCardOutlined,
   DashboardOutlined,
   DatabaseOutlined,
+  DeploymentUnitOutlined,
   ExperimentOutlined,
   FileSearchOutlined,
   LineChartOutlined,
@@ -35,7 +36,8 @@ const AdminSidebar = () => {
     if (pathname.startsWith('/admin/users')) return 'users';
     if (pathname.startsWith('/admin/technicians')) return 'technicians';
     if (pathname.startsWith('/admin/alerts')) return 'alerts';
-    if (pathname.startsWith('/admin/devices')) return 'fleet';
+    if (pathname.startsWith('/admin/devices/health')) return 'fleet';
+    if (pathname.startsWith('/admin/devices')) return 'devices';
     if (pathname.startsWith('/admin/sensor-data')) return 'sensorData';
     if (pathname.startsWith('/admin/monitoring')) return 'monitoring';
     if (pathname.startsWith('/admin/affirmations')) return 'affirmations';
@@ -123,6 +125,15 @@ const AdminSidebar = () => {
               </Tooltip>
             ),
             onClick: () => router.push('/admin/devices/health'),
+          },
+          {
+            key: 'devices',
+            icon: (
+              <Tooltip title={t('shell.admin.devices')} placement="right">
+                <DeploymentUnitOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/devices'),
           },
           {
             key: 'sensorData',

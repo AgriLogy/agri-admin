@@ -1,16 +1,19 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import {
   App,
   Button,
+  Checkbox,
   Drawer,
   Form,
   Input,
+  Modal,
   Popconfirm,
   Select,
   Space,
+  Spin,
   Switch,
   Table,
   Tag,
@@ -23,6 +26,7 @@ import {
   type DeviceType,
 } from '@/app/lib/adminDeviceApi';
 import { adminZoneApi, type AdminZone } from '@/app/lib/adminZoneApi';
+import { adminUserApi } from '@/app/lib/adminUserApi';
 import DeviceSensorsDrawer from '@/app/components/admin/DeviceSensorsDrawer';
 
 const DEVICE_TYPES: DeviceType[] = ['dragon', 'lora', 'bivocom'];
@@ -36,6 +40,75 @@ type FormValues = {
   is_active: boolean;
 };
 
+/**
+ * Searchable account picker (reused by the register drawer + the bulk-assign
+ * modal). Queries GET /users?search= with a small debounce; keeps the current
+ * value selectable even before it appears in a search result.
+ */
+const AccountSelect: React.FC<{
+  value?: string;
+  onChange?: (value?: string) => void;
+  placeholder?: string;
+}> = ({ value, onChange, placeholder }) => {
+  const [options, setOptions] = useState<{ value: string; label: string }[]>(
+    []
+  );
+  const [loading, setLoading] = useState(false);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const doSearch = (q: string) => {
+    setLoading(true);
+    adminUserApi
+      .list(q || undefined)
+      .then((rows) =>
+        setOptions(
+          rows.map((u) => {
+            const full = `${u.firstname} ${u.lastname}`.trim();
+            return {
+              value: u.username,
+              label: full ? `${u.username} — ${full}` : u.username,
+            };
+          })
+        )
+      )
+      .catch(() => setOptions([]))
+      .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    doSearch('');
+    return () => {
+      if (timer.current) clearTimeout(timer.current);
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const onSearch = (q: string) => {
+    if (timer.current) clearTimeout(timer.current);
+    timer.current = setTimeout(() => doSearch(q), 300);
+  };
+
+  const merged =
+    value && !options.some((o) => o.value === value)
+      ? [{ value, label: value }, ...options]
+      : options;
+
+  return (
+    <Select
+      showSearch
+      allowClear
+      style={{ width: '100%' }}
+      value={value}
+      placeholder={placeholder}
+      filterOption={false}
+      onSearch={onSearch}
+      onChange={onChange}
+      loading={loading}
+      options={merged}
+      notFoundContent={loading ? <Spin size="small" /> : null}
+    />
+  );
+};
+
 const DevicesMain: React.FC = () => {
   const t = useTranslations();
   const { message } = App.useApp();
@@ -47,6 +120,16 @@ const DevicesMain: React.FC = () => {
   const [submitting, setSubmitting] = useState(false);
   const [zones, setZones] = useState<AdminZone[]>([]);
   const [sensorsDevice, setSensorsDevice] = useState<AdminDevice | null>(null);
+
+  // Multi-select bulk attribution.
+  const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
+  const [unassignedOnly, setUnassignedOnly] = useState(false);
+  const [assignOpen, setAssignOpen] = useState(false);
+  const [assignUsername, setAssignUsername] = useState<string | undefined>();
+  const [assignZones, setAssignZones] = useState<AdminZone[]>([]);
+  const [assignZoneId, setAssignZoneId] = useState<number | undefined>();
+  const [assignBackfill, setAssignBackfill] = useState(false);
+  const [assignSubmitting, setAssignSubmitting] = useState(false);
 
   const refresh = () => {
     setLoading(true);
@@ -131,6 +214,58 @@ const DevicesMain: React.FC = () => {
     }
   };
 
+  const openAssign = () => {
+    setAssignUsername(undefined);
+    setAssignZones([]);
+    setAssignZoneId(undefined);
+    setAssignBackfill(false);
+    setAssignOpen(true);
+  };
+
+  const onAssignAccountChange = (username?: string) => {
+    setAssignUsername(username);
+    setAssignZoneId(undefined);
+    if (username) {
+      adminZoneApi
+        .list(username)
+        .then(setAssignZones)
+        .catch(() => setAssignZones([]));
+    } else {
+      setAssignZones([]);
+    }
+  };
+
+  const submitAssign = async () => {
+    if (!assignUsername || assignZoneId == null) {
+      message.warning(t('admin.devices.assign.needAccountZone'));
+      return;
+    }
+    setAssignSubmitting(true);
+    try {
+      const res = await adminDeviceApi.bulkAssign({
+        device_ids: selectedRowKeys.map(Number),
+        username: assignUsername,
+        zone_id: assignZoneId,
+        backfill: assignBackfill,
+      });
+      message.success(
+        t('admin.devices.assign.success', {
+          assigned: res.assigned.length,
+          failed: res.failed.length,
+        })
+      );
+      setAssignOpen(false);
+      setSelectedRowKeys([]);
+      refresh();
+    } catch (err: unknown) {
+      const detail = (err as { response?: { data?: { detail?: string } } })
+        ?.response?.data?.detail;
+      message.error(detail || t('admin.devices.assign.error'));
+    } finally {
+      setAssignSubmitting(false);
+    }
+  };
+
   const columns = [
     {
       title: t('admin.devices.col.type'),
@@ -178,24 +313,41 @@ const DevicesMain: React.FC = () => {
     },
   ];
 
+  const dataSource = unassignedOnly
+    ? devices.filter((d) => d.zone === null)
+    : devices;
+
   return (
     <div style={{ padding: 16 }}>
       <PageInfoBar
         title={t('admin.devices.title')}
         subtitle={t('admin.devices.subtitle')}
       />
-      <Space style={{ marginBottom: 12 }}>
+      <Space style={{ marginBottom: 12 }} wrap>
         <Button type="primary" onClick={openCreate}>
           {t('admin.devices.register')}
         </Button>
+        <Button disabled={selectedRowKeys.length === 0} onClick={openAssign}>
+          {t('admin.devices.assignSelected', { count: selectedRowKeys.length })}
+        </Button>
+        <Checkbox
+          checked={unassignedOnly}
+          onChange={(e) => setUnassignedOnly(e.target.checked)}
+        >
+          {t('admin.devices.unassignedOnly')}
+        </Checkbox>
       </Space>
       <Table
         rowKey="id"
         loading={loading}
-        dataSource={devices}
+        dataSource={dataSource}
         columns={columns}
         pagination={{ pageSize: 20 }}
         scroll={{ x: true }}
+        rowSelection={{
+          selectedRowKeys,
+          onChange: (keys) => setSelectedRowKeys(keys),
+        }}
       />
 
       <Drawer
@@ -220,7 +372,17 @@ const DevicesMain: React.FC = () => {
           </Space>
         }
       >
-        <Form<FormValues> form={form} layout="vertical" onFinish={submit}>
+        <Form<FormValues>
+          form={form}
+          layout="vertical"
+          onFinish={submit}
+          onValuesChange={(changed) => {
+            if ('username' in changed) {
+              form.setFieldValue('zone_id', undefined);
+              loadZonesFor(changed.username);
+            }
+          }}
+        >
           <Form.Item
             name="device_type"
             label={t('admin.devices.col.type')}
@@ -245,9 +407,8 @@ const DevicesMain: React.FC = () => {
             label={t('admin.devices.ownerLabel')}
             rules={[{ required: true }]}
           >
-            <Input
-              onBlur={(e) => loadZonesFor(e.target.value.trim())}
-              placeholder={t('admin.devices.ownerPlaceholder')}
+            <AccountSelect
+              placeholder={t('admin.devices.ownerSearchPlaceholder')}
             />
           </Form.Item>
           <Form.Item name="zone_id" label={t('admin.devices.zoneLabel')}>
@@ -269,6 +430,58 @@ const DevicesMain: React.FC = () => {
           </Form.Item>
         </Form>
       </Drawer>
+
+      <Modal
+        title={t('admin.devices.assign.title', {
+          count: selectedRowKeys.length,
+        })}
+        open={assignOpen}
+        onCancel={() => setAssignOpen(false)}
+        onOk={submitAssign}
+        okText={t('admin.devices.assign.submit')}
+        cancelText={t('admin.devices.cancel')}
+        confirmLoading={assignSubmitting}
+        okButtonProps={{ disabled: !assignUsername || assignZoneId == null }}
+        destroyOnHidden
+      >
+        <Space direction="vertical" style={{ width: '100%' }} size="middle">
+          <div>
+            <div style={{ marginBottom: 4 }}>
+              {t('admin.devices.assign.account')}
+            </div>
+            <AccountSelect
+              value={assignUsername}
+              placeholder={t('admin.devices.ownerSearchPlaceholder')}
+              onChange={onAssignAccountChange}
+            />
+          </div>
+          <div>
+            <div style={{ marginBottom: 4 }}>
+              {t('admin.devices.assign.zone')}
+            </div>
+            <Select
+              style={{ width: '100%' }}
+              value={assignZoneId}
+              disabled={!assignUsername}
+              placeholder={t('admin.devices.assign.zonePlaceholder')}
+              onChange={(v) => setAssignZoneId(v)}
+              options={assignZones.map((z) => ({
+                value: z.id,
+                label: `${z.name} (#${z.id})`,
+              }))}
+            />
+          </div>
+          <Checkbox
+            checked={assignBackfill}
+            onChange={(e) => setAssignBackfill(e.target.checked)}
+          >
+            {t('admin.devices.assign.backfill')}
+          </Checkbox>
+          <div style={{ fontSize: 12, opacity: 0.65 }}>
+            {t('admin.devices.assign.backfillHint')}
+          </div>
+        </Space>
+      </Modal>
 
       <DeviceSensorsDrawer
         device={sensorsDevice}

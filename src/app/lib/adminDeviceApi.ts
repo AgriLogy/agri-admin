@@ -25,6 +25,20 @@ export type AdminDeviceWritePayload = {
   is_active?: boolean;
 };
 
+/** Attribute many devices to one account + zone in a single call. */
+export type BulkAssignPayload = {
+  device_ids: number[];
+  username: string;
+  zone_id: number;
+  backfill?: boolean;
+};
+
+export type BulkAssignResult = {
+  assigned: number[];
+  failed: { id: number; reason: string }[];
+  backfill_enqueued: boolean;
+};
+
 /** One sensor carried by a device: maps a wire tag → sensor_key + optional zone. */
 export type DeviceSensor = {
   id: number;
@@ -67,6 +81,11 @@ export const adminDeviceApi = {
 
   remove: (id: number) =>
     api.delete<void>(`/devices/${id}`).then((r) => r.data),
+
+  bulkAssign: (payload: BulkAssignPayload) =>
+    api
+      .post<BulkAssignResult>('/devices/bulk-assign', payload)
+      .then((r) => r.data),
 
   // --- Sensor attachments (/devices/{id}/sensors) ---------------------------
   sensors: {
