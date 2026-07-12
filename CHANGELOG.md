@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/AgriLogy/agri-admin/compare/v1.18.1...v1.19.0) (2026-07-12)
+
+
+### Features
+
+* **devices:** bulk-assign devices to accounts with multi-select + backfill ([#48](https://github.com/AgriLogy/agri-admin/issues/48)) ([1a570a6](https://github.com/AgriLogy/agri-admin/commit/1a570a615c8a259fa1d4fae221720ef243d7e8eb)), closes [#47](https://github.com/AgriLogy/agri-admin/issues/47)
+
 ## [1.18.1](https://github.com/AgriLogy/agri-admin/compare/v1.18.0...v1.18.1) (2026-07-01)
 
 
