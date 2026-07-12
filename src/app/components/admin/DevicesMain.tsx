@@ -38,6 +38,7 @@ type FormValues = {
   username: string;
   zone_id?: number | null;
   is_active: boolean;
+  backfill?: boolean;
 };
 
 /**
@@ -170,6 +171,7 @@ const DevicesMain: React.FC = () => {
       username: d.user ?? '',
       zone_id: d.zone,
       is_active: d.is_active,
+      backfill: false,
     });
     loadZonesFor(d.user ?? undefined);
     setDrawerOpen(true);
@@ -187,7 +189,10 @@ const DevicesMain: React.FC = () => {
     };
     try {
       if (editing) {
-        await adminDeviceApi.update(editing.id, payload);
+        await adminDeviceApi.update(editing.id, {
+          ...payload,
+          backfill: values.backfill ?? false,
+        });
         message.success(t('admin.devices.updated'));
       } else {
         await adminDeviceApi.create(payload);
@@ -428,6 +433,16 @@ const DevicesMain: React.FC = () => {
           >
             <Switch />
           </Form.Item>
+          {editing && (
+            <Form.Item
+              name="backfill"
+              label={t('admin.devices.assign.backfill')}
+              valuePropName="checked"
+              extra={t('admin.devices.assign.backfillHint')}
+            >
+              <Switch />
+            </Form.Item>
+          )}
         </Form>
       </Drawer>
 
