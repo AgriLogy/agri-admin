@@ -23,6 +23,8 @@ import { adminUserApi, type AdminUserRow } from '@/app/lib/adminUserApi';
 type Overview = {
   users_total: number;
   users_active: number;
+  clients_total: number;
+  clients_active: number;
   staff_total: number;
   zones_total: number;
   alerts_24h: number;
@@ -156,6 +158,26 @@ const AdminDashboardMain = () => {
               <Statistic
                 title={t('admin.dashboard.stat.activeUsers')}
                 value={overview.users_active}
+              />
+            )}
+          </Card>
+        </Col>
+        <Col xs={12} md={8} lg={6}>
+          <Card>
+            {loading || !overview ? (
+              <Skeleton.Input active size="small" block />
+            ) : (
+              <Statistic
+                title={t('admin.dashboard.stat.clients')}
+                value={overview.clients_total}
+                prefix={<TeamOutlined />}
+                suffix={
+                  <span style={{ fontSize: 13, opacity: 0.65 }}>
+                    {t('admin.dashboard.stat.clientsActive', {
+                      count: overview.clients_active,
+                    })}
+                  </span>
+                }
               />
             )}
           </Card>
