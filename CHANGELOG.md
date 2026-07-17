@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/AgriLogy/agri-admin/compare/v1.21.0...v1.22.0) (2026-07-17)
+
+
+### Features
+
+* **dashboard:** show a Clients KPI on the admin overview ([#58](https://github.com/AgriLogy/agri-admin/issues/58)) ([5d62138](https://github.com/AgriLogy/agri-admin/commit/5d6213881f24dfe8682c762befb31ff62ddeeebb)), closes [#56](https://github.com/AgriLogy/agri-admin/issues/56)
+
 # [1.21.0](https://github.com/AgriLogy/agri-admin/compare/v1.20.0...v1.21.0) (2026-07-12)
 
 
