@@ -164,6 +164,8 @@ export const adminUserApi = {
   overview: async (): Promise<{
     users_total: number;
     users_active: number;
+    clients_total: number;
+    clients_active: number;
     staff_total: number;
     zones_total: number;
     alerts_24h: number;

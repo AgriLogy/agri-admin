@@ -349,6 +349,8 @@
       "stat": {
         "users": "المستخدمون",
         "activeUsers": "المستخدمون النشطون",
+        "clients": "العملاء",
+        "clientsActive": "· {count} نشط",
         "admins": "المشرفون",
         "zones": "المناطق",
         "alerts24h": "تنبيهات 24 ساعة"

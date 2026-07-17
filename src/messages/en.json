@@ -349,6 +349,8 @@
       "stat": {
         "users": "Users",
         "activeUsers": "Active users",
+        "clients": "Clients",
+        "clientsActive": "· {count} active",
         "admins": "Administrators",
         "zones": "Zones",
         "alerts24h": "Alerts 24 h"
