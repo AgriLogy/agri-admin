@@ -274,6 +274,9 @@
       "ownerPlaceholder": "nom d'utilisateur",
       "zoneLabel": "Zone",
       "zonePlaceholder": "Sélectionner une zone",
+      "latitudeLabel": "Latitude",
+      "longitudeLabel": "Longitude",
+      "coordsHint": "Position GPS de l'appareil (degrés décimaux WGS-84).",
       "activeLabel": "Actif",
       "active": "Actif",
       "inactive": "Inactif",
@@ -309,6 +312,7 @@
         "name": "Nom",
         "owner": "Propriétaire",
         "zone": "Zone",
+        "location": "Localisation",
         "status": "Statut",
         "actions": "Actions"
       },

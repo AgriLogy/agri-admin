@@ -9,6 +9,7 @@ import {
   Drawer,
   Form,
   Input,
+  InputNumber,
   Modal,
   Popconfirm,
   Select,
@@ -38,6 +39,8 @@ type FormValues = {
   username: string;
   zone_id?: number | null;
   is_active: boolean;
+  latitude?: number | null;
+  longitude?: number | null;
 };
 
 /**
@@ -169,6 +172,8 @@ const DevicesMain: React.FC = () => {
       username: d.user ?? '',
       zone_id: d.zone,
       is_active: d.is_active,
+      latitude: d.latitude,
+      longitude: d.longitude,
     });
     loadZonesFor(d.user ?? undefined);
     setDrawerOpen(true);
@@ -183,6 +188,8 @@ const DevicesMain: React.FC = () => {
       username: values.username.trim(),
       zone_id: values.zone_id ?? null,
       is_active: values.is_active,
+      latitude: values.latitude ?? null,
+      longitude: values.longitude ?? null,
     };
     try {
       if (editing) {
@@ -276,6 +283,14 @@ const DevicesMain: React.FC = () => {
       title: t('admin.devices.col.zone'),
       dataIndex: 'zone',
       render: (z: number | null) => z ?? '—',
+    },
+    {
+      title: t('admin.devices.col.location'),
+      key: 'location',
+      render: (_: unknown, row: AdminDevice) =>
+        row.latitude != null && row.longitude != null
+          ? `${row.latitude.toFixed(4)}, ${row.longitude.toFixed(4)}`
+          : '—',
     },
     {
       title: t('admin.devices.col.status'),
@@ -416,6 +431,32 @@ const DevicesMain: React.FC = () => {
                 value: z.id,
                 label: `${z.name} (#${z.id})`,
               }))}
+            />
+          </Form.Item>
+          <Form.Item
+            name="latitude"
+            label={t('admin.devices.latitudeLabel')}
+            tooltip={t('admin.devices.coordsHint')}
+          >
+            <InputNumber
+              min={-90}
+              max={90}
+              step={0.0001}
+              style={{ width: '100%' }}
+              placeholder="33.5731"
+            />
+          </Form.Item>
+          <Form.Item
+            name="longitude"
+            label={t('admin.devices.longitudeLabel')}
+            tooltip={t('admin.devices.coordsHint')}
+          >
+            <InputNumber
+              min={-180}
+              max={180}
+              step={0.0001}
+              style={{ width: '100%' }}
+              placeholder="-7.5898"
             />
           </Form.Item>
           <Form.Item
