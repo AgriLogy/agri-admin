@@ -274,6 +274,9 @@
       "ownerPlaceholder": "اسم المستخدم",
       "zoneLabel": "المنطقة",
       "zonePlaceholder": "اختر منطقة",
+      "latitudeLabel": "خط العرض",
+      "longitudeLabel": "خط الطول",
+      "coordsHint": "الموقع الجغرافي للجهاز (درجات عشرية WGS-84).",
       "activeLabel": "مُفعّل",
       "active": "مُفعّل",
       "inactive": "غير مُفعّل",
@@ -309,6 +312,7 @@
         "name": "الاسم",
         "owner": "المالك",
         "zone": "المنطقة",
+        "location": "الموقع",
         "status": "الحالة",
         "actions": "إجراءات"
       },

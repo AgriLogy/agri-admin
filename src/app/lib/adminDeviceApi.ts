@@ -14,6 +14,9 @@ export type AdminDevice = {
   zone: number | null;
   is_active: boolean;
   created_at: string | null;
+  /** GPS position (WGS-84 decimal degrees); null until captured. */
+  latitude: number | null;
+  longitude: number | null;
 };
 
 export type AdminDeviceWritePayload = {
@@ -23,6 +26,8 @@ export type AdminDeviceWritePayload = {
   username?: string;
   zone_id?: number | null;
   is_active?: boolean;
+  latitude?: number | null;
+  longitude?: number | null;
 };
 
 /** Attribute many devices to one account + zone in a single call. */
