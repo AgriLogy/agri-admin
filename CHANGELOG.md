@@ -1,3 +1,11 @@
+# [1.23.0](https://github.com/AgriLogy/agri-admin/compare/v1.22.0...v1.23.0) (2026-07-23)
+
+
+### Features
+
+* **devices:** set GPS coordinates from the device list ([#60](https://github.com/AgriLogy/agri-admin/issues/60)) ([13d613d](https://github.com/AgriLogy/agri-admin/commit/13d613dc25fbedd0892846417661c1230e734598)), closes [#59](https://github.com/AgriLogy/agri-admin/issues/59)
+* **users:** assign access-level tiers from the admin console ([#64](https://github.com/AgriLogy/agri-admin/issues/64)) ([d217d06](https://github.com/AgriLogy/agri-admin/commit/d217d068a84bb1b22626b7d7bc61fb73db903b3b))
+
 # [1.22.0](https://github.com/AgriLogy/agri-admin/compare/v1.21.0...v1.22.0) (2026-07-17)
 
 
