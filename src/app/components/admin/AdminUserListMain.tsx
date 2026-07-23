@@ -20,6 +20,7 @@ import { AdminCrudTable } from '@/app/components/admin/_shared/AdminCrudTable';
 import { ExportCsvButton } from '@/app/components/admin/_shared/ExportCsvButton';
 import { adminUserApi, type AdminUserRow } from '@/app/lib/adminUserApi';
 import { openViewAs } from '@/app/lib/adminImpersonationApi';
+import UserAccessLevelSelect from './userDetail/UserAccessLevelSelect';
 import UserCreateDrawer from './UserCreateDrawer';
 
 const localeTag = (locale: string): string =>
@@ -48,6 +49,7 @@ const AdminUserListMain = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [selectedKeys, setSelectedKeys] = useState<Key[]>([]);
   const [bulkBusy, setBulkBusy] = useState(false);
+  const [selfUsername, setSelfUsername] = useState<string | null>(null);
 
   const refresh = useCallback(async () => {
     setLoading(true);
@@ -64,6 +66,17 @@ const AdminUserListMain = () => {
   useEffect(() => {
     void refresh();
   }, [refresh]);
+
+  useEffect(() => {
+    // Identify the signed-in admin so the self-change guard can disable the
+    // access-level control on their own row.
+    adminUserApi
+      .me()
+      .then((identity) => setSelfUsername(identity.username))
+      .catch(() => {
+        /* leave null — the control stays enabled, the server still guards */
+      });
+  }, []);
 
   const handleToggle = useCallback(
     async (row: AdminUserRow) => {
@@ -181,6 +194,25 @@ const AdminUserListMain = () => {
           ),
       },
       {
+        title: t('admin.userList.col.accessLevel'),
+        dataIndex: 'access_level',
+        key: 'access_level',
+        filters: [
+          { text: t('admin.accessLevel.tier.monitor'), value: 'monitor' },
+          { text: t('admin.accessLevel.tier.editor'), value: 'editor' },
+          { text: t('admin.accessLevel.tier.admin'), value: 'admin' },
+        ],
+        onFilter: (val, row) => row.access_level === val,
+        render: (_value, row) => (
+          <UserAccessLevelSelect
+            username={row.username}
+            value={row.access_level}
+            selfUsername={selfUsername}
+            onChanged={() => void refresh()}
+          />
+        ),
+      },
+      {
         title: t('admin.userList.col.status'),
         dataIndex: 'is_active',
         key: 'is_active',
@@ -290,7 +322,16 @@ const AdminUserListMain = () => {
         ),
       },
     ],
-    [handleResetPassword, handleToggle, handleViewAs, router, t, tag]
+    [
+      handleResetPassword,
+      handleToggle,
+      handleViewAs,
+      refresh,
+      router,
+      selfUsername,
+      t,
+      tag,
+    ]
   );
 
   const selectedRows = useMemo(
@@ -334,6 +375,7 @@ const AdminUserListMain = () => {
     { label: t('admin.export.csv.lastname'), key: 'lastname' },
     { label: t('admin.userList.col.email'), key: 'email' },
     { label: t('admin.userList.col.role'), key: 'is_staff' },
+    { label: t('admin.userList.col.accessLevel'), key: 'access_level' },
     { label: t('admin.userList.col.status'), key: 'is_active' },
     { label: t('admin.userList.col.payment'), key: 'payement_status' },
     { label: t('admin.userList.col.zones'), key: 'zones_count' },

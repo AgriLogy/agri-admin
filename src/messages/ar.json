@@ -384,7 +384,8 @@
         "zones": "المناطق",
         "joinedAt": "تاريخ التسجيل",
         "lastLogin": "آخر تسجيل دخول",
-        "actions": "إجراءات"
+        "actions": "إجراءات",
+        "accessLevel": "الوصول"
       },
       "role": {
         "admin": "مشرف",
@@ -1226,6 +1227,22 @@
       "seriesCol": "السلسلة",
       "rowsCol": "صفوف",
       "nothingToDo": "محدّث بالفعل — لا شيء للتعبئة"
+    },
+    "accessLevel": {
+      "tier": {
+        "monitor": "مراقب",
+        "editor": "محرّر",
+        "admin": "مشرف"
+      },
+      "desc": {
+        "monitor": "قراءة فقط",
+        "editor": "إنشاء وتعديل",
+        "admin": "وصول كامل + إدارة المستخدمين"
+      },
+      "changeSuccess": "تم تحديث مستوى الوصول لـ {username}.",
+      "changeError": "تعذّر تغيير مستوى الوصول.",
+      "selfDisabledTooltip": "لا يمكنك تغيير مستوى وصولك الخاص.",
+      "ariaLabel": "مستوى الوصول لـ {username}"
     }
   },
   "alertsPage": {

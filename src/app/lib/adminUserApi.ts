@@ -3,6 +3,7 @@
  * (the per-user reads that live under /api/admin).
  */
 import api from './api';
+import type { AccessLevel } from './accessLevel';
 
 export type AdminUserRow = {
   id: number;
@@ -12,10 +13,16 @@ export type AdminUserRow = {
   lastname: string;
   is_active: boolean;
   is_staff: boolean;
+  access_level: AccessLevel;
   payement_status: string;
   zones_count: number;
   date_joined: string;
   last_login: string | null;
+};
+
+export type CurrentAdminIdentity = {
+  username: string;
+  access_level: AccessLevel;
 };
 
 export type AdminUserDetail = AdminUserRow & {
@@ -59,6 +66,7 @@ export type AdminUserPatchPayload = Partial<
     | 'date_joined'
     | 'last_login'
     | 'last_notified'
+    | 'access_level'
   >
 >;
 
@@ -135,6 +143,28 @@ export const adminUserApi = {
     const res = await api.post<{ username: string; password: string }>(
       `/users/${encodeURIComponent(username)}/password-reset`,
       body
+    );
+    return res.data;
+  },
+
+  /** The caller's own identity + RBAC tier, for self-change guards. */
+  me: async (): Promise<CurrentAdminIdentity> => {
+    const res = await api.get<CurrentAdminIdentity>('/users/me');
+    return res.data;
+  },
+
+  /**
+   * Set a target user's RBAC access-level tier (admin-only). The server rejects
+   * a self-change (400) and unknown values; callers should surface the returned
+   * message rather than crash.
+   */
+  setAccessLevel: async (
+    username: string,
+    accessLevel: AccessLevel
+  ): Promise<CurrentAdminIdentity> => {
+    const res = await api.post<CurrentAdminIdentity>(
+      `/users/${encodeURIComponent(username)}/access-level`,
+      { access_level: accessLevel }
     );
     return res.data;
   },

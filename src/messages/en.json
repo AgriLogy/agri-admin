@@ -384,7 +384,8 @@
         "zones": "Zones",
         "joinedAt": "Joined on",
         "lastLogin": "Last login",
-        "actions": "Actions"
+        "actions": "Actions",
+        "accessLevel": "Access"
       },
       "role": {
         "admin": "Admin",
@@ -1226,6 +1227,22 @@
       "seriesCol": "Series",
       "rowsCol": "Rows",
       "nothingToDo": "Already up to date — nothing to backfill"
+    },
+    "accessLevel": {
+      "tier": {
+        "monitor": "Monitor",
+        "editor": "Editor",
+        "admin": "Admin"
+      },
+      "desc": {
+        "monitor": "Read-only",
+        "editor": "Create & edit",
+        "admin": "Full access + user management"
+      },
+      "changeSuccess": "Access level updated for {username}.",
+      "changeError": "Could not change the access level.",
+      "selfDisabledTooltip": "You can't change your own access level.",
+      "ariaLabel": "Access level for {username}"
     }
   },
   "alertsPage": {
