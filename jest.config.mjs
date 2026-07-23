@@ -10,6 +10,10 @@ export default {
   // Ignore Next build output so a local `.next/standalone/package.json` doesn't
   // trigger a jest-haste-map naming collision.
   modulePathIgnorePatterns: ['<rootDir>/.next/'],
+  // Resolve the `@/*` path alias (baseUrl ./src) for component tests.
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
   transform: {
     '^.+\\.[jt]sx?$': [
       'babel-jest',
