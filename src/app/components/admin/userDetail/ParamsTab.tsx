@@ -25,6 +25,9 @@ type ParamsFormValues = {
   basin_max_depth_m?: number | null;
   basin_area_m2?: number | null;
   sensor_mount_offset_m?: number | null;
+  basin_length_m?: number | null;
+  basin_width_m?: number | null;
+  basin_height_m?: number | null;
 };
 
 const SENSOR_UNIT_FAMILIES: Array<{
@@ -120,6 +123,9 @@ export function ParamsTab({ username }: ParamsTabProps) {
           basin_max_depth_m: data.basin_max_depth_m,
           basin_area_m2: data.basin_area_m2,
           sensor_mount_offset_m: data.sensor_mount_offset_m,
+          basin_length_m: data.basin_length_m,
+          basin_width_m: data.basin_width_m,
+          basin_height_m: data.basin_height_m,
         });
       } catch {
         message.error(t('admin.params.readError'));
@@ -210,6 +216,9 @@ export function ParamsTab({ username }: ParamsTabProps) {
                   basin_max_depth_m: params.basin_max_depth_m,
                   basin_area_m2: params.basin_area_m2,
                   sensor_mount_offset_m: params.sensor_mount_offset_m,
+                  basin_length_m: params.basin_length_m,
+                  basin_width_m: params.basin_width_m,
+                  basin_height_m: params.basin_height_m,
                 }
               : undefined
           }
@@ -299,6 +308,32 @@ export function ParamsTab({ username }: ParamsTabProps) {
           >
             <InputNumber min={0} step={0.1} style={{ width: '100%' }} />
           </Form.Item>
+          <Space.Compact block>
+            <Form.Item
+              name="basin_length_m"
+              label={t('admin.params.field.basinLength')}
+              style={{ flex: 1 }}
+              rules={[{ type: 'number', min: 0 }]}
+            >
+              <InputNumber min={0} step={0.1} style={{ width: '100%' }} />
+            </Form.Item>
+            <Form.Item
+              name="basin_width_m"
+              label={t('admin.params.field.basinWidth')}
+              style={{ flex: 1 }}
+              rules={[{ type: 'number', min: 0 }]}
+            >
+              <InputNumber min={0} step={0.1} style={{ width: '100%' }} />
+            </Form.Item>
+            <Form.Item
+              name="basin_height_m"
+              label={t('admin.params.field.basinHeight')}
+              style={{ flex: 1 }}
+              rules={[{ type: 'number', min: 0 }]}
+            >
+              <InputNumber min={0} step={0.1} style={{ width: '100%' }} />
+            </Form.Item>
+          </Space.Compact>
           <Form.Item>
             <Button type="primary" htmlType="submit" loading={savingParams}>
               {t('admin.params.save')}

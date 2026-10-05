@@ -259,7 +259,10 @@
         "irrigationWaterQuantity": "Quantité d’eau d’irrigation (L)",
         "basinMaxDepth": "Profondeur max du bassin (m)",
         "basinArea": "Surface du bassin (m²)",
-        "sensorMountOffset": "Décalage du capteur (m)"
+        "sensorMountOffset": "Décalage du capteur (m)",
+        "basinLength": "Longueur du bassin (m)",
+        "basinWidth": "Largeur du bassin (m)",
+        "basinHeight": "Hauteur capt→fond (m)"
       }
     },
     "devices": {

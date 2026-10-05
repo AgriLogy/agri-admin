@@ -19,6 +19,10 @@ export type AdminZone = {
   basin_max_depth_m?: number | null;
   basin_area_m2?: number | null;
   sensor_mount_offset_m?: number | null;
+  // Rectangular basin interior dimensions (m).
+  basin_length_m?: number | null;
+  basin_width_m?: number | null;
+  basin_height_m?: number | null;
 };
 
 export type AdminZoneCreatePayload = Omit<AdminZone, 'id'> & {
@@ -44,6 +48,9 @@ export type AdminZoneParams = Pick<
   | 'basin_max_depth_m'
   | 'basin_area_m2'
   | 'sensor_mount_offset_m'
+  | 'basin_length_m'
+  | 'basin_width_m'
+  | 'basin_height_m'
 >;
 
 export type ActiveGraphRecord = Record<string, boolean | number>;

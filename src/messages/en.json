@@ -259,7 +259,10 @@
         "irrigationWaterQuantity": "Irrigation water quantity (L)",
         "basinMaxDepth": "Basin max depth (m)",
         "basinArea": "Basin area (m²)",
-        "sensorMountOffset": "Sensor mount offset (m)"
+        "sensorMountOffset": "Sensor mount offset (m)",
+        "basinLength": "Basin length (m)",
+        "basinWidth": "Basin width (m)",
+        "basinHeight": "Basin height sens→bottom (m)"
       }
     },
     "devices": {

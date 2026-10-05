@@ -259,7 +259,10 @@
         "irrigationWaterQuantity": "كمية مياه الري (L)",
         "basinMaxDepth": "أقصى عمق للحوض (m)",
         "basinArea": "مساحة الحوض (m²)",
-        "sensorMountOffset": "إزاحة تركيب المستشعر (m)"
+        "sensorMountOffset": "إزاحة تركيب المستشعر (m)",
+        "basinLength": "طول الحوض (م)",
+        "basinWidth": "عرض الحوض (م)",
+        "basinHeight": "ارتفاع حساس→القاع (م)"
       }
     },
     "devices": {
