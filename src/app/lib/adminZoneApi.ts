@@ -23,6 +23,11 @@ export type AdminZone = {
   basin_length_m?: number | null;
   basin_width_m?: number | null;
   basin_height_m?: number | null;
+  // Borehole (forage) cylinder geometry + thresholds (m, nullable).
+  forage_diameter_m?: number | null;
+  forage_total_depth_m?: number | null;
+  forage_high_m?: number | null;
+  forage_low_m?: number | null;
 };
 
 export type AdminZoneCreatePayload = Omit<AdminZone, 'id'> & {
@@ -51,6 +56,10 @@ export type AdminZoneParams = Pick<
   | 'basin_length_m'
   | 'basin_width_m'
   | 'basin_height_m'
+  | 'forage_diameter_m'
+  | 'forage_total_depth_m'
+  | 'forage_high_m'
+  | 'forage_low_m'
 >;
 
 export type ActiveGraphRecord = Record<string, boolean | number>;

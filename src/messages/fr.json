@@ -247,6 +247,7 @@
       "zoneLabel": "Zone :",
       "soilIrrigationTitle": "Paramètres du sol & irrigation",
       "basinTitle": "Bassin / réservoir (capteur de niveau)",
+      "forageTitle": "Forage (capteur de profondeur)",
       "preferredUnitsTitle": "Unités préférées par capteur",
       "save": "Enregistrer",
       "field": {
@@ -262,7 +263,11 @@
         "sensorMountOffset": "Décalage du capteur (m)",
         "basinLength": "Longueur du bassin (m)",
         "basinWidth": "Largeur du bassin (m)",
-        "basinHeight": "Hauteur capt→fond (m)"
+        "basinHeight": "Hauteur capt→fond (m)",
+        "forageDiameter": "Diamètre du forage (m)",
+        "forageTotalDepth": "Profondeur totale (m)",
+        "forageHigh": "Seuil haut (m)",
+        "forageLow": "Seuil bas (m)"
       }
     },
     "devices": {
@@ -385,7 +390,8 @@
         "zones": "Zones",
         "joinedAt": "Inscrit le",
         "lastLogin": "Dernière connexion",
-        "actions": "Actions"
+        "actions": "Actions",
+        "accessLevel": "Accès"
       },
       "role": {
         "admin": "Admin",
@@ -1185,6 +1191,28 @@
       "loadTablesError": "Impossible de charger les tables",
       "loadSchemaError": "Impossible de charger le schéma de la table",
       "loadRowsError": "Impossible de charger les lignes",
+      "backup": {
+        "title": "Sauvegarde et restauration",
+        "subtitle": "Téléchargez toute la base de données au format JSON, ou restaurez-la depuis un fichier. Les sauvegardes sont diffusées en flux — rien n'est écrit sur le disque du serveur.",
+        "downloadBtn": "Télécharger la sauvegarde (JSON)",
+        "downloaded": "Sauvegarde téléchargée : {filename}",
+        "downloadError": "Impossible de télécharger la sauvegarde",
+        "chooseFile": "Choisir un fichier de sauvegarde…",
+        "invalidFile": "Fichier de sauvegarde invalide (JSON avec une carte « tables » attendu)",
+        "modeMerge": "Fusionner",
+        "modeReplace": "Remplacer",
+        "restoreBtn": "Restaurer",
+        "restored": "Restauration terminée — {inserted} insérés, {updated} mis à jour, {errors} erreurs",
+        "restoreError": "Échec de la restauration",
+        "confirmTitle": "Restaurer à partir de cette sauvegarde ?",
+        "confirmMerge": "Insère ou met à jour les lignes de {tables} tables par clé primaire. Les lignes existantes sont mises à jour ; les nouvelles sont insérées.",
+        "confirmReplace": "Ceci SUPPRIME toutes les lignes de {tables} tables, puis charge la sauvegarde. Action irréversible.",
+        "confirmOk": "Restaurer",
+        "replaceWarning": "Le mode Remplacer efface chaque table de la sauvegarde avant le chargement. Assurez-vous d'avoir une sauvegarde récente.",
+        "resultTitle": "Restauration ({mode}) terminée",
+        "resultTotals": "{inserted} insérés · {updated} mis à jour · {errors} erreurs",
+        "resultUnknown": "Tables inconnues ignorées : {tables}"
+      },
       "form": {
         "createTitle": "Nouveau {table}",
         "editTitle": "Modifier {table}",
@@ -1227,6 +1255,22 @@
       "seriesCol": "Série",
       "rowsCol": "Lignes",
       "nothingToDo": "Déjà à jour — rien à remplir"
+    },
+    "accessLevel": {
+      "tier": {
+        "monitor": "Observateur",
+        "editor": "Éditeur",
+        "admin": "Admin"
+      },
+      "desc": {
+        "monitor": "Lecture seule",
+        "editor": "Créer et modifier",
+        "admin": "Accès complet + gestion des utilisateurs"
+      },
+      "changeSuccess": "Niveau d’accès mis à jour pour {username}.",
+      "changeError": "Impossible de modifier le niveau d’accès.",
+      "selfDisabledTooltip": "Vous ne pouvez pas modifier votre propre niveau d’accès.",
+      "ariaLabel": "Niveau d’accès de {username}"
     }
   },
   "alertsPage": {

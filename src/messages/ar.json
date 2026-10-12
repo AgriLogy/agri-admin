@@ -247,6 +247,7 @@
       "zoneLabel": "المنطقة:",
       "soilIrrigationTitle": "معاملات التربة والري",
       "basinTitle": "الحوض / الخزّان (مستشعر المنسوب)",
+      "forageTitle": "البئر (حساس العمق)",
       "preferredUnitsTitle": "الوحدات المفضّلة لكل مستشعر",
       "save": "حفظ",
       "field": {
@@ -262,7 +263,11 @@
         "sensorMountOffset": "إزاحة تركيب المستشعر (m)",
         "basinLength": "طول الحوض (م)",
         "basinWidth": "عرض الحوض (م)",
-        "basinHeight": "ارتفاع حساس→القاع (م)"
+        "basinHeight": "ارتفاع حساس→القاع (م)",
+        "forageDiameter": "قطر البئر (م)",
+        "forageTotalDepth": "العمق الكلي (م)",
+        "forageHigh": "العتبة العليا (م)",
+        "forageLow": "العتبة الدنيا (م)"
       }
     },
     "devices": {
@@ -385,7 +390,8 @@
         "zones": "المناطق",
         "joinedAt": "تاريخ التسجيل",
         "lastLogin": "آخر تسجيل دخول",
-        "actions": "إجراءات"
+        "actions": "إجراءات",
+        "accessLevel": "الوصول"
       },
       "role": {
         "admin": "مشرف",
@@ -1185,6 +1191,28 @@
       "loadTablesError": "تعذّر تحميل الجداول",
       "loadSchemaError": "تعذّر تحميل مخطط الجدول",
       "loadRowsError": "تعذّر تحميل الصفوف",
+      "backup": {
+        "title": "النسخ الاحتياطي والاستعادة",
+        "subtitle": "نزّل قاعدة البيانات كاملة كملف JSON، أو استعِدها من ملف. تُبثّ النسخ مباشرةً — لا يُكتب أي شيء على قرص الخادم.",
+        "downloadBtn": "تنزيل النسخة الاحتياطية (JSON)",
+        "downloaded": "تم تنزيل النسخة الاحتياطية: {filename}",
+        "downloadError": "تعذّر تنزيل النسخة الاحتياطية",
+        "chooseFile": "اختر ملف النسخة الاحتياطية…",
+        "invalidFile": "ملف نسخة احتياطية غير صالح (المتوقع JSON يحتوي على خريطة «tables»)",
+        "modeMerge": "دمج",
+        "modeReplace": "استبدال",
+        "restoreBtn": "استعادة",
+        "restored": "اكتملت الاستعادة — {inserted} مُدرَجة، {updated} مُحدَّثة، {errors} أخطاء",
+        "restoreError": "فشلت الاستعادة",
+        "confirmTitle": "الاستعادة من هذه النسخة الاحتياطية؟",
+        "confirmMerge": "إدراج أو تحديث الصفوف عبر {tables} جدولاً حسب المفتاح الأساسي. تُحدَّث الصفوف الموجودة وتُدرَج الجديدة.",
+        "confirmReplace": "سيؤدي هذا إلى حذف جميع الصفوف في {tables} جدولاً ثم تحميل النسخة الاحتياطية. لا يمكن التراجع.",
+        "confirmOk": "استعادة",
+        "replaceWarning": "يمسح وضع الاستبدال كل جدول في النسخة الاحتياطية قبل التحميل. تأكد من وجود نسخة احتياطية حديثة أولاً.",
+        "resultTitle": "انتهت الاستعادة ({mode})",
+        "resultTotals": "{inserted} مُدرَجة · {updated} مُحدَّثة · {errors} أخطاء",
+        "resultUnknown": "جداول غير معروفة تم تجاهلها: {tables}"
+      },
       "form": {
         "createTitle": "{table} جديد",
         "editTitle": "تعديل {table}",
@@ -1227,6 +1255,22 @@
       "seriesCol": "السلسلة",
       "rowsCol": "صفوف",
       "nothingToDo": "محدّث بالفعل — لا شيء للتعبئة"
+    },
+    "accessLevel": {
+      "tier": {
+        "monitor": "مراقب",
+        "editor": "محرّر",
+        "admin": "مشرف"
+      },
+      "desc": {
+        "monitor": "قراءة فقط",
+        "editor": "إنشاء وتعديل",
+        "admin": "وصول كامل + إدارة المستخدمين"
+      },
+      "changeSuccess": "تم تحديث مستوى الوصول لـ {username}.",
+      "changeError": "تعذّر تغيير مستوى الوصول.",
+      "selfDisabledTooltip": "لا يمكنك تغيير مستوى وصولك الخاص.",
+      "ariaLabel": "مستوى الوصول لـ {username}"
     }
   },
   "alertsPage": {

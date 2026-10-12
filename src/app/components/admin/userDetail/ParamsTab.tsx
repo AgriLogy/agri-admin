@@ -28,6 +28,10 @@ type ParamsFormValues = {
   basin_length_m?: number | null;
   basin_width_m?: number | null;
   basin_height_m?: number | null;
+  forage_diameter_m?: number | null;
+  forage_total_depth_m?: number | null;
+  forage_high_m?: number | null;
+  forage_low_m?: number | null;
 };
 
 const SENSOR_UNIT_FAMILIES: Array<{
@@ -126,6 +130,10 @@ export function ParamsTab({ username }: ParamsTabProps) {
           basin_length_m: data.basin_length_m,
           basin_width_m: data.basin_width_m,
           basin_height_m: data.basin_height_m,
+          forage_diameter_m: data.forage_diameter_m,
+          forage_total_depth_m: data.forage_total_depth_m,
+          forage_high_m: data.forage_high_m,
+          forage_low_m: data.forage_low_m,
         });
       } catch {
         message.error(t('admin.params.readError'));
@@ -219,6 +227,10 @@ export function ParamsTab({ username }: ParamsTabProps) {
                   basin_length_m: params.basin_length_m,
                   basin_width_m: params.basin_width_m,
                   basin_height_m: params.basin_height_m,
+                  forage_diameter_m: params.forage_diameter_m,
+                  forage_total_depth_m: params.forage_total_depth_m,
+                  forage_high_m: params.forage_high_m,
+                  forage_low_m: params.forage_low_m,
                 }
               : undefined
           }
@@ -328,6 +340,45 @@ export function ParamsTab({ username }: ParamsTabProps) {
             <Form.Item
               name="basin_height_m"
               label={t('admin.params.field.basinHeight')}
+              style={{ flex: 1 }}
+              rules={[{ type: 'number', min: 0 }]}
+            >
+              <InputNumber min={0} step={0.1} style={{ width: '100%' }} />
+            </Form.Item>
+          </Space.Compact>
+          <h3 style={{ margin: '12px 0 8px' }}>
+            {t('admin.params.forageTitle')}
+          </h3>
+          <Space.Compact block>
+            <Form.Item
+              name="forage_diameter_m"
+              label={t('admin.params.field.forageDiameter')}
+              style={{ flex: 1 }}
+              rules={[{ type: 'number', min: 0 }]}
+            >
+              <InputNumber min={0} step={0.1} style={{ width: '100%' }} />
+            </Form.Item>
+            <Form.Item
+              name="forage_total_depth_m"
+              label={t('admin.params.field.forageTotalDepth')}
+              style={{ flex: 1 }}
+              rules={[{ type: 'number', min: 0 }]}
+            >
+              <InputNumber min={0} step={0.1} style={{ width: '100%' }} />
+            </Form.Item>
+          </Space.Compact>
+          <Space.Compact block>
+            <Form.Item
+              name="forage_high_m"
+              label={t('admin.params.field.forageHigh')}
+              style={{ flex: 1 }}
+              rules={[{ type: 'number', min: 0 }]}
+            >
+              <InputNumber min={0} step={0.1} style={{ width: '100%' }} />
+            </Form.Item>
+            <Form.Item
+              name="forage_low_m"
+              label={t('admin.params.field.forageLow')}
               style={{ flex: 1 }}
               rules={[{ type: 'number', min: 0 }]}
             >

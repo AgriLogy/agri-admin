@@ -247,6 +247,7 @@
       "zoneLabel": "Zone:",
       "soilIrrigationTitle": "Soil & irrigation parameters",
       "basinTitle": "Basin / reservoir (level sensor)",
+      "forageTitle": "Borehole (depth sensor)",
       "preferredUnitsTitle": "Preferred units per sensor",
       "save": "Save",
       "field": {
@@ -262,7 +263,11 @@
         "sensorMountOffset": "Sensor mount offset (m)",
         "basinLength": "Basin length (m)",
         "basinWidth": "Basin width (m)",
-        "basinHeight": "Basin height sens→bottom (m)"
+        "basinHeight": "Basin height sens→bottom (m)",
+        "forageDiameter": "Borehole diameter (m)",
+        "forageTotalDepth": "Total depth (m)",
+        "forageHigh": "High threshold (m)",
+        "forageLow": "Low threshold (m)"
       }
     },
     "devices": {
@@ -385,7 +390,8 @@
         "zones": "Zones",
         "joinedAt": "Joined on",
         "lastLogin": "Last login",
-        "actions": "Actions"
+        "actions": "Actions",
+        "accessLevel": "Access"
       },
       "role": {
         "admin": "Admin",
@@ -1185,6 +1191,28 @@
       "loadTablesError": "Could not load tables",
       "loadSchemaError": "Could not load the table schema",
       "loadRowsError": "Could not load rows",
+      "backup": {
+        "title": "Backup & restore",
+        "subtitle": "Download the whole database as a JSON file, or restore it from one. Backups stream directly — nothing is written to server disk.",
+        "downloadBtn": "Download backup (JSON)",
+        "downloaded": "Backup downloaded: {filename}",
+        "downloadError": "Could not download the backup",
+        "chooseFile": "Choose backup file…",
+        "invalidFile": "Not a valid backup file (expected JSON with a \"tables\" map)",
+        "modeMerge": "Merge",
+        "modeReplace": "Replace",
+        "restoreBtn": "Restore",
+        "restored": "Restore complete — {inserted} inserted, {updated} updated, {errors} errors",
+        "restoreError": "Restore failed",
+        "confirmTitle": "Restore from this backup?",
+        "confirmMerge": "Upsert rows across {tables} tables by primary key. Existing rows are updated; new ones inserted.",
+        "confirmReplace": "This DELETES all rows in {tables} tables, then loads the backup. This cannot be undone.",
+        "confirmOk": "Restore",
+        "replaceWarning": "Replace mode wipes every table in the backup before loading. Make sure you have a current backup first.",
+        "resultTitle": "Restore ({mode}) finished",
+        "resultTotals": "{inserted} inserted · {updated} updated · {errors} errors",
+        "resultUnknown": "Skipped unknown tables: {tables}"
+      },
       "form": {
         "createTitle": "New {table}",
         "editTitle": "Edit {table}",
@@ -1227,6 +1255,22 @@
       "seriesCol": "Series",
       "rowsCol": "Rows",
       "nothingToDo": "Already up to date — nothing to backfill"
+    },
+    "accessLevel": {
+      "tier": {
+        "monitor": "Monitor",
+        "editor": "Editor",
+        "admin": "Admin"
+      },
+      "desc": {
+        "monitor": "Read-only",
+        "editor": "Create & edit",
+        "admin": "Full access + user management"
+      },
+      "changeSuccess": "Access level updated for {username}.",
+      "changeError": "Could not change the access level.",
+      "selfDisabledTooltip": "You can't change your own access level.",
+      "ariaLabel": "Access level for {username}"
     }
   },
   "alertsPage": {
