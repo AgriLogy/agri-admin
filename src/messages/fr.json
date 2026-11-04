@@ -462,6 +462,9 @@
         "d90": "90 jours"
       },
       "noData": "Aucune mesure pour cette sélection.",
+      "lastReadingAt": "Dernière donnée : {date}",
+      "neverReported": "Ce capteur n'a jamais remonté de donnée pour cette zone.",
+      "widenTo": "Afficher {range}",
       "loadError": "Impossible de charger les mesures."
     },
     "stationData": {

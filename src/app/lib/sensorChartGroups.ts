@@ -76,3 +76,23 @@ export function toChartSeries(rows: SensorReading[]): ChartPoint[] {
 export function isoDaysAgo(days: number, now: number = Date.now()): string {
   return new Date(now - days * 24 * 60 * 60 * 1000).toISOString();
 }
+
+/**
+ * Smallest period in `ranges` (days) whose window reaches back to
+ * `lastTimestamp`, or `null` when the reading is older than every period (or
+ * the timestamp is unparseable). Used when the selected period is empty: the
+ * chart offers a one-click widen to the period that contains the last reading,
+ * so a silent sensor reads as "last data on …" instead of a broken query.
+ */
+export function rangeCovering(
+  lastTimestamp: string | null | undefined,
+  ranges: readonly number[],
+  now: number = Date.now()
+): number | null {
+  if (!lastTimestamp) return null;
+  const t = Date.parse(lastTimestamp);
+  if (!Number.isFinite(t)) return null;
+  const ageDays = (now - t) / (24 * 60 * 60 * 1000);
+  const fits = [...ranges].sort((a, b) => a - b).find((d) => d >= ageDays);
+  return fits ?? null;
+}

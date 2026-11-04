@@ -462,6 +462,9 @@
         "d90": "90 days"
       },
       "noData": "No readings for this selection.",
+      "lastReadingAt": "Last reading: {date}",
+      "neverReported": "This sensor has never reported for this zone.",
+      "widenTo": "Show {range}",
       "loadError": "Unable to load readings."
     },
     "stationData": {

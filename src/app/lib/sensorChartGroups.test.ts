@@ -1,6 +1,7 @@
 import {
   filterCatalogByGroup,
   isoDaysAgo,
+  rangeCovering,
   sensorGroupFor,
   toChartSeries,
 } from './sensorChartGroups';
@@ -113,5 +114,31 @@ describe('isoDaysAgo', () => {
   it('subtracts whole days from the given now', () => {
     const now = Date.parse('2026-06-10T00:00:00Z');
     expect(isoDaysAgo(7, now)).toBe('2026-06-03T00:00:00.000Z');
+  });
+});
+
+describe('rangeCovering', () => {
+  const now = Date.parse('2026-06-10T12:00:00Z');
+  const ranges = [1, 7, 30, 90] as const;
+
+  it('picks the smallest period that reaches the last reading', () => {
+    expect(rangeCovering('2026-06-10T00:00:00Z', ranges, now)).toBe(1);
+    expect(rangeCovering('2026-06-05T12:00:00Z', ranges, now)).toBe(7);
+    expect(rangeCovering('2026-05-20T12:00:00Z', ranges, now)).toBe(30);
+    expect(rangeCovering('2026-04-01T12:00:00Z', ranges, now)).toBe(90);
+  });
+
+  it('includes a reading exactly at the edge of a period', () => {
+    expect(rangeCovering('2026-06-03T12:00:00Z', ranges, now)).toBe(7);
+  });
+
+  it('returns null when the reading is older than every period', () => {
+    expect(rangeCovering('2026-01-01T00:00:00Z', ranges, now)).toBeNull();
+  });
+
+  it('returns null for missing or unparseable timestamps', () => {
+    expect(rangeCovering(null, ranges, now)).toBeNull();
+    expect(rangeCovering(undefined, ranges, now)).toBeNull();
+    expect(rangeCovering('not-a-date', ranges, now)).toBeNull();
   });
 });
