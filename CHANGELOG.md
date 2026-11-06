@@ -1,3 +1,10 @@
+# [1.25.0](https://github.com/AgriLogy/agri-admin/compare/v1.24.0...v1.25.0) (2026-11-06)
+
+
+### Features
+
+* **settings:** configure the assistant's AI provider from the back-office ([#69](https://github.com/AgriLogy/agri-admin/issues/69)) ([eea8fa4](https://github.com/AgriLogy/agri-admin/commit/eea8fa4cc16182792be6548f6cdfecff7222ebda)), closes [#68](https://github.com/AgriLogy/agri-admin/issues/68)
+
 # [1.24.0](https://github.com/AgriLogy/agri-admin/compare/v1.23.1...v1.24.0) (2026-11-06)
 
 
