@@ -1,6 +1,6 @@
 'use client';
 
-import { Alert, Card, Empty, Select, Skeleton, Space } from 'antd';
+import { Alert, Button, Card, Empty, Select, Skeleton, Space } from 'antd';
 import { useLocale, useTranslations } from 'next-intl';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
@@ -21,6 +21,7 @@ import { adminZoneApi, type AdminZone } from '@/app/lib/adminZoneApi';
 import {
   filterCatalogByGroup,
   isoDaysAgo,
+  rangeCovering,
   toChartSeries,
   type SensorGroup,
 } from '@/app/lib/sensorChartGroups';
@@ -58,6 +59,12 @@ export function SensorChartPanel({ username, group }: SensorChartPanelProps) {
   >([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  // Timestamp of the most recent reading, fetched only when the selected
+  // period is empty: `null` = the sensor never reported for this zone,
+  // `undefined` = not looked up (period has data, or the lookup failed).
+  const [lastReading, setLastReading] = useState<string | null | undefined>(
+    undefined
+  );
 
   // Zones + the group's sensor catalog, once per user.
   useEffect(() => {
@@ -91,9 +98,27 @@ export function SensorChartPanel({ username, group }: SensorChartPanelProps) {
         limit: 2000,
       });
       setRows(res.rows);
+      let latest: string | null | undefined;
+      if (toChartSeries(res.rows).length === 0) {
+        // Empty period: distinguish a silent sensor from a broken query by
+        // fetching the newest reading regardless of date (rows are newest-first).
+        try {
+          const probe = await adminSensorDataApi.list({
+            sensor,
+            username,
+            zone_id: zoneId,
+            limit: 1,
+          });
+          latest = probe.rows[0]?.timestamp ?? null;
+        } catch {
+          latest = undefined;
+        }
+      }
+      setLastReading(latest);
     } catch {
       setError(true);
       setRows([]);
+      setLastReading(undefined);
     } finally {
       setLoading(false);
     }
@@ -120,6 +145,22 @@ export function SensorChartPanel({ username, group }: SensorChartPanelProps) {
       ? label
       : d.toLocaleString(LOCALE_TAG[locale] ?? 'fr-FR');
   };
+
+  const widenTo = rangeCovering(lastReading, RANGE_DAYS);
+  const emptyDescription = (
+    <Space direction="vertical" size={4}>
+      <span>{t('admin.sensorChart.noData')}</span>
+      {lastReading ? (
+        <span>
+          {t('admin.sensorChart.lastReadingAt', {
+            date: fmtTooltip(lastReading),
+          })}
+        </span>
+      ) : lastReading === null ? (
+        <span>{t('admin.sensorChart.neverReported')}</span>
+      ) : null}
+    </Space>
+  );
 
   if (zones.length === 0) {
     return (
@@ -184,8 +225,16 @@ export function SensorChartPanel({ username, group }: SensorChartPanelProps) {
         ) : series.length === 0 ? (
           <Empty
             image={Empty.PRESENTED_IMAGE_SIMPLE}
-            description={t('admin.sensorChart.noData')}
-          />
+            description={emptyDescription}
+          >
+            {widenTo !== null && widenTo > days ? (
+              <Button size="small" onClick={() => setDays(widenTo)}>
+                {t('admin.sensorChart.widenTo', {
+                  range: t(`admin.sensorChart.range.d${widenTo}`),
+                })}
+              </Button>
+            ) : null}
+          </Empty>
         ) : (
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
