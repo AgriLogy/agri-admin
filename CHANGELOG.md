@@ -1,3 +1,10 @@
+# [1.24.0](https://github.com/AgriLogy/agri-admin/compare/v1.23.1...v1.24.0) (2026-11-06)
+
+
+### Features
+
+* **sensor-chart:** show the last reading when the selected period is empty ([#66](https://github.com/AgriLogy/agri-admin/issues/66)) ([c32d1c3](https://github.com/AgriLogy/agri-admin/commit/c32d1c31d814b355cf177941d05bb8f3f202068b)), closes [AgriLogy/agri-admin#57](https://github.com/AgriLogy/agri-admin/issues/57)
+
 ## [1.23.1](https://github.com/AgriLogy/agri-admin/compare/v1.23.0...v1.23.1) (2026-11-06)
 
 
