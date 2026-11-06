@@ -1,4 +1,4 @@
-import NonAuthNavbar from '@/app/components/NonAuthNavbar ';
+import NonAuthNavbar from '@/app/components/NonAuthNavbar';
 import AdminLoginBox from './AdminLoginBox';
 
 const NAVBAR_HEIGHT_PX = 82;
