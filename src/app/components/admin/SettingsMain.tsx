@@ -17,6 +17,7 @@ import { Box, SimpleGrid } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 
 import { PageInfoBar } from '@/app/components/layout/PageInfoBar';
+import AssistantLlmCard from '@/app/components/admin/AssistantLlmCard';
 import {
   adminSettingsApi,
   type SettingsGrouped,
@@ -156,6 +157,9 @@ const SettingsMain = () => {
           </Space>
         }
       />
+      <Box mb={4}>
+        <AssistantLlmCard />
+      </Box>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
         {Object.entries(grouped).map(([category, rows]) => (
           <Card
