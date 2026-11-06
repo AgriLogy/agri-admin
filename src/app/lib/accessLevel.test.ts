@@ -82,8 +82,8 @@ describe('accessLevelErrorMessage', () => {
   });
 
   it('falls back when the body is an empty object', () => {
-    expect(
-      accessLevelErrorMessage({ response: { data: {} } }, fallback)
-    ).toBe(fallback);
+    expect(accessLevelErrorMessage({ response: { data: {} } }, fallback)).toBe(
+      fallback
+    );
   });
 });

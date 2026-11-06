@@ -93,10 +93,9 @@ describe('UserAccessLevelSelect', () => {
 
     openDropdown();
     fireEvent.click(
-      await screen.findByText(
-        'admin.accessLevel.tier.admin',
-        { selector: '.ant-select-item-option-content' }
-      )
+      await screen.findByText('admin.accessLevel.tier.admin', {
+        selector: '.ant-select-item-option-content',
+      })
     );
 
     await waitFor(() =>
