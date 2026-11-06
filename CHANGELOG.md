@@ -1,3 +1,10 @@
+## [1.23.1](https://github.com/AgriLogy/agri-admin/compare/v1.23.0...v1.23.1) (2026-11-06)
+
+
+### Bug Fixes
+
+* **types:** make typecheck and format:check pass on a clean main ([#67](https://github.com/AgriLogy/agri-admin/issues/67)) ([3087e36](https://github.com/AgriLogy/agri-admin/commit/3087e368af2010a8ffd8895ee3bbbc27fe686ba6)), closes [#64](https://github.com/AgriLogy/agri-admin/issues/64) [#65](https://github.com/AgriLogy/agri-admin/issues/65)
+
 # [1.23.0](https://github.com/AgriLogy/agri-admin/compare/v1.22.0...v1.23.0) (2026-07-23)
 
 
