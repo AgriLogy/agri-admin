@@ -5,7 +5,7 @@
  */
 import api from './api';
 
-export type ProviderId = 'anthropic' | 'openai' | 'ollama';
+export type ProviderId = 'anthropic' | 'openai' | 'groq' | 'ollama';
 
 export type ProviderMeta = {
   label: string;
