@@ -1,3 +1,10 @@
+## [1.25.1](https://github.com/AgriLogy/agri-admin/compare/v1.25.0...v1.25.1) (2026-11-11)
+
+
+### Bug Fixes
+
+* **assistant:** add groq to the ProviderId type ([#71](https://github.com/AgriLogy/agri-admin/issues/71)) ([4c193f4](https://github.com/AgriLogy/agri-admin/commit/4c193f4a473cd71e05889f8998a024eb00a832f3)), closes [#70](https://github.com/AgriLogy/agri-admin/issues/70)
+
 # [1.25.0](https://github.com/AgriLogy/agri-admin/compare/v1.24.0...v1.25.0) (2026-11-06)
 
 
