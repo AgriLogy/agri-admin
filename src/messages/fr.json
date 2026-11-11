@@ -1283,6 +1283,82 @@
       "changeError": "Impossible de modifier le niveau d’accès.",
       "selfDisabledTooltip": "Vous ne pouvez pas modifier votre propre niveau d’accès.",
       "ariaLabel": "Niveau d’accès de {username}"
+    },
+    "knowledge": {
+      "title": "Base de connaissances de l'assistant",
+      "subtitle": "Articles agronomiques cités par l'assistant Agrogo. Seuls les articles approuvés sont utilisés auprès des agriculteurs.",
+      "new": "Nouvel article",
+      "editTitle": "Modifier l'article",
+      "empty": "Aucun article pour le moment",
+      "created": "Article enregistré",
+      "updated": "Article mis à jour",
+      "backToReview": "Article mis à jour et renvoyé en relecture : l'assistant ne l'utilise plus jusqu'à sa nouvelle approbation.",
+      "editApprovedWarning": "Cet article est approuvé. Modifier son texte le renvoie en relecture, et l'assistant cesse de l'utiliser jusqu'à sa nouvelle approbation.",
+      "unavailable": "La base de connaissances n'est pas encore disponible sur ce serveur.",
+      "searchPlaceholder": "Rechercher titre, mots-clés, texte",
+      "overdueHelp": "Date de relecture dépassée : l'assistant l'utilise encore mais signale qu'il peut être obsolète.",
+      "approveNeedsSource": "Ajoutez au moins une source avant d’approuver.",
+      "saveDraft": "Enregistrer le brouillon",
+      "saveAndSubmit": "Enregistrer et envoyer en relecture",
+      "addSource": "Ajouter une source",
+      "col": {
+        "title": "Titre",
+        "language": "Langue",
+        "topic": "Thème",
+        "status": "Statut",
+        "reviewDue": "À relire avant",
+        "sources": "Sources"
+      },
+      "field": {
+        "title": "Titre",
+        "language": "Langue",
+        "topic": "Thème",
+        "reviewDue": "À relire avant",
+        "crops": "Cultures",
+        "cropsHelp": "Appuyez sur Entrée après chaque culture. Laissez vide si l'article vaut pour toutes les cultures.",
+        "keywords": "Mots-clés",
+        "keywordsHelp": "Autres façons de le dire : darija en arabe et en lettres latines (sqi, zitoun), termes techniques français.",
+        "body": "Texte",
+        "bodyHelp": "Conseils pratiques, dans la langue de l'article. Pas de doses ni de volumes qui dépendent des données d'une exploitation.",
+        "sources": "Sources",
+        "sourcesHelp": "Origine du contenu (FAO, INRA, ONCA, guide technique…). Obligatoire pour approuver.",
+        "sourceTitle": "Titre de la source"
+      },
+      "status": {
+        "all": "Tous",
+        "draft": "Brouillon",
+        "review": "En relecture",
+        "approved": "Approuvé",
+        "archived": "Archivé"
+      },
+      "action": {
+        "draft": "Repasser en brouillon",
+        "review": "Envoyer en relecture",
+        "approved": "Approuver",
+        "archived": "Archiver"
+      },
+      "statusChanged": {
+        "draft": "Repassé en brouillon",
+        "review": "Envoyé en relecture",
+        "approved": "Approuvé : l'assistant peut maintenant le citer",
+        "archived": "Archivé"
+      },
+      "language": {
+        "ary": "Darija",
+        "ar": "Arabe (standard)",
+        "fr": "Français",
+        "en": "Anglais"
+      },
+      "topic": {
+        "irrigation": "Irrigation",
+        "crops": "Cultures",
+        "soil": "Sol",
+        "nutrition": "Fertilisation",
+        "weather": "Météo",
+        "crop_problems": "Problèmes des cultures",
+        "equipment": "Équipement",
+        "other": "Autre"
+      }
     }
   },
   "alertsPage": {
@@ -2334,7 +2410,8 @@
       "sensorData": "Données capteurs",
       "records": "Données",
       "monitoring": "Supervision",
-      "database": "Base de données"
+      "database": "Base de données",
+      "knowledge": "Base de connaissances"
     },
     "mobileMenu": {
       "home": "Accueil",

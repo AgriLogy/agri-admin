@@ -1283,6 +1283,82 @@
       "changeError": "Could not change the access level.",
       "selfDisabledTooltip": "You can't change your own access level.",
       "ariaLabel": "Access level for {username}"
+    },
+    "knowledge": {
+      "title": "Assistant knowledge base",
+      "subtitle": "Agronomy articles the Agrogo assistant cites. Only approved articles reach farmers.",
+      "new": "New article",
+      "editTitle": "Edit article",
+      "empty": "No articles yet",
+      "created": "Article saved",
+      "updated": "Article updated",
+      "backToReview": "Article updated and sent back to review: the assistant stops using it until it is approved again.",
+      "editApprovedWarning": "This article is approved. Changing its text sends it back to review, and the assistant stops using it until it is approved again.",
+      "unavailable": "The knowledge base is not available on this server yet.",
+      "searchPlaceholder": "Search title, keywords, text",
+      "overdueHelp": "Review date passed: the assistant still uses it but tells farmers it may be outdated.",
+      "approveNeedsSource": "Add at least one source before approving.",
+      "saveDraft": "Save draft",
+      "saveAndSubmit": "Save and submit for review",
+      "addSource": "Add a source",
+      "col": {
+        "title": "Title",
+        "language": "Language",
+        "topic": "Topic",
+        "status": "Status",
+        "reviewDue": "Review by",
+        "sources": "Sources"
+      },
+      "field": {
+        "title": "Title",
+        "language": "Language",
+        "topic": "Topic",
+        "reviewDue": "Review by",
+        "crops": "Crops",
+        "cropsHelp": "Press Enter after each crop. Leave empty if the article applies to any crop.",
+        "keywords": "Keywords",
+        "keywordsHelp": "Other ways farmers say it: Darija in Arabic script and in Latin letters (sqi, zitoun), French technical words.",
+        "body": "Text",
+        "bodyHelp": "Practical guidance, in the article language. Do not give doses or volumes that depend on a farm's data.",
+        "sources": "Sources",
+        "sourcesHelp": "Where this comes from (FAO, INRA, ONCA, a technical guide…). Required to approve.",
+        "sourceTitle": "Source title"
+      },
+      "status": {
+        "all": "All",
+        "draft": "Draft",
+        "review": "In review",
+        "approved": "Approved",
+        "archived": "Archived"
+      },
+      "action": {
+        "draft": "Back to draft",
+        "review": "Submit for review",
+        "approved": "Approve",
+        "archived": "Archive"
+      },
+      "statusChanged": {
+        "draft": "Moved back to draft",
+        "review": "Submitted for review",
+        "approved": "Approved: the assistant can now cite it",
+        "archived": "Archived"
+      },
+      "language": {
+        "ary": "Darija",
+        "ar": "Arabic (MSA)",
+        "fr": "French",
+        "en": "English"
+      },
+      "topic": {
+        "irrigation": "Irrigation",
+        "crops": "Crops",
+        "soil": "Soil",
+        "nutrition": "Nutrition",
+        "weather": "Weather",
+        "crop_problems": "Crop problems",
+        "equipment": "Equipment",
+        "other": "Other"
+      }
     }
   },
   "alertsPage": {
@@ -2334,7 +2410,8 @@
       "sensorData": "Sensor data",
       "records": "Records",
       "monitoring": "Monitoring",
-      "database": "Database"
+      "database": "Database",
+      "knowledge": "Knowledge base"
     },
     "mobileMenu": {
       "home": "Home",
