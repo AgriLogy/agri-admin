@@ -3,6 +3,7 @@
 import {
   AlertOutlined,
   AuditOutlined,
+  BookOutlined,
   ConsoleSqlOutlined,
   CreditCardOutlined,
   DashboardOutlined,
@@ -42,6 +43,7 @@ const AdminSidebar = () => {
     if (pathname.startsWith('/admin/monitoring')) return 'monitoring';
     if (pathname.startsWith('/admin/affirmations')) return 'affirmations';
     if (pathname.startsWith('/admin/kc')) return 'kc';
+    if (pathname.startsWith('/admin/knowledge')) return 'knowledge';
     if (pathname.startsWith('/admin/billing')) return 'billing';
     if (pathname.startsWith('/admin/records')) return 'records';
     if (pathname.startsWith('/admin/audit')) return 'audit';
@@ -170,6 +172,15 @@ const AdminSidebar = () => {
               </Tooltip>
             ),
             onClick: () => router.push('/admin/kc'),
+          },
+          {
+            key: 'knowledge',
+            icon: (
+              <Tooltip title={t('shell.admin.knowledge')} placement="right">
+                <BookOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/knowledge'),
           },
           {
             key: 'records',
