@@ -1,3 +1,10 @@
+# [1.26.0](https://github.com/AgriLogy/agri-admin/compare/v1.25.1...v1.26.0) (2026-11-11)
+
+
+### Features
+
+* **assistant:** knowledge base page (review, approve, archive) ([#73](https://github.com/AgriLogy/agri-admin/issues/73)) ([e95224a](https://github.com/AgriLogy/agri-admin/commit/e95224a4fa5b538f76d842fdcffd49f344a78b6f)), closes [#72](https://github.com/AgriLogy/agri-admin/issues/72)
+
 ## [1.25.1](https://github.com/AgriLogy/agri-admin/compare/v1.25.0...v1.25.1) (2026-11-11)
 
 
