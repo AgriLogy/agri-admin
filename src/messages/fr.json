@@ -1205,6 +1205,20 @@
           "at": "Quand",
           "empty": "Aucune action admin"
         }
+      },
+      "ingest": {
+        "title": "Flux de données capteurs",
+        "feed": "Flux",
+        "status": "État",
+        "latest": "Dernière donnée",
+        "lastHour": "Dernière heure",
+        "alert": "Alerte",
+        "ok": "Reçoit des données",
+        "stale": "Silencieux depuis {h} h",
+        "no_data": "Aucune donnée",
+        "alertArmed": "E-mail envoyé",
+        "alertArmedHint": "L'équipe a été prévenue ; un rappel suit tant que le flux reste silencieux, puis un e-mail à la reprise.",
+        "footer": "Alerte après {h} h sans donnée · {r} destinataire(s) · rappel toutes les {n} h"
       }
     },
     "database": {
