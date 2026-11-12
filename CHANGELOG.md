@@ -1,3 +1,10 @@
+# [1.27.0](https://github.com/AgriLogy/agri-admin/compare/v1.26.0...v1.27.0) (2026-11-12)
+
+
+### Features
+
+* **monitoring:** sensor-feed freshness card on the monitoring overview ([#75](https://github.com/AgriLogy/agri-admin/issues/75)) ([10ba1c8](https://github.com/AgriLogy/agri-admin/commit/10ba1c87f3cb810265c4e79331c28be85c4c44b8)), closes [#490](https://github.com/AgriLogy/agri-admin/issues/490) [#74](https://github.com/AgriLogy/agri-admin/issues/74)
+
 # [1.26.0](https://github.com/AgriLogy/agri-admin/compare/v1.25.1...v1.26.0) (2026-11-11)
 
 
