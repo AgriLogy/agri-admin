@@ -18,6 +18,7 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import { PageInfoBar } from '@/app/components/layout/PageInfoBar';
 import MonitoringNav from '@/app/components/admin/monitoring/MonitoringNav';
+import IngestFeedsCard from '@/app/components/admin/monitoring/IngestFeedsCard';
 import {
   adminMonitoringApi,
   type MonitoringOverview,
@@ -94,6 +95,7 @@ const MonitoringOverviewMain = () => {
         subtitle={t('admin.monitoring.overview.subtitle')}
       />
       <MonitoringNav />
+      <IngestFeedsCard />
 
       {loading || !data ? (
         <Skeleton active paragraph={{ rows: 6 }} />

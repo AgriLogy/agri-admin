@@ -97,7 +97,33 @@ export type LoginEvent = {
   created_at: string | null;
 };
 
+export type IngestFeedStatus = 'ok' | 'stale' | 'no_data';
+
+/** One sensor feed's freshness (GET /admin/monitoring/ingest, agri-api #490). */
+export type IngestFeed = {
+  key: string;
+  label: string;
+  source: string;
+  status: IngestFeedStatus;
+  latest_at: string | null;
+  hours_silent: number | null;
+  last_hour_count: number;
+  /** A "no data" alert email is armed for this feed; null = unknown. */
+  alert_active: boolean | null;
+};
+
+export type IngestStatus = {
+  checked_at: string;
+  threshold_hours: number;
+  renotify_hours: number;
+  recipients: number;
+  feeds: IngestFeed[];
+};
+
 export const adminMonitoringApi = {
+  ingest: () =>
+    api.get<IngestStatus>('/admin/monitoring/ingest').then((r) => r.data),
+
   overview: () =>
     api
       .get<MonitoringOverview>('/admin/monitoring/overview')
