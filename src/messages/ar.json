@@ -957,7 +957,14 @@
         "statusOff": "متوقف",
         "fromEnv": "تُقرأ الإعدادات حاليًا من متغيرات بيئة الخادم. الحفظ هنا يستبدلها.",
         "keyUnreadable": "لم يعد من الممكن قراءة المفتاح المحفوظ (تغيّر المفتاح السري للخادم). أدخله من جديد.",
-        "updated": "عدّله {who} في {when}"
+        "updated": "عدّله {who} في {when}",
+        "modelHelp": "اكتب اسم النموذج، أو اختر اقتراحًا، أو حمّل قائمة المزوّد.",
+        "modelPlaceholder": "اسم النموذج",
+        "loadModels": "تحميل النماذج",
+        "modelsLoaded": "تم تحميل {count} نموذج",
+        "modelsError": "تعذّر تحميل النماذج: {error}",
+        "keySavedTag": "مفتاح ••••{hint}",
+        "baseUrlRequired": "أدخل عنوان الخادم"
       }
     },
     "kc": {
@@ -1373,6 +1380,10 @@
         "equipment": "المعدات",
         "other": "أخرى"
       }
+    },
+    "assistantPage": {
+      "title": "المساعد الذكي",
+      "subtitle": "اختر محرك الذكاء الاصطناعي (Claude، GPT، Groq…) ومفتاح API الخاص به."
     }
   },
   "alertsPage": {
@@ -2425,7 +2436,8 @@
       "records": "السجلات",
       "monitoring": "المراقبة",
       "database": "قاعدة البيانات",
-      "knowledge": "قاعدة المعارف"
+      "knowledge": "قاعدة المعارف",
+      "assistant": "المساعد الذكي"
     },
     "mobileMenu": {
       "home": "الرئيسية",
