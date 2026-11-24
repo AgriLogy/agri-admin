@@ -1383,7 +1383,29 @@
     },
     "assistantPage": {
       "title": "AI assistant",
-      "subtitle": "Choose the AI engine (Claude, GPT, Groq…) and its API key."
+      "subtitle": "Choose the AI engine (Claude, GPT, Groq…) and its API key.",
+      "voice": {
+        "title": "Voice (spoken questions)",
+        "intro": "The chat's microphone records the question and Whisper (on Groq) transcribes it: much better on Darija than the browser's recognition. Uses the Groq key saved above, whichever provider runs the chat.",
+        "enabled": "Turn on server transcription",
+        "model": "Model",
+        "modelHelp": "whisper-large-v3: most accurate. -turbo: faster, slightly less accurate.",
+        "language": "Language",
+        "languageHelp": "Auto: follows the language chosen in the chat (Darija/Arabic → Arabic script), otherwise Whisper detects it. Useful when farmers mix Darija and French.",
+        "lang": {
+          "auto": "Auto",
+          "ar": "Arabic / Darija",
+          "fr": "French",
+          "en": "English"
+        },
+        "noKey": "No Groq key saved: choose the Groq provider above, paste the key and save.",
+        "active": "Active",
+        "inactive": "Inactive (the chat uses the browser's recognition)",
+        "save": "Save",
+        "saved": "Voice settings saved",
+        "saveError": "Could not save the voice settings",
+        "limit": "Longest recording: {seconds} s. Nothing is kept."
+      }
     }
   },
   "alertsPage": {

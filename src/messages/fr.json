@@ -1383,7 +1383,29 @@
     },
     "assistantPage": {
       "title": "Assistant IA",
-      "subtitle": "Choisissez le moteur IA (Claude, GPT, Groq…) et sa clé API."
+      "subtitle": "Choisissez le moteur IA (Claude, GPT, Groq…) et sa clé API.",
+      "voice": {
+        "title": "Voix (questions dictées)",
+        "intro": "Le micro du chat enregistre la question et Whisper (sur Groq) la transcrit : bien meilleur en darija que la reconnaissance du navigateur. Utilise la clé Groq enregistrée ci-dessus, quel que soit le fournisseur du chat.",
+        "enabled": "Activer la transcription par le serveur",
+        "model": "Modèle",
+        "modelHelp": "whisper-large-v3 : le plus précis. -turbo : plus rapide, un peu moins précis.",
+        "language": "Langue",
+        "languageHelp": "Auto : suit la langue choisie dans le chat (darija/arabe → écriture arabe), sinon Whisper la détecte. Utile quand les agriculteurs mélangent darija et français.",
+        "lang": {
+          "auto": "Auto",
+          "ar": "Arabe / darija",
+          "fr": "Français",
+          "en": "Anglais"
+        },
+        "noKey": "Aucune clé Groq enregistrée : choisissez le fournisseur Groq ci-dessus, collez la clé et enregistrez.",
+        "active": "Actif",
+        "inactive": "Inactif (le chat utilise la reconnaissance du navigateur)",
+        "save": "Enregistrer",
+        "saved": "Réglages de la voix enregistrés",
+        "saveError": "Impossible d'enregistrer les réglages de la voix",
+        "limit": "Durée maximale d'un enregistrement : {seconds} s. Rien n'est conservé."
+      }
     }
   },
   "alertsPage": {

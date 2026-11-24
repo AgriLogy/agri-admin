@@ -10,6 +10,7 @@ import { Box } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 
 import AssistantLlmCard from '@/app/components/admin/AssistantLlmCard';
+import AssistantVoiceCard from '@/app/components/admin/AssistantVoiceCard';
 import { PageInfoBar } from '@/app/components/layout/PageInfoBar';
 
 const AssistantMain = () => {
@@ -20,8 +21,9 @@ const AssistantMain = () => {
         title={t('admin.assistantPage.title')}
         subtitle={t('admin.assistantPage.subtitle')}
       />
-      <Box maxW="760px">
+      <Box maxW="760px" display="grid" gap={4}>
         <AssistantLlmCard />
+        <AssistantVoiceCard />
       </Box>
     </Box>
   );
