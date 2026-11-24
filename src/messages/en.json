@@ -1373,6 +1373,73 @@
         "equipment": "Equipment",
         "other": "Other"
       }
+    },
+    "stations": {
+      "title": "Weather stations: indoors or outdoors?",
+      "subtitle": "Each station is compared daily with the farm’s outdoor weather (Open-Meteo) over the last {hours} h: sun, wind, temperature swing, nights.",
+      "refresh": "Refresh",
+      "empty": "No weather station sent a reading in the last 7 days.",
+      "placementHelp": "Where the station is meant to be. Auto: the detection decides and alerts. Outdoor: a sheltered reading is flagged as a mismatch. Indoor: indoors on purpose (greenhouse, shed, test bench) — checked but never emailed.",
+      "placementBy": "Declared by {user} on {at}",
+      "placementSaved": "Placement saved",
+      "saveError": "Could not save the placement",
+      "checkNow": "Check now",
+      "checked": "Check done: {status}",
+      "checkError": "The check failed",
+      "notCheckedYet": "Not checked yet",
+      "mismatch": "Mismatch",
+      "mismatchHelp": "The detection does not match the declared placement.",
+      "placement": {
+        "auto": "Auto (detection)",
+        "outdoor": "Outdoor",
+        "indoor": "Indoor"
+      },
+      "detected": {
+        "outdoor": "Measures outdoors",
+        "indoor": "Sheltered / indoors",
+        "uncertain": "Uncertain",
+        "unknown": "Unknown"
+      },
+      "status": {
+        "ok": "Measures the field",
+        "suspect": "One sign of shelter",
+        "sheltered": "Sheltered (several signs)",
+        "insufficient_data": "Not enough hours of readings",
+        "no_location": "Farm has no location",
+        "no_reference": "Outdoor weather unavailable",
+        "no_readings": "No readings in the window"
+      },
+      "sensor": {
+        "solar": "Sun",
+        "wind": "Wind",
+        "temperature": "Temperature"
+      },
+      "verdict": {
+        "ok": "Reads like outdoors",
+        "sheltered": "Looks sheltered",
+        "not_checked": "Not checked (no sensor, overcast or calm day)"
+      },
+      "signal": {
+        "no_sun": "Solar sensor ≈ 0 in daylight (max {station_max_wm2} W/m², outside up to {reference_max_wm2} W/m²)",
+        "no_wind": "Wind 0 all day (outside averages {reference_mean_ms} m/s at 10 m)",
+        "damped_temperature": "Swing {station_range_c} °C vs {reference_range_c} °C outside (low {station_min_c} vs {reference_min_c} °C)",
+        "warm_nights": "Nights {mean_bias_c} °C warmer than outside"
+      },
+      "col": {
+        "station": "Station",
+        "lastReading": "Last reading",
+        "placement": "Declared placement",
+        "detected": "Detection",
+        "sensors": "Sensors",
+        "why": "Why",
+        "checkedAt": "Checked at"
+      },
+      "stat": {
+        "total": "Stations",
+        "sheltered": "Detected sheltered",
+        "mismatch": "Mismatches",
+        "declaredIndoor": "Declared indoor"
+      }
     }
   },
   "alertsPage": {
@@ -2425,7 +2492,8 @@
       "records": "Records",
       "monitoring": "Monitoring",
       "database": "Database",
-      "knowledge": "Knowledge base"
+      "knowledge": "Knowledge base",
+      "stations": "Stations: indoor / outdoor"
     },
     "mobileMenu": {
       "home": "Home",

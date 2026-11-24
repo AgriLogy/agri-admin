@@ -1373,6 +1373,73 @@
         "equipment": "Équipement",
         "other": "Autre"
       }
+    },
+    "stations": {
+      "title": "Stations météo : intérieur ou extérieur ?",
+      "subtitle": "Chaque station est comparée chaque jour à la météo extérieure de la ferme (Open-Meteo) sur les dernières {hours} h : soleil, vent, amplitude de température, nuits.",
+      "refresh": "Actualiser",
+      "empty": "Aucune station météo n’a envoyé de mesure ces 7 derniers jours.",
+      "placementHelp": "Où la station doit être. Auto : la détection décide et alerte. Extérieur : une mesure « abritée » est signalée comme incohérente. Intérieur : installée à l’intérieur volontairement (serre, local, banc de test) — vérifiée mais jamais d’e-mail.",
+      "placementBy": "Déclaré par {user} le {at}",
+      "placementSaved": "Emplacement enregistré",
+      "saveError": "Impossible d’enregistrer l’emplacement",
+      "checkNow": "Vérifier maintenant",
+      "checked": "Vérification terminée : {status}",
+      "checkError": "La vérification a échoué",
+      "notCheckedYet": "Pas encore vérifiée",
+      "mismatch": "Incohérent",
+      "mismatchHelp": "La détection ne correspond pas à l’emplacement déclaré.",
+      "placement": {
+        "auto": "Auto (détection)",
+        "outdoor": "Extérieur",
+        "indoor": "Intérieur"
+      },
+      "detected": {
+        "outdoor": "Mesure l’extérieur",
+        "indoor": "Abritée / intérieur",
+        "uncertain": "Douteuse",
+        "unknown": "Inconnu"
+      },
+      "status": {
+        "ok": "Mesure le champ",
+        "suspect": "Un signe d’abri",
+        "sheltered": "Abritée (plusieurs signes)",
+        "insufficient_data": "Pas assez d’heures de mesure",
+        "no_location": "Ferme sans localisation",
+        "no_reference": "Météo extérieure indisponible",
+        "no_readings": "Aucune mesure sur la période"
+      },
+      "sensor": {
+        "solar": "Soleil",
+        "wind": "Vent",
+        "temperature": "Température"
+      },
+      "verdict": {
+        "ok": "Lit comme à l’extérieur",
+        "sheltered": "Semble abrité",
+        "not_checked": "Non vérifié (capteur absent, jour couvert ou calme)"
+      },
+      "signal": {
+        "no_sun": "Capteur solaire ≈ 0 en journée (max {station_max_wm2} W/m², dehors jusqu’à {reference_max_wm2} W/m²)",
+        "no_wind": "Vent à 0 toute la journée (dehors {reference_mean_ms} m/s en moyenne à 10 m)",
+        "damped_temperature": "Amplitude {station_range_c} °C contre {reference_range_c} °C dehors (min {station_min_c} contre {reference_min_c} °C)",
+        "warm_nights": "Nuits {mean_bias_c} °C plus chaudes que dehors"
+      },
+      "col": {
+        "station": "Station",
+        "lastReading": "Dernière mesure",
+        "placement": "Emplacement déclaré",
+        "detected": "Détection",
+        "sensors": "Capteurs",
+        "why": "Pourquoi",
+        "checkedAt": "Vérifiée le"
+      },
+      "stat": {
+        "total": "Stations",
+        "sheltered": "Détectées abritées",
+        "mismatch": "Incohérences",
+        "declaredIndoor": "Déclarées intérieur"
+      }
     }
   },
   "alertsPage": {
@@ -2425,7 +2492,8 @@
       "records": "Données",
       "monitoring": "Supervision",
       "database": "Base de données",
-      "knowledge": "Base de connaissances"
+      "knowledge": "Base de connaissances",
+      "stations": "Stations : intérieur / extérieur"
     },
     "mobileMenu": {
       "home": "Accueil",
