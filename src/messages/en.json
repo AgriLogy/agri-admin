@@ -1822,6 +1822,7 @@
       "title": "Administrator area",
       "subtitle": "Sign in to manage the platform",
       "invalidCredentials": "Incorrect username or password.",
+      "noAccess": "This account has no access to the admin console.",
       "usernameLabel": "Username",
       "usernameRequired": "Please enter your username.",
       "usernamePlaceholder": "Your username",

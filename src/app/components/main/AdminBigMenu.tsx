@@ -6,9 +6,8 @@ import { useColorMode } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 
-import api from '@/app/lib/api';
+import { useCurrentAdmin } from '@/app/components/layout/CurrentAdminProvider';
 import useColorModeStyles from '@/app/utils/useColorModeStyles';
 import logo from '../../public/logo.png';
 
@@ -16,18 +15,8 @@ const AdminBigMenu = () => {
   const t = useTranslations();
   const { colorMode, toggleColorMode } = useColorMode();
   const { bg } = useColorModeStyles();
-  const [username, setUsername] = useState('User');
-
-  useEffect(() => {
-    api
-      .get('/users/me')
-      .then((res) => {
-        if (res.data?.username) setUsername(res.data.username);
-      })
-      .catch(() => {
-        /* keep default */
-      });
-  }, []);
+  // Loaded once by the admin shell (CurrentAdminProvider), which also guards access.
+  const username = useCurrentAdmin()?.username || 'User';
 
   return (
     <Flex

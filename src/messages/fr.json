@@ -1822,6 +1822,7 @@
       "title": "Espace administrateur",
       "subtitle": "Connectez-vous pour gérer la plateforme",
       "invalidCredentials": "Nom d'utilisateur ou mot de passe incorrect.",
+      "noAccess": "Ce compte n'a pas accès à l'administration.",
       "usernameLabel": "Nom d'utilisateur",
       "usernameRequired": "Veuillez saisir votre nom d'utilisateur.",
       "usernamePlaceholder": "Votre nom d'utilisateur",
