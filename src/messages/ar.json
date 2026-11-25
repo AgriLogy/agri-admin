@@ -1384,6 +1384,73 @@
     "assistantPage": {
       "title": "المساعد الذكي",
       "subtitle": "اختر محرك الذكاء الاصطناعي (Claude، GPT، Groq…) ومفتاح API الخاص به."
+    },
+    "stations": {
+      "title": "محطات الطقس: في الداخل أم في الخارج؟",
+      "subtitle": "تُقارن كل محطة يوميًا بطقس الضيعة الخارجي (Open-Meteo) خلال آخر {hours} ساعة: الشمس، الرياح، مدى الحرارة، الليالي.",
+      "refresh": "تحديث",
+      "empty": "لم ترسل أي محطة طقس قياسات خلال الأيام السبعة الأخيرة.",
+      "placementHelp": "المكان المفترض للمحطة. تلقائي: الكشف يقرر وينبه. خارج: القياس «المحمي» يُعلَّم كتعارض. داخل: مثبتة في الداخل عن قصد (بيت بلاستيكي، مخزن، منصة اختبار) — تُفحص دون إرسال بريد.",
+      "placementBy": "صرّح به {user} في {at}",
+      "placementSaved": "تم حفظ المكان",
+      "saveError": "تعذر حفظ المكان",
+      "checkNow": "افحص الآن",
+      "checked": "انتهى الفحص: {status}",
+      "checkError": "فشل الفحص",
+      "notCheckedYet": "لم تُفحص بعد",
+      "mismatch": "تعارض",
+      "mismatchHelp": "نتيجة الكشف لا توافق المكان المصرّح به.",
+      "placement": {
+        "auto": "تلقائي (كشف)",
+        "outdoor": "خارج",
+        "indoor": "داخل"
+      },
+      "detected": {
+        "outdoor": "تقيس الخارج",
+        "indoor": "محمية / في الداخل",
+        "uncertain": "مشكوك فيها",
+        "unknown": "غير معروف"
+      },
+      "status": {
+        "ok": "تقيس الحقل",
+        "suspect": "علامة حماية واحدة",
+        "sheltered": "محمية (عدة علامات)",
+        "insufficient_data": "ساعات قياس غير كافية",
+        "no_location": "الضيعة بلا موقع",
+        "no_reference": "الطقس الخارجي غير متاح",
+        "no_readings": "لا قياسات في الفترة"
+      },
+      "sensor": {
+        "solar": "الشمس",
+        "wind": "الرياح",
+        "temperature": "الحرارة"
+      },
+      "verdict": {
+        "ok": "يقرأ كأنه في الخارج",
+        "sheltered": "يبدو محميًا",
+        "not_checked": "لم يُفحص (لا مستشعر، يوم غائم أو هادئ)"
+      },
+      "signal": {
+        "no_sun": "مستشعر الشمس ≈ 0 نهارًا (أقصى {station_max_wm2} W/m²، في الخارج حتى {reference_max_wm2} W/m²)",
+        "no_wind": "الرياح 0 طوال اليوم (في الخارج {reference_mean_ms} م/ث في المتوسط على 10 م)",
+        "damped_temperature": "مدى {station_range_c} °C مقابل {reference_range_c} °C في الخارج (الأدنى {station_min_c} مقابل {reference_min_c} °C)",
+        "warm_nights": "الليالي أدفأ من الخارج بـ {mean_bias_c} °C"
+      },
+      "col": {
+        "station": "المحطة",
+        "lastReading": "آخر قياس",
+        "placement": "المكان المصرّح به",
+        "detected": "الكشف",
+        "sensors": "المستشعرات",
+        "why": "السبب",
+        "checkedAt": "تاريخ الفحص"
+      },
+      "stat": {
+        "total": "المحطات",
+        "sheltered": "مكتشفة محمية",
+        "mismatch": "تعارضات",
+        "declaredIndoor": "مصرّح بها داخل"
+      }
     }
   },
   "alertsPage": {
@@ -2437,7 +2504,8 @@
       "monitoring": "المراقبة",
       "database": "قاعدة البيانات",
       "knowledge": "قاعدة المعارف",
-      "assistant": "المساعد الذكي"
+      "assistant": "المساعد الذكي",
+      "stations": "المحطات: داخل / خارج"
     },
     "mobileMenu": {
       "home": "الرئيسية",
