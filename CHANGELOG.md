@@ -1,3 +1,10 @@
+## [1.29.1](https://github.com/AgriLogy/agri-admin/compare/v1.29.0...v1.29.1) (2026-11-25)
+
+
+### Bug Fixes
+
+* **admin:** show access refused instead of an empty page on 403 ([#84](https://github.com/AgriLogy/agri-admin/issues/84)) ([6a7c3be](https://github.com/AgriLogy/agri-admin/commit/6a7c3be84af0b53b853340447ffb57d49279de76))
+
 # [1.29.0](https://github.com/AgriLogy/agri-admin/compare/v1.28.0...v1.29.0) (2026-11-25)
 
 
