@@ -1,3 +1,10 @@
+## [1.29.2](https://github.com/AgriLogy/agri-admin/compare/v1.29.1...v1.29.2) (2026-11-25)
+
+
+### Bug Fixes
+
+* **auth:** keep non-staff accounts out of the admin console ([#86](https://github.com/AgriLogy/agri-admin/issues/86)) ([e1eb5fc](https://github.com/AgriLogy/agri-admin/commit/e1eb5fc07b1be36cb388c559df9b22591ad8785e)), closes [#85](https://github.com/AgriLogy/agri-admin/issues/85)
+
 ## [1.29.1](https://github.com/AgriLogy/agri-admin/compare/v1.29.0...v1.29.1) (2026-11-25)
 
 
