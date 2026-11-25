@@ -1,3 +1,10 @@
+# [1.29.0](https://github.com/AgriLogy/agri-admin/compare/v1.28.0...v1.29.0) (2026-11-25)
+
+
+### Features
+
+* **assistant:** voice settings card (Whisper on Groq) ([#81](https://github.com/AgriLogy/agri-admin/issues/81)) ([35b34d0](https://github.com/AgriLogy/agri-admin/commit/35b34d0bb10cd97fe87aae064101b6ef6f9e9f35)), closes [#528](https://github.com/AgriLogy/agri-admin/issues/528) [#76](https://github.com/AgriLogy/agri-admin/issues/76) [#80](https://github.com/AgriLogy/agri-admin/issues/80)
+
 # [1.28.0](https://github.com/AgriLogy/agri-admin/compare/v1.27.0...v1.28.0) (2026-11-25)
 
 
