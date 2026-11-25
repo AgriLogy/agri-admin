@@ -1,3 +1,11 @@
+# [1.28.0](https://github.com/AgriLogy/agri-admin/compare/v1.27.0...v1.28.0) (2026-11-25)
+
+
+### Features
+
+* **assistant:** Assistant IA page, one key per provider, live model list ([#77](https://github.com/AgriLogy/agri-admin/issues/77)) ([7c3bd94](https://github.com/AgriLogy/agri-admin/commit/7c3bd9430a91f699d1242427ca3ffeabf33516c1)), closes [#528](https://github.com/AgriLogy/agri-admin/issues/528) [#76](https://github.com/AgriLogy/agri-admin/issues/76)
+* **stations:** page to declare stations indoor/outdoor and check them ([#79](https://github.com/AgriLogy/agri-admin/issues/79)) ([96cea81](https://github.com/AgriLogy/agri-admin/commit/96cea813ba788113585af1420be6ce9892211d3c)), closes [#78](https://github.com/AgriLogy/agri-admin/issues/78)
+
 # [1.27.0](https://github.com/AgriLogy/agri-admin/compare/v1.26.0...v1.27.0) (2026-11-12)
 
 
