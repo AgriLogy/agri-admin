@@ -48,6 +48,27 @@ export type AssistantConfig = {
   keys?: Partial<Record<ProviderId, ProviderKeyStatus>>;
   providers: Record<ProviderId, ProviderMeta>;
   effort_levels: string[];
+  /** Voice input settings (agri-api #533). Absent on older servers. */
+  voice?: VoiceConfig;
+};
+
+/** Whisper on Groq for the chat's microphone; uses the Groq key above. */
+export type VoiceConfig = {
+  enabled: boolean;
+  provider: 'groq';
+  model: string;
+  language: string;
+  has_groq_key: boolean;
+  active: boolean;
+  models: string[];
+  languages: string[];
+  max_seconds: number;
+};
+
+export type VoiceFormValues = {
+  enabled: boolean;
+  model: string;
+  language: string;
 };
 
 export type AssistantModelsResult =
@@ -150,4 +171,6 @@ export const adminAssistantApi = {
     api
       .post<AssistantModelsResult>('/admin/assistant/models', payload)
       .then((r) => r.data),
+  saveVoice: (payload: VoiceFormValues) =>
+    api.put<VoiceConfig>('/admin/assistant/voice', payload).then((r) => r.data),
 };
