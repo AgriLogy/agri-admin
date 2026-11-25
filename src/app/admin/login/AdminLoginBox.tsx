@@ -1,11 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { Alert, Button, Form, Input, Space } from 'antd';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import axiosInstance from '@/app/lib/api';
+import { ADMIN_NO_ACCESS_REASON, isStaffAccount } from '@/app/lib/adminAccess';
 import { LoginCard } from '@/app/components/auth/LoginCard';
 
 type LoginFormValues = {
@@ -16,6 +17,8 @@ type LoginFormValues = {
 type SignInResponse = {
   access: string;
   refresh: string;
+  is_staff?: boolean;
+  is_technician?: boolean;
 };
 
 export default function AdminLoginBox() {
@@ -23,10 +26,22 @@ export default function AdminLoginBox() {
   const t = useTranslations();
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  // Sent back here by the admin shell because the account is not staff.
+  const sentBackNoAccess =
+    useSearchParams().get('reason') === ADMIN_NO_ACCESS_REASON;
+  const [reasonDismissed, setReasonDismissed] = useState(false);
+  const shownError =
+    errorMessage ||
+    (sentBackNoAccess && !reasonDismissed ? t('misc.adminLogin.noAccess') : '');
+
+  const dismissError = () => {
+    setErrorMessage('');
+    setReasonDismissed(true);
+  };
 
   const onFinish = async (values: LoginFormValues) => {
     setLoading(true);
-    setErrorMessage('');
+    dismissError();
 
     try {
       const { status, data } = await axiosInstance.post<SignInResponse>(
@@ -35,6 +50,12 @@ export default function AdminLoginBox() {
       );
 
       if (status >= 200 && status < 300) {
+        // Only staff may use the console: agri-api refuses every admin
+        // endpoint to other accounts, so keep their tokens out of storage.
+        if (!isStaffAccount(data)) {
+          setErrorMessage(t('misc.adminLogin.noAccess'));
+          return;
+        }
         localStorage.setItem('accessToken', data.access);
         localStorage.setItem('refreshToken', data.refresh);
         router.push('/admin');
@@ -51,12 +72,12 @@ export default function AdminLoginBox() {
       title={t('misc.adminLogin.title')}
       subtitle={t('misc.adminLogin.subtitle')}
     >
-      {errorMessage && (
+      {shownError && (
         <Alert
           type="error"
-          description={errorMessage}
+          description={shownError}
           showIcon
-          closable={{ onClose: () => setErrorMessage('') }}
+          closable={{ onClose: dismissError }}
           style={{ marginBottom: '1rem' }}
         />
       )}

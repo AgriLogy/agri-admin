@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import NonAuthNavbar from '@/app/components/NonAuthNavbar';
 import AdminLoginBox from './AdminLoginBox';
 
@@ -11,7 +12,10 @@ export default function AdminLoginPage() {
         className="flex items-center justify-center px-4 md:px-0 bg-neutral-50 dark:bg-neutral-900"
         style={{ minHeight: `calc(100vh - ${NAVBAR_HEIGHT_PX}px)` }}
       >
-        <AdminLoginBox />
+        {/* useSearchParams in the box needs a boundary for prerendering. */}
+        <Suspense fallback={null}>
+          <AdminLoginBox />
+        </Suspense>
       </main>
     </>
   );

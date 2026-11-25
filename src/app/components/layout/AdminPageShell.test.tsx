@@ -25,6 +25,14 @@ jest.mock('next-intl', () => {
   };
 });
 
+// The staff guard (CurrentAdminProvider) has its own tests; here it only has
+// to let the page through, so this suite stays about the 403 panel.
+jest.mock('@/app/components/layout/CurrentAdminProvider', () => ({
+  CurrentAdminProvider: ({ children }: { children: React.ReactNode }) => (
+    <>{children}</>
+  ),
+}));
+
 jest.mock('@/app/components/main/AdminHeader', () => ({
   __esModule: true,
   default: () => <header />,
