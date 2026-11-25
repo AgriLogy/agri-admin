@@ -1,10 +1,13 @@
 'use client';
 
 /**
- * Back-office settings for the farmer assistant's LLM (AgriLogy/agri-api#472):
- * provider (Claude / OpenAI-compatible / Ollama), model, base URL, effort and
- * API key, plus a "Test" round-trip. The key is write-only: the server only
- * reports whether one is stored and its last 4 characters.
+ * Back-office settings for the farmer assistant's LLM (AgriLogy/agri-api#472,
+ * #528): provider (Claude, OpenAI GPT, Groq, Mistral, Gemini, OpenRouter,
+ * DeepSeek, Ollama or any OpenAI-compatible server), model (typed, suggested,
+ * or loaded live from the provider), base URL, effort and API key, plus a
+ * "Test" round-trip. Each provider keeps its own key, so switching back and
+ * forth needs no re-paste. Keys are write-only: the server only reports
+ * whether each provider has one and its last 4 characters.
  */
 
 import {
@@ -26,8 +29,10 @@ import { useTranslations } from 'next-intl';
 
 import {
   adminAssistantApi,
+  buildModelsPayload,
   buildSavePayload,
   buildTestPayload,
+  keyStatusFor,
   type AssistantConfig,
   type AssistantFormValues,
   type AssistantTestResult,
@@ -47,6 +52,8 @@ const AssistantLlmCard = () => {
   const [keyInput, setKeyInput] = useState('');
   const [removeKey, setRemoveKey] = useState(false);
   const [test, setTest] = useState<AssistantTestResult | null>(null);
+  const [loadingModels, setLoadingModels] = useState(false);
+  const [liveModels, setLiveModels] = useState<string[]>([]);
   const provider = Form.useWatch('provider', form) as ProviderId | undefined;
 
   const apply = useCallback(
@@ -74,13 +81,16 @@ const AssistantLlmCard = () => {
   }, [apply, message, t]);
 
   const meta = provider && config ? config.providers[provider] : undefined;
-  // The stored key belongs to the stored provider only.
-  const keyStoredHere =
-    !!config?.has_api_key && config.provider === provider && !removeKey;
+  // Each provider has its own saved key.
+  const keyHere = keyStatusFor(config, provider);
+  const keyStoredHere = keyHere.has_key && !removeKey;
 
   const onProviderChange = (p: ProviderId) => {
     const m = config?.providers[p];
     setTest(null);
+    setLiveModels([]);
+    setKeyInput('');
+    setRemoveKey(false);
     form.setFieldsValue({
       model: p === config?.provider ? config.model : (m?.default_model ?? ''),
       base_url:
@@ -105,6 +115,33 @@ const AssistantLlmCard = () => {
       setSaving(false);
     }
   };
+
+  const loadModels = async () => {
+    const values = form.getFieldsValue();
+    if (!values.provider) return;
+    setLoadingModels(true);
+    try {
+      const res = await adminAssistantApi.models(
+        buildModelsPayload(values.provider, values.base_url ?? '', keyInput)
+      );
+      if (res.ok) {
+        setLiveModels(res.models);
+        message.success(t(`${tk}.modelsLoaded`, { count: res.models.length }));
+      } else {
+        message.error(t(`${tk}.modelsError`, { error: res.error }));
+      }
+    } catch (err) {
+      const detail = (err as { response?: { data?: { detail?: string } } })
+        ?.response?.data?.detail;
+      message.error(t(`${tk}.modelsError`, { error: detail || '—' }));
+    } finally {
+      setLoadingModels(false);
+    }
+  };
+
+  const modelOptions = Array.from(
+    new Set([...(meta?.suggested_models ?? []), ...liveModels])
+  ).map((m) => ({ value: m }));
 
   const runTest = async () => {
     const values = form.getFieldsValue();
@@ -188,28 +225,65 @@ const AssistantLlmCard = () => {
         <Form.Item name="provider" label={t(`${tk}.provider`)}>
           <Select
             onChange={onProviderChange}
-            options={Object.entries(config?.providers ?? {}).map(([id, p]) => ({
-              value: id,
-              label: p.label,
-            }))}
+            options={Object.entries(config?.providers ?? {}).map(([id, p]) => {
+              const k = keyStatusFor(config, id as ProviderId);
+              return {
+                value: id,
+                label: k.has_key ? (
+                  <Space>
+                    {p.label}
+                    <Tag color="green" style={{ marginInlineEnd: 0 }}>
+                      {t(`${tk}.keySavedTag`, { hint: k.hint })}
+                    </Tag>
+                  </Space>
+                ) : (
+                  p.label
+                ),
+              };
+            })}
           />
         </Form.Item>
 
         <Form.Item
-          name="model"
           label={t(`${tk}.model`)}
-          rules={[{ required: true, message: t(`${tk}.modelRequired`) }]}
-          extra={provider === 'ollama' ? t(`${tk}.ollamaModelHelp`) : undefined}
+          required
+          extra={
+            provider === 'ollama'
+              ? t(`${tk}.ollamaModelHelp`)
+              : t(`${tk}.modelHelp`)
+          }
         >
-          <AutoComplete
-            options={(meta?.suggested_models ?? []).map((m) => ({ value: m }))}
-            placeholder={meta?.default_model || 'gpt-4.1-mini, llama-3.3-70b…'}
-          />
+          <Space.Compact style={{ width: '100%' }}>
+            <Form.Item
+              name="model"
+              noStyle
+              rules={[{ required: true, message: t(`${tk}.modelRequired`) }]}
+            >
+              <AutoComplete
+                style={{ width: '100%' }}
+                options={modelOptions}
+                filterOption={(input, option) =>
+                  String(option?.value ?? '')
+                    .toLowerCase()
+                    .includes(input.toLowerCase())
+                }
+                placeholder={meta?.default_model || t(`${tk}.modelPlaceholder`)}
+              />
+            </Form.Item>
+            <Button loading={loadingModels} onClick={loadModels}>
+              {t(`${tk}.loadModels`)}
+            </Button>
+          </Space.Compact>
         </Form.Item>
 
         <Form.Item
           name="base_url"
           label={t(`${tk}.baseUrl`)}
+          rules={
+            provider === 'custom'
+              ? [{ required: true, message: t(`${tk}.baseUrlRequired`) }]
+              : []
+          }
           extra={
             provider === 'anthropic'
               ? t(`${tk}.baseUrlAnthropic`)
@@ -249,9 +323,7 @@ const AssistantLlmCard = () => {
               onChange={(e) => setKeyInput(e.target.value)}
               placeholder={
                 keyStoredHere
-                  ? t(`${tk}.apiKeyStored`, {
-                      hint: config?.api_key_hint ?? '',
-                    })
+                  ? t(`${tk}.apiKeyStored`, { hint: keyHere.hint })
                   : t(`${tk}.apiKeyPlaceholder`)
               }
             />

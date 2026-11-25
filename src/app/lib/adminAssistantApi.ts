@@ -1,11 +1,22 @@
 /**
  * Typed wrapper for the assistant LLM settings (agri-api /admin/assistant/*,
- * AgriLogy/agri-api#472). The API key is write-only: the server never returns
- * it, only `has_api_key` and its last 4 characters.
+ * AgriLogy/agri-api#472, #528). Each provider keeps its own API key, and keys
+ * are write-only: the server never returns one, only whether each provider has
+ * one (`keys`) and its last 4 characters.
  */
 import api from './api';
 
-export type ProviderId = 'anthropic' | 'openai' | 'groq' | 'ollama';
+/** Known presets; the server's catalog is the source of truth. */
+export type ProviderId =
+  | 'anthropic'
+  | 'openai'
+  | 'groq'
+  | 'mistral'
+  | 'gemini'
+  | 'openrouter'
+  | 'deepseek'
+  | 'ollama'
+  | 'custom';
 
 export type ProviderMeta = {
   label: string;
@@ -14,7 +25,11 @@ export type ProviderMeta = {
   suggested_models: string[];
   requires_api_key: boolean;
   supports_effort: boolean;
+  /** Speaks the OpenAI API (all but Claude). Absent on older servers. */
+  openai_compatible?: boolean;
 };
+
+export type ProviderKeyStatus = { has_key: boolean; hint: string };
 
 export type AssistantConfig = {
   source: 'settings' | 'env' | 'none';
@@ -29,9 +44,31 @@ export type AssistantConfig = {
   api_key_unreadable: boolean;
   updated_at: string | null;
   updated_by: string | null;
+  /** Key status per provider (agri-api #528). Absent on older servers. */
+  keys?: Partial<Record<ProviderId, ProviderKeyStatus>>;
   providers: Record<ProviderId, ProviderMeta>;
   effort_levels: string[];
 };
+
+export type AssistantModelsResult =
+  | { ok: true; models: string[] }
+  | { ok: false; error: string };
+
+/**
+ * Whether `provider` has a saved key, and its hint. Older servers (one key
+ * only) report it through `has_api_key`, valid for the stored provider only.
+ */
+export function keyStatusFor(
+  config: AssistantConfig | null,
+  provider: ProviderId | undefined
+): ProviderKeyStatus {
+  const none = { has_key: false, hint: '' };
+  if (!config || !provider) return none;
+  if (config.keys) return config.keys[provider] ?? none;
+  return config.has_api_key && config.provider === provider
+    ? { has_key: true, hint: config.api_key_hint }
+    : none;
+}
 
 export type AssistantTestResult =
   | { ok: true; model: string; reply: string; latency_ms: number }
@@ -85,6 +122,19 @@ export function buildTestPayload(
   return payload;
 }
 
+/** Ask the provider for its models: only send a key or URL that was typed. */
+export function buildModelsPayload(
+  provider: ProviderId,
+  baseUrl: string,
+  keyInput: string
+): { provider: ProviderId; base_url?: string; api_key?: string } {
+  const payload: { provider: ProviderId; base_url?: string; api_key?: string } =
+    { provider };
+  if (baseUrl.trim()) payload.base_url = baseUrl.trim();
+  if (keyInput.trim()) payload.api_key = keyInput.trim();
+  return payload;
+}
+
 export const adminAssistantApi = {
   get: () =>
     api.get<AssistantConfig>('/admin/assistant/config').then((r) => r.data),
@@ -95,5 +145,9 @@ export const adminAssistantApi = {
   test: (payload: ReturnType<typeof buildTestPayload>) =>
     api
       .post<AssistantTestResult>('/admin/assistant/test', payload)
+      .then((r) => r.data),
+  models: (payload: ReturnType<typeof buildModelsPayload>) =>
+    api
+      .post<AssistantModelsResult>('/admin/assistant/models', payload)
       .then((r) => r.data),
 };

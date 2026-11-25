@@ -957,7 +957,14 @@
         "statusOff": "Inactif",
         "fromEnv": "Réglages actuellement lus depuis les variables d'environnement du serveur. Enregistrer ici les remplace.",
         "keyUnreadable": "La clé enregistrée ne peut plus être lue (clé secrète du serveur modifiée). Saisissez-la à nouveau.",
-        "updated": "Modifié par {who} le {when}"
+        "updated": "Modifié par {who} le {when}",
+        "modelHelp": "Saisissez un modèle, choisissez une suggestion ou chargez la liste du fournisseur.",
+        "modelPlaceholder": "Nom du modèle",
+        "loadModels": "Charger les modèles",
+        "modelsLoaded": "{count} modèles chargés",
+        "modelsError": "Impossible de charger les modèles : {error}",
+        "keySavedTag": "clé ••••{hint}",
+        "baseUrlRequired": "Saisissez l'adresse du serveur"
       }
     },
     "kc": {
@@ -1373,6 +1380,10 @@
         "equipment": "Équipement",
         "other": "Autre"
       }
+    },
+    "assistantPage": {
+      "title": "Assistant IA",
+      "subtitle": "Choisissez le moteur IA (Claude, GPT, Groq…) et sa clé API."
     },
     "stations": {
       "title": "Stations météo : intérieur ou extérieur ?",
@@ -2493,6 +2504,7 @@
       "monitoring": "Supervision",
       "database": "Base de données",
       "knowledge": "Base de connaissances",
+      "assistant": "Assistant IA",
       "stations": "Stations : intérieur / extérieur"
     },
     "mobileMenu": {

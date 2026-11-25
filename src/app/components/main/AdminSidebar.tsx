@@ -14,6 +14,7 @@ import {
   FileSearchOutlined,
   LineChartOutlined,
   LogoutOutlined,
+  RobotOutlined,
   SafetyCertificateOutlined,
   SettingOutlined,
   TeamOutlined,
@@ -46,6 +47,7 @@ const AdminSidebar = () => {
     if (pathname.startsWith('/admin/affirmations')) return 'affirmations';
     if (pathname.startsWith('/admin/kc')) return 'kc';
     if (pathname.startsWith('/admin/knowledge')) return 'knowledge';
+    if (pathname.startsWith('/admin/assistant')) return 'assistant';
     if (pathname.startsWith('/admin/billing')) return 'billing';
     if (pathname.startsWith('/admin/records')) return 'records';
     if (pathname.startsWith('/admin/audit')) return 'audit';
@@ -192,6 +194,15 @@ const AdminSidebar = () => {
               </Tooltip>
             ),
             onClick: () => router.push('/admin/knowledge'),
+          },
+          {
+            key: 'assistant',
+            icon: (
+              <Tooltip title={t('shell.admin.assistant')} placement="right">
+                <RobotOutlined />
+              </Tooltip>
+            ),
+            onClick: () => router.push('/admin/assistant'),
           },
           {
             key: 'records',
