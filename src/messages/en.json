@@ -2738,5 +2738,9 @@
       "reading": "Electricity consumption",
       "type": "Electricity"
     }
+  },
+  "accessRefused": {
+    "title": "Admins only.",
+    "description": "This account doesn't have the access level this page needs."
   }
 }

@@ -2738,5 +2738,9 @@
       "reading": "Consommation électrique",
       "type": "Électricité"
     }
+  },
+  "accessRefused": {
+    "title": "Accès réservé aux administrateurs.",
+    "description": "Ce compte n'a pas le niveau d'accès nécessaire pour cette page."
   }
 }
