@@ -1,13 +1,21 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Grid, GridItem } from '@chakra-ui/react';
 import HeaderAdmin from '@/app/components/main/AdminHeader';
 import AdminSidebar from '@/app/components/main/AdminSidebar';
 import useColorModeStyles from '@/app/utils/useColorModeStyles';
+import { AccessRefused } from '@/app/components/admin/_shared/AccessRefused';
+import { startAccessGeneration, useAccessDenied } from '@/app/lib/accessDenied';
 
 export function AdminPageShell({ children }: { children: React.ReactNode }) {
   const { textColor, navBgColor } = useColorModeStyles();
+  // New page view: forget a refusal from the previous page. Runs during the
+  // first render, before the page's own effects send their requests.
+  useState(startAccessGeneration);
+  // A read on this page came back 403: say access was refused rather than
+  // letting the page render its "no data" state.
+  const accessDenied = useAccessDenied();
 
   return (
     <Grid
@@ -70,7 +78,7 @@ export function AdminPageShell({ children }: { children: React.ReactNode }) {
           overflowX="hidden"
           sx={{ WebkitOverflowScrolling: 'touch' }}
         >
-          {children}
+          {accessDenied ? <AccessRefused /> : children}
         </Box>
       </GridItem>
     </Grid>
