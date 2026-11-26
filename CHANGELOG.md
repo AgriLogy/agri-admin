@@ -1,3 +1,10 @@
+# [1.30.0](https://github.com/AgriLogy/agri-admin/compare/v1.29.2...v1.30.0) (2026-11-26)
+
+
+### Features
+
+* rebrand the back office to Agrogo ([#88](https://github.com/AgriLogy/agri-admin/issues/88)) ([0c15046](https://github.com/AgriLogy/agri-admin/commit/0c15046ea9822d4511f88c5d7ad424f0af8e2ee1)), closes [#87](https://github.com/AgriLogy/agri-admin/issues/87)
+
 ## [1.29.2](https://github.com/AgriLogy/agri-admin/compare/v1.29.1...v1.29.2) (2026-11-25)
 
 
