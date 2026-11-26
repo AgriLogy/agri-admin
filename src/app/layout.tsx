@@ -10,8 +10,8 @@ import { chakraColorModeConfig } from '@/app/ui';
 import { dirFor, type Locale } from '@/i18n/config';
 
 export const metadata: Metadata = {
-  title: 'Agrilogy — Admin',
-  description: 'Agrilogy administration console.',
+  title: 'Agrogo — Admin',
+  description: 'Agrogo administration console.',
 };
 
 export default async function RootLayout({
