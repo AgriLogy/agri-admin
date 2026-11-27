@@ -97,7 +97,8 @@ export type LoginEvent = {
   created_at: string | null;
 };
 
-export type IngestFeedStatus = 'ok' | 'stale' | 'no_data';
+// 'ignored': left out of the alert on purpose (INGEST_STALE_IGNORED_FEEDS).
+export type IngestFeedStatus = 'ok' | 'stale' | 'no_data' | 'ignored';
 
 /** One sensor feed's freshness (GET /admin/monitoring/ingest, agri-api #490). */
 export type IngestFeed = {

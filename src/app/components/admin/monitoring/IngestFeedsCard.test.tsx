@@ -136,3 +136,21 @@ it('polls so a feed coming back shows up without a reload', async () => {
     'admin.monitoring.ingest.ok'
   );
 });
+
+it('labels a feed left out of the alert as not monitored', async () => {
+  const base = status();
+  ingest.mockResolvedValue(
+    status({
+      feeds: [
+        { ...base.feeds[0], status: 'ignored', alert_active: false },
+        base.feeds[1],
+      ],
+    })
+  );
+  render(<IngestFeedsCard />);
+
+  expect(await screen.findByTestId('ingest-lora')).toHaveTextContent(
+    'admin.monitoring.ingest.ignored'
+  );
+  expect(screen.queryByText('admin.monitoring.ingest.alertArmed')).toBeNull();
+});

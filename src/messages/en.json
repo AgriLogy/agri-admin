@@ -1223,6 +1223,8 @@
         "ok": "Receiving data",
         "stale": "Silent for {h} h",
         "no_data": "No data",
+        "ignored": "Not monitored",
+        "ignoredHint": "Switched off on purpose: this feed never sends a “no data” alert.",
         "alertArmed": "Email sent",
         "alertArmedHint": "The team was notified; a reminder follows while the feed stays silent, then an email when it resumes.",
         "footer": "Alert after {h} h without data · {r} recipient(s) · reminder every {n} h"

@@ -28,6 +28,7 @@ const STATUS_COLOR: Record<IngestFeed['status'], string> = {
   ok: 'green',
   stale: 'red',
   no_data: 'default',
+  ignored: 'default',
 };
 
 const IngestFeedsCard = () => {
@@ -67,11 +68,16 @@ const IngestFeedsCard = () => {
       title: t('status'),
       key: 'status',
       render: (_: unknown, f: IngestFeed) => (
-        <Tag color={STATUS_COLOR[f.status]} data-testid={`ingest-${f.key}`}>
-          {f.status === 'stale'
-            ? t('stale', { h: f.hours_silent ?? 0 })
-            : t(f.status)}
-        </Tag>
+        <Tooltip title={f.status === 'ignored' ? t('ignoredHint') : undefined}>
+          <Tag
+            color={STATUS_COLOR[f.status] ?? 'default'}
+            data-testid={`ingest-${f.key}`}
+          >
+            {f.status === 'stale'
+              ? t('stale', { h: f.hours_silent ?? 0 })
+              : t(f.status)}
+          </Tag>
+        </Tooltip>
       ),
     },
     {
