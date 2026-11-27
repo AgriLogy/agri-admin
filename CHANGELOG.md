@@ -1,3 +1,10 @@
+# [1.31.0](https://github.com/AgriLogy/agri-admin/compare/v1.30.0...v1.31.0) (2026-11-27)
+
+
+### Features
+
+* **monitoring:** show feeds left out of the stale alert as not monitored ([#90](https://github.com/AgriLogy/agri-admin/issues/90)) ([143f1aa](https://github.com/AgriLogy/agri-admin/commit/143f1aa830942b75ca394c0e21d7cbf34c1d8850)), closes [#89](https://github.com/AgriLogy/agri-admin/issues/89)
+
 # [1.30.0](https://github.com/AgriLogy/agri-admin/compare/v1.29.2...v1.30.0) (2026-11-26)
 
 
