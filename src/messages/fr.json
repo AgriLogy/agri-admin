@@ -1223,6 +1223,8 @@
         "ok": "Reçoit des données",
         "stale": "Silencieux depuis {h} h",
         "no_data": "Aucune donnée",
+        "ignored": "Non surveillé",
+        "ignoredHint": "Désactivé volontairement : ce flux n’envoie jamais d’alerte « pas de données ».",
         "alertArmed": "E-mail envoyé",
         "alertArmedHint": "L'équipe a été prévenue ; un rappel suit tant que le flux reste silencieux, puis un e-mail à la reprise.",
         "footer": "Alerte après {h} h sans donnée · {r} destinataire(s) · rappel toutes les {n} h"
